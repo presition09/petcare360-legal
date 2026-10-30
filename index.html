@@ -1,49 +1,553 @@
 <!doctype html>
-<html lang="th">
+<html lang="th" data-site="petcare-home">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PetCare AI 360</title>
+<meta name="robots" content="noindex, nofollow">
+<title>PetCare AI 360 — สมุดสุขภาพน้องหมาแมว</title>
+<meta name="description" content="บันทึกวัคซีน ยา น้ำหนัก และนัดหมายของน้องไว้ที่เดียว พร้อมแจ้งเตือนตรงเวลา และแชตถามวิธีใช้ได้ฟรี · แอปไม่วินิจฉัยโรค">
+<meta property="og:title" content="PetCare AI 360 — สมุดสุขภาพน้องหมาแมว">
+<meta property="og:description" content="บันทึกวัคซีน ยา น้ำหนัก และนัดหมายของน้องไว้ที่เดียว พร้อมแจ้งเตือนตรงเวลา">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://presition09.github.io/petcare360-legal/">
+<meta property="og:image" content="https://presition09.github.io/petcare360-legal/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://presition09.github.io/petcare360-legal/">
+<link rel="icon" type="image/png" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F0FDFA;--card:#fff;--primary:#0F766E;--text:#0F172A;--text2:#475569;--border:#E5E7EB}
-@media (prefers-color-scheme:dark){:root{--bg:#0B1514;--card:#13201F;--primary:#5EEAD4;--text:#E6F0EF;--text2:#A7B6B4;--border:#24403D}}
+:root{--teal:#2EC4B6;--teal-d:#1A9E92;--teal-l:#CBF3F0;--teal-xl:#E8FAF8;--coral:#FF6B6B;--coral-l:#FFF0F0;--gold:#FFD166;--gold-l:#FFF8E1;--navy:#0D1B2A;--ink:#334155;--muted:#64748B;--line:#DDECEC;--bg:#F0FAFA;--card:#fff;--r:20px;color-scheme:light}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Thai",Sarabun,sans-serif}
-a{color:var(--primary)}
-header{background:var(--card);border-bottom:1px solid var(--border)}
-.wrap{max-width:760px;margin:0 auto;padding:0 16px}
-.brand{display:block;padding:14px 0 6px;font-weight:700;font-size:18px;color:var(--primary);text-decoration:none}
-nav{display:flex;flex-wrap:wrap;gap:4px 16px;padding-bottom:12px;font-size:14px}
-nav a{text-decoration:none;color:var(--text2)}
-nav a[aria-current]{color:var(--primary);font-weight:700}
-nav span{opacity:.7}
-main{padding:24px 0 40px}
-h1{font-size:26px;line-height:1.3;margin:0}
-.sub{color:var(--text2);margin:4px 0 12px}
-.switch{font-size:14px}
-.doc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:8px 20px 16px;margin-top:20px}
-.updated{color:var(--text2);font-size:14px}
-h2{font-size:18px;line-height:1.4;margin:24px 0 6px}
-ul,ol{padding-left:22px;margin:6px 0}
-li{margin:4px 0}
-p{margin:6px 0}
-footer{color:var(--text2);font-size:13px;padding:0 0 32px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Kanit,system-ui,sans-serif;overflow-x:clip}
+a{color:var(--teal-d)}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:8px}
+/* header */
+header.top{position:sticky;top:0;z-index:30;background:rgba(240,250,250,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:600;font-size:18px;white-space:nowrap}
+.brand img{width:34px;height:34px;border-radius:9px}
+nav.links{display:flex;gap:18px;margin-left:auto}
+nav.links a{color:var(--ink);text-decoration:none;font-size:15px}
+nav.links a:hover{color:var(--teal-d)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:11px 20px;font-weight:500;text-decoration:none;white-space:nowrap}
+.btn.dark{background:var(--navy);color:#fff}
+.btn.dark:hover{background:#1c2f45}
+.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.btn.small{padding:8px 16px;font-size:14px}
+.short{display:none}
+@media (max-width:900px){nav.links{display:none}header.top .btn{margin-left:auto}}
+@media (max-width:480px){header.top .long{display:none}header.top .short{display:inline}.brand{font-size:16px}}
+/* hero */
+.hero{padding:56px 0 30px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--teal-d)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px var(--teal-l)}
+h1{font-size:clamp(36px,5.2vw,58px);line-height:1.15;color:var(--navy);margin:18px 0 14px;font-weight:600}
+.grad{background:linear-gradient(90deg,var(--teal-d),var(--teal) 45%,var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--ink);max-width:560px}
+.rot{color:var(--coral);font-weight:500;border-bottom:2px solid var(--gold)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 14px}
+.medical{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;max-width:520px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:34px}}
+/* chat demo */
+.demo{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:0 24px 60px -30px rgba(13,27,42,.35);padding:18px;position:relative}
+.demo .bar{display:flex;align-items:center;gap:10px;padding:4px 4px 12px;border-bottom:1px solid var(--line)}
+.demo .bar img{width:36px;height:36px;border-radius:10px}
+.demo .bar b{color:var(--navy);font-weight:600}
+.demo .bar small{display:block;color:var(--muted);font-size:12px;line-height:1.3}
+.tap{font-size:13px;color:var(--coral);margin:12px 2px 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--teal-xl);color:var(--navy);border-radius:999px;padding:7px 14px;font-size:14px}
+.chip[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.thread{min-height:250px;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:88%;padding:11px 14px;border-radius:18px;font-size:14.5px;line-height:1.6;white-space:pre-line}
+.msg.me{align-self:flex-end;background:var(--teal);color:#06302c;border-bottom-right-radius:6px}
+.msg.bot{align-self:flex-start;background:#F4F8F8;border:1px solid var(--line);border-bottom-left-radius:6px}
+.msg.bot.alert{background:var(--coral-l);border-color:#FFD0D0}
+.msg b{color:var(--navy)}
+.trace{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:12px}
+.trace span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted)}
+.trace span.on{border-color:var(--teal);color:var(--teal-d)}
+.trace .arr{border:0;background:none;padding:3px 0;color:#9FB5B8}
+.sample{font-size:12px;color:var(--muted);margin-top:10px}
+.buddy{position:absolute;width:110px;right:-22px;bottom:-34px;pointer-events:none;filter:drop-shadow(0 10px 18px rgba(0,0,0,.18))}
+@media (max-width:600px){.buddy{width:80px;right:-6px;bottom:-26px}}
+/* marquee */
+.marquee{overflow:hidden;border-block:1px solid var(--line);background:#fff;margin-top:46px}
+.track{display:flex;gap:12px;padding:14px 0;width:max-content;animation:slide 38s linear infinite}
+.track span{border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:14px;color:var(--navy);background:var(--bg);white-space:nowrap}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none}}
+/* statement */
+.statement{padding:110px 0 70px;text-align:center}
+.statement p{font-size:clamp(28px,4.4vw,52px);line-height:1.35;font-weight:600;margin:0 auto;max-width:980px}
+.statement .w{color:#C9D9DA;transition:color .35s}
+.statement .w.lit{color:var(--navy)}
+.statement .w.lit.t{color:var(--teal-d)}
+.statement small{display:block;margin-top:18px;color:var(--muted)}
+/* section heads */
+section.block{padding:70px 0}
+.eyebrow{font-size:13px;letter-spacing:.14em;color:var(--teal-d);font-weight:600}
+h2{font-size:clamp(28px,3.4vw,40px);color:var(--navy);line-height:1.25;margin:6px 0 10px;font-weight:600}
+.sub{color:var(--muted);max-width:720px;margin:0 0 26px}
+.group{display:flex;align-items:center;gap:16px;border-radius:var(--r);padding:16px 20px;margin-bottom:26px;background:#fff;border:1px solid var(--line)}
+.letter{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:22px;flex:none}
+.group h3{margin:0;color:var(--navy);font-size:20px;font-weight:600}
+.group p{margin:0;color:var(--muted);font-size:15px}
+.g-r .letter{background:var(--teal)}.g-c .letter{background:var(--coral)}.g-p .letter{background:#E8A93A}.g-f .letter{background:var(--navy)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:900px){.grid2{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.card h4{margin:0 0 4px;color:var(--navy);font-size:18px;font-weight:600}
+.card .hint{font-size:13px;color:var(--coral);margin:0 0 12px}
+.note{font-size:12.5px;color:var(--muted);margin-top:12px}
+/* overview loop */
+.loop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;position:relative}
+.step b{display:block;color:var(--navy);font-size:18px;font-weight:600;margin-top:8px}
+.step span{font-size:14px;color:var(--muted)}
+.step .n{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:600}
+.step[aria-pressed=true]{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-l)}
+.loopnote{margin-top:14px;background:#fff;border:1px dashed var(--teal);border-radius:var(--r);padding:16px 20px;color:var(--navy)}
+.loopnote a{margin-left:6px}
+@media (max-width:900px){.loop{grid-template-columns:1fr 1fr}}
+/* weight chart */
+.wtop{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.wnow{font-size:38px;font-weight:600;color:var(--navy);line-height:1}
+.wnow small{font-size:16px;color:var(--muted);font-weight:400}
+.delta{font-size:13px;color:var(--coral)}
+svg.chart{width:100%;height:auto;margin-top:14px}
+.hist{list-style:none;margin:10px 0 0;padding:0;font-size:14px}
+.hist li{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:7px 2px}
+.types{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.types span{background:var(--teal-xl);border-radius:10px;padding:6px 12px;font-size:14px;color:var(--navy)}
+/* medicine */
+.medhead{display:flex;gap:12px;align-items:center}
+.pillicon{width:46px;height:46px;border-radius:14px;background:var(--coral-l);display:grid;place-items:center;font-size:22px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.stats div{background:var(--bg);border-radius:14px;padding:10px 12px;font-size:13px;color:var(--muted)}
+.stats b{display:block;font-size:24px;color:var(--navy);font-weight:600}
+.dose{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding:12px 0}
+.dose b{color:var(--navy)}
+.give{border:1px solid var(--teal);background:var(--teal-xl);color:var(--teal-d);border-radius:12px;padding:8px 14px;font-size:14px}
+.give.done{background:#E7F8EE;border-color:#59C08A;color:#20895A}
+/* vaccine */
+.seg{display:inline-flex;background:var(--bg);border-radius:12px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;border-radius:9px;padding:7px 16px;color:var(--ink)}
+.seg button[aria-pressed=true]{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.vin{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:12px 0}
+.vin input{font:inherit;border:1px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff}
+.vlist{list-style:none;padding:0;margin:0}
+.vlist li{border-top:1px solid var(--line);padding:11px 2px}
+.vlist b{color:var(--navy)}
+.tag{display:inline-block;font-size:11.5px;border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:2px}
+.tag.core{background:var(--teal-l);color:var(--teal-d)}.tag.opt{background:var(--gold-l);color:#9A6A00}.tag.law{background:var(--coral-l);color:#C94444}
+.vdate{font-size:14px;color:var(--ink)}
+/* chat modes */
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:10px 16px;text-align:left;color:var(--navy)}
+.tabs button small{display:block;color:var(--muted);font-size:12px}
+.tabs button[aria-pressed=true]{border-color:#E8A93A;box-shadow:0 0 0 3px var(--gold-l)}
+.modebody ul{margin:6px 0 0;padding-left:20px}
+.modebody li{margin:4px 0}
+/* find + shots */
+.phone{border-radius:34px;border:8px solid var(--navy);overflow:hidden;background:var(--navy);max-width:300px;margin:0 auto}
+.shots{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px}
+.shots figure{margin:0;flex:0 0 220px;scroll-snap-align:start}
+.shots figure .phone{max-width:220px;border-width:6px;border-radius:28px}
+.shots figcaption{font-size:13.5px;color:var(--ink);margin-top:10px;text-align:center}
+/* privacy */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.facts .card b{color:var(--navy);display:block;margin-bottom:4px}
+.facts .card{font-size:15px}
+@media (max-width:900px){.facts{grid-template-columns:1fr}}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:4px 18px;margin-bottom:10px}
+summary{cursor:pointer;padding:12px 0;color:var(--navy);font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--teal-d);font-size:20px;line-height:1}
+details[open] summary::after{content:"–"}
+details div{white-space:pre-line;padding:0 0 14px;font-size:15px}
+/* download band + footer */
+.band{background:var(--navy);color:#fff;border-radius:28px;padding:40px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center}
+.bandpet{width:96px;height:auto;margin:-60px 0 -40px}
+.band h2{color:#fff;margin:0 0 6px}
+.band p{margin:0;color:#B8C7D3}
+.band .btn{background:#fff;color:var(--navy)}
+@media (max-width:700px){.band{grid-template-columns:1fr;padding:28px}.bandpet{margin:-70px 0 0;width:84px}}
+footer{padding:46px 0 120px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a{color:var(--ink);text-decoration:none}
+/* paw support */
+.ps-btn{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:12px 18px;box-shadow:0 12px 30px -10px rgba(13,27,42,.6);font-weight:500}
+.ps{position:fixed;right:18px;bottom:82px;z-index:41;width:min(380px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 120px));background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px -20px rgba(13,27,42,.45);display:none;flex-direction:column;overflow:hidden}
+.ps.open{display:flex}
+.ps .head{background:var(--teal-xl);padding:14px 18px;border-bottom:1px solid var(--line)}
+.ps .head b{color:var(--navy)}
+.ps .head small{display:block;color:var(--muted);font-size:12.5px}
+.ps .body{padding:14px;overflow:auto;display:flex;flex-direction:column;gap:10px}
+.ps .foot{padding:12px 14px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.ps .chips .chip{font-size:13px}
 </style>
 </head>
 <body>
-<header><div class="wrap"><a class="brand" href="./">🐾 PetCare AI 360</a><nav><a href="privacy/">นโยบายความเป็นส่วนตัว<span> · Privacy</span></a><a href="terms/">ข้อกำหนดการใช้งาน<span> · Terms</span></a><a href="contact/">ติดต่อ / ลบบัญชี<span> · Contact</span></a></nav></div></header>
-<main class="wrap">
-<h1>PetCare AI 360</h1>
-<p class="sub">สมุดสุขภาพสัตว์เลี้ยง: ทะเบียนน้อง วัคซีน ยา น้ำหนัก กิจกรรม และแจ้งเตือน · แอปไม่วินิจฉัยโรค<br>
-A pet health record book: profiles, vaccines, medicines, weight, activities and reminders. The app does not diagnose disease.</p>
-<section class="doc">
-<ul>
-<li><a href="privacy/">นโยบายความเป็นส่วนตัว · Privacy</a></li>
-<li><a href="terms/">ข้อกำหนดการใช้งาน · Terms</a></li>
-<li><a href="contact/">ติดต่อ / ลบบัญชี · Contact</a></li>
-</ul>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#"><img src="assets/icon-192.png" alt="" width="34" height="34">PetCare AI 360</a>
+  <nav class="links" aria-label="เมนูหลัก">
+    <a href="#overview">ภาพรวม</a><a href="#records">บันทึกสุขภาพ</a><a href="#care">ยาและวัคซีน</a><a href="#paw">น้องพอว์</a><a href="#find">คลินิกใกล้ตัว</a><a href="#privacy">ความเป็นส่วนตัว</a>
+  </nav>
+  <a class="btn dark small" href="https://apps.apple.com/th/app/id6827011693"><span class="long">ดาวน์โหลดบน App Store</span><span class="short">ดาวน์โหลด</span></a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="pill"><i></i>สมุดสุขภาพน้องหมาแมว · ใช้ฟรี</span>
+    <h1>ดูแลน้องครบ 360°<br><span class="grad">ไม่พลาดยาและวัคซีน</span></h1>
+    <p class="lead">บันทึกประวัติสุขภาพ เตือนเวลาให้ยาและวัคซีน และถามน้องพอว์เรื่องบันทึกกับวิธีใช้แอปได้ สำหรับ<span class="rot" id="rot">น้องหมา</span></p>
+    <div class="cta">
+      <a class="btn dark" href="https://apps.apple.com/th/app/id6827011693">ดาวน์โหลดบน App Store</a>
+      <a class="btn ghost" href="#overview">ดูว่าแอปทำอะไรได้ ↓</a>
+    </div>
+    <p class="medical">🩺 <span>แอปไม่วินิจฉัยโรคและไม่แทนการตรวจของสัตวแพทย์ ถ้าน้องมีอาการผิดปกติ ให้พาไปพบสัตวแพทย์</span></p>
+  </div>
+  <div class="demo" aria-label="ลองถามน้องพอว์">
+    <div class="bar"><img src="assets/paw-avatar.webp" alt=""><div><b>น้องพอว์ 🐾</b><small>แชตธรรมดา · ดูแลน้อง Nova · ฟรี</small></div></div>
+    <p class="tap">👆 ลองกดคำถาม แล้วดูคำตอบ</p>
+    <div class="chips" id="qchips"></div>
+    <div class="thread" id="thread" aria-live="polite"></div>
+    <div class="trace" id="trace"></div>
+    <p class="sample">คำตอบจริงจากแชตธรรมดาของแอป ใช้ข้อมูลตัวอย่างของน้อง Nova (แมว) · ทำงานในเครื่อง ไม่ใช้เหรียญ</p>
+    <img class="buddy" src="assets/buddy-dog.webp" alt="">
+  </div>
+</div>
+<div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
 </section>
+
+<section class="statement"><div class="wrap">
+  <p id="statement">ทุกเรื่องของน้อง อยู่ใน มือถือ เครื่องเดียว เตือน ตรงเวลา ไม่ต้อง จำเอง</p>
+  <small>เลื่อนลงต่อ เพื่อดูว่าแต่ละส่วนทำงานอย่างไร</small>
+</div></section>
+
+<section class="block" id="overview"><div class="wrap">
+  <div class="eyebrow">OVERVIEW</div>
+  <h2>4 ขั้น วนเป็นวงเดียว</h2>
+  <p class="sub">กดแต่ละขั้นเพื่อดูว่าเกิดอะไรขึ้นในแอป — ยิ่งบันทึกมาก แนวโน้มของน้องยิ่งชัด</p>
+  <div class="loop" id="loop"></div>
+  <div class="loopnote" id="loopnote"></div>
+</div></section>
+
+<section class="block" id="records"><div class="wrap">
+  <div class="group g-r"><div class="letter">R</div><div><h3>Records · บันทึกสุขภาพ</h3><p>ประวัติทุกอย่างของน้องแต่ละตัว ดูย้อนหลังและแนวโน้มได้</p></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h4>น้ำหนักของน้อง Nova</h4>
+      <p class="hint">👆 กด "+ บันทึก" แล้วดูกราฟเปลี่ยน</p>
+      <div class="wtop"><div class="wnow" id="wnow"></div><button class="btn dark small" id="wadd">+ บันทึก</button></div>
+      <div class="delta" id="wdelta"></div>
+      <svg class="chart" id="wchart" viewBox="0 0 520 190" role="img" aria-label="กราฟน้ำหนัก"></svg>
+      <ul class="hist" id="whist"></ul>
+      <p class="note">ข้อมูลตัวอย่าง · ในแอปบันทึกได้วันละ 1 ค่า บันทึกซ้ำวันเดิม = แทนค่าเดิม</p>
+    </div>
+    <div class="card">
+      <h4>บันทึกได้ครบในที่เดียว</h4>
+      <p>เพิ่มน้องได้หลายตัว แต่ละตัวมีรูป สายพันธุ์ วันเกิด น้ำหนัก และเลขไมโครชิปของตัวเอง แล้วเก็บประวัติแยกกัน</p>
+      <div class="types"><span>💉 วัคซีน</span><span>🩺 พบสัตวแพทย์</span><span>💊 ยา–อาหารเสริม</span><span>⚖️ น้ำหนัก</span><span>🍚 อาหาร</span><span>💧 น้ำ</span><span>🚶 การเดิน</span><span>😴 การนอน</span><span>📅 นัดหมาย</span><span>🪪 การ์ดน้อง</span></div>
+      <p class="note">เลือกวันที่จากปฏิทินได้ ลงบันทึกย้อนหลังได้ แต่ลงวันที่ในอนาคตไม่ได้ · วันที่แสดงแบบ "30 ต.ค. 2569"</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="block" id="care"><div class="wrap">
+  <div class="group g-c"><div class="letter">C</div><div><h3>Care · ยาและวัคซีน</h3><p>เตือนตรงเวลาด้วยการแจ้งเตือนในเครื่อง ติ๊กเมื่อให้แล้ว นับจำนวนยาให้</p></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h4>ยาวันนี้</h4>
+      <p class="hint">👆 กด "ให้ยาแล้ว" แล้วดูตัวเลขเปลี่ยน</p>
+      <div class="medhead"><div class="pillicon">💊</div><div><b style="color:var(--navy)">วิตามินบำรุงขน</b><div style="font-size:14px;color:var(--muted)">1 เม็ด · วันละ 2 ครั้ง</div></div></div>
+      <div class="stats"><div>รอบวันนี้<b>2</b></div><div>ให้แล้ว<b id="mgiven">0</b></div><div>คงเหลือ<b id="mstock">60</b></div></div>
+      <div id="doses"></div>
+      <p class="note">ข้อมูลตัวอย่าง · ใส่จำนวนยาได้หรือเว้นว่าง (เว้นว่าง = ไม่นับจำนวน) · ขนาดยาตามฉลากหรือคำสั่งสัตวแพทย์เท่านั้น</p>
+    </div>
+    <div class="card">
+      <h4>คำนวณกำหนดวัคซีน</h4>
+      <p class="hint">👆 เลือกหมาหรือแมว ใส่วันเกิด แล้วดูเข็มที่ควรได้</p>
+      <div class="seg" role="group" aria-label="ชนิดสัตว์"><button id="vdog" aria-pressed="true">🐶 หมา</button><button id="vcat" aria-pressed="false">🐱 แมว</button></div>
+      <div class="vin"><label for="vbirth">วันเกิด</label><input type="date" id="vbirth"><span class="vdate" id="vbirthth"></span></div>
+      <ul class="vlist" id="vlist"></ul>
+      <p class="note">ใช้โปรแกรมวัคซีนชุดเดียวกับในแอป (อ้างอิง WSAVA · AAHA · AAFP · พ.ร.บ.โรคพิษสุนัขบ้า) เป็นแนวทางทั่วไป ไม่ใช่คำวินิจฉัย — ยืนยันตารางกับสัตวแพทย์ทุกครั้ง</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="block" id="paw"><div class="wrap">
+  <div class="group g-p"><div class="letter">P</div><div><h3>Paw · น้องพอว์ ผู้ช่วยในแชต</h3><p>ถามเรื่องของน้องจากบันทึกที่มี และถามวิธีใช้แอปได้</p></div></div>
+  <div class="grid2">
+    <div class="card">
+      <div class="tabs" role="group" aria-label="โหมดแชต">
+        <button id="mfree" aria-pressed="true">💬 แชตธรรมดา<small>ฟรี · ทำงานในเครื่อง</small></button>
+        <button id="magent" aria-pressed="false">✨ Agent<small>15 Paw Coin ต่อข้อความ</small></button>
+      </div>
+      <div class="modebody" id="modebody"></div>
+    </div>
+    <div class="card">
+      <h4>ขอบเขตที่ตั้งใจไว้</h4>
+      <ul style="margin:8px 0 0;padding-left:20px">
+        <li>ไม่วินิจฉัยโรค ไม่สั่งยา ไม่กำหนดขนาดยา</li>
+        <li>เรื่องที่อาจฉุกเฉิน เช่น กินช็อกโกแลตหรือยาของคน → บอกให้พาไปพบสัตวแพทย์ทันที</li>
+        <li>มีน้องหลายตัว → ตอบจากบันทึกของตัวที่เปิดแชตอยู่ ไม่ปนข้อมูลข้ามตัว</li>
+        <li>บันทึกจากแชตต้องกดยืนยันบนการ์ดก่อนทุกครั้ง</li>
+      </ul>
+      <p class="note">Paw Coin ได้ฟรีตอนสมัครและจากการเช็กอินรายวัน · เวอร์ชันนี้ยังซื้อเหรียญไม่ได้</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="block" id="find"><div class="wrap">
+  <div class="group g-f"><div class="letter">F</div><div><h3>Find · คลินิกและร้านใกล้ตัว</h3><p>โรงพยาบาลสัตว์ อาบน้ำตัดขน โรงแรมสัตว์เลี้ยง และร้านขายของ</p></div></div>
+  <div class="grid2">
+    <div class="phone"><img src="assets/07-nearby.webp" alt="หน้าค้นหาคลินิกใกล้ตัวในแอป" loading="lazy" width="540" height="1173"></div>
+    <div class="card" style="align-self:center">
+      <h4>หาได้จากตำแหน่งที่อยู่ หรือเลือกเมืองเอง</h4>
+      <p>แอปขอตำแหน่งเฉพาะตอนใช้งาน เพื่อเรียงร้านจากใกล้ไปไกล ดูระยะทาง เวลาเปิด แผนที่ และกดโทรได้</p>
+      <p>ไม่อนุญาตตำแหน่งก็ใช้ได้ แค่เลือกเมืองที่ต้องการ</p>
+      <p class="note">ข้อมูลสถานที่ © OpenStreetMap contributors · โปรดโทรเช็กเวลาเปิดและเบอร์กับร้านก่อนเดินทาง · แอปยังไม่มีการจองผ่านแอป ติดต่อร้านโดยตรง</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="block" id="screens"><div class="wrap">
+  <div class="eyebrow">SCREENS</div>
+  <h2>หน้าจอจริงในแอป</h2>
+  <p class="sub">ชุดเดียวกับที่อยู่บน App Store · เลื่อนดูได้</p>
+  <div class="shots" id="shots"></div>
+</div></section>
+
+<section class="block" id="privacy"><div class="wrap">
+  <div class="eyebrow">PRIVACY</div>
+  <h2>ข้อมูลของคุณกับน้อง ดูแลอย่างตรงไปตรงมา</h2>
+  <p class="sub">สรุปจากนโยบายความเป็นส่วนตัวและฉลากความเป็นส่วนตัวบน App Store</p>
+  <div class="facts">
+    <div class="card"><b>เก็บเท่าที่ใช้งาน</b>ชื่อ อีเมล ข้อมูลและบันทึกของน้อง รูปที่อัปโหลด แชต ตำแหน่ง (เมื่ออนุญาต) และข้อมูลการใช้งาน — ไม่ใช้ติดตามข้ามแอปหรือโฆษณา</div>
+    <div class="card"><b>AI ภายนอกต้องขออนุญาตก่อน</b>Agent การ์ดการ์ตูน AI และการอ่านใบเซอร์ ส่งข้อมูลไป OpenRouter (สหรัฐฯ) ที่ใช้โมเดล Google Gemini แอปจะถามก่อนครั้งแรก และปิดได้ที่หน้าบัญชี</div>
+    <div class="card"><b>แชตธรรมดาอยู่ในเครื่อง</b>คำตอบของแชตธรรมดาคำนวณบนมือถือ ไม่ส่งไป AI ภายนอก · ใช้แชตปรับปรุงผู้ช่วยเฉพาะเมื่อเปิดสวิตช์ยินยอม</div>
+    <div class="card"><b>ลบบัญชีได้เองในแอป</b>ยืนยันด้วยรหัสผ่าน ปิดบัญชีทันที เก็บข้อมูลไว้ 30 วันเผื่อเปลี่ยนใจ แล้วลบถาวร</div>
+    <div class="card"><b>เซิร์ฟเวอร์และสิทธิ์</b>ข้อมูลเก็บบน Supabase (สิงคโปร์) · แต่ละบัญชีเห็นเฉพาะข้อมูลของตัวเอง</div>
+    <div class="card"><b>อ่านฉบับเต็ม</b><a href="privacy/">นโยบายความเป็นส่วนตัว</a> · <a href="terms/">ข้อกำหนดการใช้งาน</a> · <a href="contact/">ติดต่อ / ลบบัญชี</a></div>
+  </div>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <div class="eyebrow">FAQ</div>
+  <h2>คำถามพบบ่อย</h2>
+  <p class="sub">คำตอบชุดเดียวกับที่แชตในแอปใช้ตอบ</p>
+  <div id="faqlist"></div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="band"><img class="bandpet" src="assets/buddy-cat.webp" alt="" width="120" height="163"><div><h2>เริ่มบันทึกให้น้องวันนี้</h2><p>ดาวน์โหลดฟรีบน App Store · iPhone · ประเทศไทย</p></div><a class="btn" href="https://apps.apple.com/th/app/id6827011693">ดาวน์โหลดบน App Store</a></div>
+</div></section>
 </main>
-<footer class="wrap">PetCare AI 360 · อริษ ขันทอง (บุคคลธรรมดา) · <a href="mailto:presition01@gmail.com">presition01@gmail.com</a></footer>
+
+<footer><div class="wrap">
+  <div>© 2026 Aris Khuntong (บุคคลธรรมดา) · PetCare AI 360<br>ติดต่อ <a href="mailto:presition01@gmail.com">presition01@gmail.com</a></div>
+  <nav aria-label="ลิงก์ท้ายเว็บ"><a href="privacy/">นโยบายความเป็นส่วนตัว</a><a href="terms/">ข้อกำหนดการใช้งาน</a><a href="contact/">ติดต่อ / ลบบัญชี</a></nav>
+</div></footer>
+
+<button class="ps-btn" id="psbtn" aria-expanded="false" aria-controls="ps">🛟 Paw Support</button>
+<div class="ps" id="ps" role="dialog" aria-label="Paw Support">
+  <div class="head" style="display:flex;gap:10px;align-items:center"><img src="assets/paw-avatar.webp" alt="" width="36" height="36" style="border-radius:10px"><div><b>🛟 Paw Support</b><small>ตอบจากคู่มือในแอป · ไม่เจอคำตอบ ส่งอีเมลหาทีมงานได้</small></div></div>
+  <div class="body" id="psbody"></div>
+  <div class="foot"><a class="btn dark small" id="psmail" href="mailto:presition01@gmail.com">✉️ ส่งอีเมลหาทีมงาน</a></div>
+</div>
+
+<script>
+window.PC = {"site":{"baseUrl":"https://presition09.github.io/petcare360-legal/","appStoreUrl":"https://apps.apple.com/th/app/id6827011693","contact":"presition01@gmail.com","legalBase":"./"},"answers":[{"id":"meds","q":"ยาที่ต้องกินวันนี้","a":"ยาของน้องNova (ตามที่บันทึกไว้):\n• วิตามินบำรุงขน — 1 เม็ด · คงเหลือ 59\n\n(ขนาดยาที่แสดงคือค่าที่เจ้าของบันทึก ระบบไม่ได้ตรวจสอบคำสั่งสัตวแพทย์ ถ้าจะเปลี่ยนขนาดหรือหยุดยา ต้องถามสัตวแพทย์ก่อนนะคะ)","kind":"records","intent":"records:medicine"},{"id":"weight","q":"น้ำหนักล่าสุดเท่าไหร่","a":"น้ำหนักน้องNova\n• ล่าสุด **3.1 กก.** (30 ต.ค. 2569)\n• เทียบกับ 2.8 กก. (23 ก.ย. 2569 · 37 วันก่อน) → เพิ่มขึ้น 0.3 กก. (10.7%)\n• แสดง 5 จาก 5 บันทึก\n\n⚠️ เปลี่ยนไปเกิน 10% ใน 37 วัน — ควรเอาตัวเลขชุดนี้ให้สัตวแพทย์ดูค่ะ หนูประเมินสาเหตุแทนไม่ได้","kind":"records","intent":"records:weight"},{"id":"choco","q":"น้องเผลอกินช็อกโกแลต ทำยังไงดี","a":"🚨 อาการหรือเหตุที่เล่าอาจเป็นเหตุฉุกเฉินค่ะ **ติดต่อสัตวแพทย์ฉุกเฉินหรือโรงพยาบาลสัตว์ และพาน้องไปทันที** หนูไม่วินิจฉัยหรือบอกวิธีรักษาผ่านแชทค่ะ\n\n📚 แหล่งอ้างอิง:\n• https://www.aspca.org/pet-care/aspca-poison-control/people-foods-avoid-feeding-your-pets","kind":"emergency","intent":"food:Chocolate"},{"id":"howto","q":"เพิ่มยายังไง","a":"เพิ่มยา–อาหารเสริม\n1. เลือกน้อง แล้วไป Home > เมนูลัด ยา-อาหารเสริม (หรือ ประวัติน้อง > เพิ่มบันทึก > ยา)\n2. แตะ เพิ่มยา/อาหารเสริม\n3. กรอก ชื่อยา/อาหารเสริม และ ขนาดยา ตามฉลากหรือคำสั่งสัตวแพทย์ แล้วเลือก ความถี่\n4. เวลากินยา ต้องเลือกอย่างน้อย 1 เวลา: แตะปุ่มเวลาที่มี หรือแตะ + เวลาอื่น เพื่อเลือกชั่วโมงใดก็ได้ นาทีละ 10 นาที\n5. ระยะเวลาให้ยา: กินต่อเนื่อง · 7 วัน · 14 วัน · 30 วัน หรือ กำหนดวันจบเอง (เลือกวันสุดท้ายจากปฏิทิน)\n6. จำนวนยาที่มี ไม่บังคับ เว้นว่าง = แอปไม่นับจำนวน ถ้าใส่ตัวเลข แอปจะลดลงครั้งละ 1 ทุกครั้งที่บันทึกว่าให้แล้ว\n7. กดบันทึก แล้วดูในแท็บ ยาวันนี้ · กราฟและประวัติ · สต็อก\n\nแอปไม่เลือกยาหรือกำหนดขนาดยาให้ ขนาดยาและการเปลี่ยนยาให้ทำตามสัตวแพทย์ค่ะ\n\nถ้าบอกว่าติดอยู่หน้าจอไหน หนูจะบอกขั้นถัดไปให้ได้ค่ะ","kind":"app_info","intent":"app_help:medicine"}],"vaccines":{"dog":[{"name":"วัคซีนรวม 5-in-1 (DHPPL)","protects":"ไข้หัด · ตับอักเสบ · พาร์โว · พาราอินฟลูเอนซา · เลปโต","category":"core","legal":false,"firstMonths":2,"series":"3 เข็ม: อายุ 8 / 12 / 16 สัปดาห์","boosterMonths":12,"bloodTest":false,"note":"เลปโต (ตัว L) ระบาดในไทย ต้องกระตุ้นทุกปี"},{"name":"พิษสุนัขบ้า (Rabies)","protects":"โรคพิษสุนัขบ้า (ติดคนได้ เสียชีวิตเกือบ 100%)","category":"core","legal":true,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"กฎหมายไทย (พ.ร.บ. 2535) บังคับฉีด + กระตุ้นทุกปี"},{"name":"หลอดลมอักเสบติดต่อ (Bordetella)","protects":"ไอในคอก (kennel cough) — สำหรับหมาที่ฝากเลี้ยง/ไปสนามหมา/อาบน้ำร้าน","category":"non-core","legal":false,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"แนะนำก่อนฝากเลี้ยงหรือเข้าสังคมหมา"}],"cat":[{"name":"วัคซีนรวม 3-in-1 (FVRCP)","protects":"ไข้หัดแมว (ลำไส้อักเสบ) · หวัดแมว (เฮอร์ปีส์) · แคลิซี (แผลในปาก)","category":"core","legal":false,"firstMonths":2,"series":"3 เข็ม: อายุ 8 / 12 / 16 สัปดาห์","boosterMonths":12,"bloodTest":false,"note":"แมวในบ้านก็ต้องฉีด · ลูกแมวครบ 3 เข็ม เข็มสุดท้าย ≥16 สัปดาห์"},{"name":"พิษสุนัขบ้า (Rabies)","protects":"โรคพิษสุนัขบ้า (แมวเป็นสัตว์ควบคุมตามกฎหมายไทยด้วย)","category":"core","legal":true,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"กฎหมายไทยครอบคลุมแมว — ฉีด + กระตุ้นทุกปี"},{"name":"ลิวคีเมียแมว (FeLV)","protects":"มะเร็งเม็ดเลือดขาว/ภูมิคุ้มกันจากไวรัส FeLV","category":"core","legal":false,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":true,"note":"แนะนำสำหรับลูกแมว/แมวออกนอกบ้าน · ⚠️ ต้องตรวจเลือดก่อนฉีด"},{"name":"คลามัยเดีย (Chlamydia)","protects":"เยื่อตาอักเสบจากเชื้อคลามัยเดีย","category":"non-core","legal":false,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"เฉพาะบ้านหลายแมวที่มีการติดเชื้อ"}]},"faq":[{"id":"app_overview","title":"เริ่มใช้ PetCare AI 360","body":"1. เพิ่มน้องที่หน้า Home แล้วเลือกน้องให้ถูกตัว\n2. ใช้ Health บันทึกน้ำหนัก อาหาร น้ำ เดิน และนอน\n3. เปิดประวัติน้อง (Records) เพื่อบันทึกวัคซีน ตรวจสุขภาพ ยา หรือนัดแพทย์\n4. ใช้ Chat ธรรมดาถามข้อมูลที่บันทึกหรือวิธีใช้แอปได้ฟรี\n5. ค้นหาสถานที่แล้วติดต่อร้านหรือคลินิกเอง\n\nแอปไม่วินิจฉัยโรค หากน้องมีอาการหรือความเสี่ยง ให้ติดต่อสัตวแพทย์ค่ะ"},{"id":"add_pet","title":"เพิ่มสัตว์เลี้ยง","body":"1. ไปหน้า Home แล้วแตะ + เพิ่มสัตว์เลี้ยง (ท้ายแถวรายชื่อน้อง)\n2. หน้า ข้อมูลพื้นฐาน: เลือกชนิดและกรอกชื่อน้อง ข้อมูลอื่นใส่เท่าที่มี แล้วแตะ ถัดไป →\n3. หน้า รายละเอียดเพิ่มเติม: ใส่วัคซีนล่าสุดหรือยาที่กำลังใช้ได้ (ไม่บังคับ) ถ้าใส่ยา ให้เลือกความถี่และเวลาให้ยาด้วย\n4. แตะ 🐾 เพิ่มน้อง แล้วตรวจว่าน้องใหม่ขึ้นในแถวรายชื่อ และเลือกน้องตัวนั้นก่อนบันทึกข้อมูลเพิ่ม\n\nเพิ่มได้ไม่จำกัดจำนวน ไม่หัก Paw Coin รูปและข้อมูลอื่นแก้ภายหลังได้ค่ะ"},{"id":"medicine","title":"เพิ่มยา–อาหารเสริม","body":"1. เลือกน้อง แล้วไป Home > เมนูลัด ยา-อาหารเสริม (หรือ ประวัติน้อง > เพิ่มบันทึก > ยา)\n2. แตะ เพิ่มยา/อาหารเสริม\n3. กรอก ชื่อยา/อาหารเสริม และ ขนาดยา ตามฉลากหรือคำสั่งสัตวแพทย์ แล้วเลือก ความถี่\n4. เวลากินยา ต้องเลือกอย่างน้อย 1 เวลา: แตะปุ่มเวลาที่มี หรือแตะ + เวลาอื่น เพื่อเลือกชั่วโมงใดก็ได้ นาทีละ 10 นาที\n5. ระยะเวลาให้ยา: กินต่อเนื่อง · 7 วัน · 14 วัน · 30 วัน หรือ กำหนดวันจบเอง (เลือกวันสุดท้ายจากปฏิทิน)\n6. จำนวนยาที่มี ไม่บังคับ เว้นว่าง = แอปไม่นับจำนวน ถ้าใส่ตัวเลข แอปจะลดลงครั้งละ 1 ทุกครั้งที่บันทึกว่าให้แล้ว\n7. กดบันทึก แล้วดูในแท็บ ยาวันนี้ · กราฟและประวัติ · สต็อก\n\nแอปไม่เลือกยาหรือกำหนดขนาดยาให้ ขนาดยาและการเปลี่ยนยาให้ทำตามสัตวแพทย์ค่ะ"},{"id":"vaccine","title":"บันทึกวัคซีน","body":"1. เลือกน้อง แล้วเปิด Home > ประวัติน้อง (Records)\n2. ใน เพิ่มบันทึก แตะ วัคซีน\n3. กรอกชื่อวัคซีน เลือกวันที่ฉีดจากปฏิทิน (ย้อนหลังได้ ไม่เกินวันนี้) และใส่คลินิกตามเอกสารจริง\n4. กดบันทึก แล้วตรวจในประวัติการบันทึก\n\nหรือเปิดหน้าโปรแกรมวัคซีน (Health > ภาพรวม > การ์ด 💉 หรือหน้าข้อมูลน้อง > วัคซีน) แล้วแตะ + บันทึกว่าฉีดแล้ว วันนัดและโปรแกรมวัคซีนให้สัตวแพทย์กำหนด แอปช่วยเก็บข้อมูลค่ะ"},{"id":"reminder_troubleshoot","title":"ทำไมไม่มีแจ้งเตือน (หรือยังเตือนอยู่)","body":"1. เปิด Home > ยา-อาหารเสริม แล้วดูกล่อง ยาที่ต้องแก้ ยาที่ยังไม่ได้ตั้งเวลา หรือใช้ความถี่ที่แอปตั้งเตือนไม่ได้ จะไม่มีแจ้งเตือน ให้แตะ แก้ไข แล้วเลือกเวลาและความถี่จากตัวเลือก\n2. ตรวจว่าวันนี้ยังอยู่ในช่วงคอร์ส ยาที่เลยวันสุดท้ายหรือกดหยุดยาแล้วจะไม่เตือน\n3. ที่ Home แตะรูปหรือชื่อบัญชี > การแจ้งเตือน เปิดสวิตช์ แจ้งเตือนยา/วัคซีน หรือ แจ้งเตือนนัดหมาย แตะ ตรวจสถานะแจ้งเตือน และตรวจสิทธิ์แจ้งเตือนของ PetCare ในการตั้งค่าเครื่อง\n4. Android: ถ้าขึ้นว่ายังไม่อนุญาตตั้งเตือนตามเวลา ให้แตะ เปิดตั้งค่า Android แล้วอนุญาต\n5. แอปตั้งคิวเตือนล่วงหน้าเป็นช่วง ๆ ควรเปิดแอปทุกไม่กี่วัน ถ้าไม่ได้เปิดนาน จะเหลือแจ้งเตือนสรุปวันละครั้งไม่เกิน 30 วัน และยารายเดือนที่รอบถัดไปห่างเกิน 30 วัน จะถูกตั้งเตือนเมื่อเปิดแอปครั้งถัดไป\n\nยาหมดแล้วยังเตือน: การเตือนเป็นไปตามตารางยา ไม่ได้ดูจำนวนยา ถ้าหมอสั่งหยุด ให้ไปแท็บ สต็อก แล้วแตะ หยุดยา ถ้ามียาเพิ่ม ให้แตะ แก้ไข แล้ว + เติม จำนวนเป็น 0 ก็ยังบันทึกว่าให้แล้วได้ค่ะ"},{"id":"chat_mode","title":"เลือกโหมดแชท","body":"1. เปิด AI Chat แล้วตรวจชื่อน้อง\n2. เลือก Chat ธรรมดา เพื่อถามข้อมูลที่บันทึกและวิธีใช้แอปได้ฟรี\n3. Agent เป็นอีกโหมดและแสดงค่าใช้ Paw Coin ก่อนส่ง\n4. ถ้าเล่าข้อมูล เช่น น้ำหนัก ยา วัคซีน หรือนัด ในโหมด Agent จะมีการ์ดให้ตรวจ แล้วแตะ ยืนยันบันทึก ก่อนบันทึกจริง (ยาต้องเลือกเวลาให้ยาในการ์ดก่อน) หรือบันทึกเองที่หน้าบันทึก แล้วตรวจประวัติหลังบันทึก\n\nChat ธรรมดาไม่แก้ข้อมูลให้ ไม่วินิจฉัยหรือกำหนดยา และไม่หัก Paw Coin ค่ะ"},{"id":"paw_coin","title":"ดู Paw Coin และรับเหรียญ","body":"1. แตะยอดเหรียญมุมขวาบนของหน้า Home เพื่อเปิด Paw Coin ของคุณ\n2. ดูยอด ได้รับทั้งหมด ใช้ไปทั้งหมด และแตะ ประวัติ เพื่อดูรายการ\n3. แตะ 📅 Check-in วันนี้ วันละครั้งเพื่อรับเหรียญ หรือรับเพิ่มจากการชวนเพื่อน\n4. เหรียญใช้กับ Agent (ค่าใช้ต่อข้อความแสดงที่ปุ่ม Agent) และการ์ตูน AI ในการ์ดน้อง\n\nตอนนี้ยังซื้อหรือเติม Paw Coin ด้วยเงินจริงในแอปไม่ได้ Chat ธรรมดาไม่หักเหรียญ และ Paw Coin แยกจากค่าสมาชิกค่ะ"},{"id":"nearby_vet","title":"ค้นหาสัตวแพทย์และสถานที่","body":"1. ไป Home > เมนูลัด คลินิก-โรงพยาบาล · ร้านอาบน้ำ-ตัดขน · โรงแรมสัตว์เลี้ยง หรือ ร้านอุปกรณ์สัตว์เลี้ยง (หรือปุ่ม + ในแท็บนัดหมาย)\n2. แตะ เปิด GPS เพื่อใช้ตำแหน่งปัจจุบัน หรือ เลือกเมือง และพื้นที่ที่ต้องการ\n3. เปิดรายการเพื่อดูรายละเอียด แผนที่ และเบอร์โทร\n4. ติดต่อสถานที่และตกลงคิวเอง\n\nผลค้นหาไม่ได้แปลว่าเป็นร้านคู่สัญญาหรือมีคิวว่าง แอปไม่รับชำระค่าจองร้านค่ะ"},{"id":"account_delete","title":"ลบบัญชี","body":"1. ที่ Home แตะรูปหรือชื่อบัญชี เลื่อนลงไปที่ ตั้งค่า แล้วแตะ 🗑️ ลบบัญชี\n2. อ่านผลกระทบ กรอก รหัสผ่าน (เหตุผลไม่บังคับ) แล้วแตะ ยืนยันและขอลบบัญชี ถ้าจำรหัสผ่านไม่ได้ ให้แตะ จำรหัสผ่านไม่ได้? ยืนยันทางอีเมลแทน แล้วกรอกรหัสตัวเลขจากอีเมล\n3. ระบบเก็บข้อมูลไว้ 30 วันแล้วจึงลบถาวร แชตที่เก็บในเครื่องนี้ถูกลบทันทีเมื่อยืนยัน\n4. ถ้าเปลี่ยนใจภายใน 30 วัน ให้เข้าสู่ระบบด้วยบัญชีเดิม แล้วแตะ กู้คืนบัญชี\n\nแชทนี้ไม่ได้ลบบัญชีให้ การลบบัญชีไม่ใช่การยกเลิกการต่ออายุสมาชิกในร้านค้า อย่าลบบัญชีเพื่อแก้ปัญหาเข้าสู่ระบบค่ะ"},{"id":"privacy","title":"อ่านนโยบายและข้อกำหนด","body":"ที่ Home แตะรูปหรือชื่อบัญชี แล้วเลือก ความเป็นส่วนตัว หรือ เงื่อนไขการใช้งาน เพื่ออ่านเอกสารที่แอปแสดง หากพบปัญหาให้แจ้งชื่อหน้าและข้อความผิดพลาด โดยไม่ส่งรหัสผ่าน OTP หรือลิงก์รีเซ็ต\n\nตรวจข้อมูลส่วนตัวก่อนแชร์การ์ดหรือภาพหน้าจอค่ะ"}],"shots":[{"src":"assets/03-home.webp","caption":"หน้าแรก — น้องทุกตัว เมนูลัด และช่วงทดลองใช้"},{"src":"assets/05-medicine.webp","caption":"ยาวันนี้ — ติ๊กให้ยาแล้ว จำนวนคงเหลือลดเอง"},{"src":"assets/04-weight.webp","caption":"น้ำหนัก — กราฟแนวโน้มและประวัติ"},{"src":"assets/06-chat.webp","caption":"แชตธรรมดา — ตอบจากบันทึกของน้อง ฟรี"},{"src":"assets/07-nearby.webp","caption":"คลินิกใกล้ตัว — ข้อมูลร้านจาก OpenStreetMap"},{"src":"assets/01-onboarding-1.webp","caption":"ดูแลน้องทุกตัว เก็บประวัติเป็นที่เดียว"},{"src":"assets/02-onboarding-2.webp","caption":"ค้นหาคลินิกและร้านใกล้คุณ"}],"builtOn":"2026-10-30"};
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/(https:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  const TH_M = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+  const thDate = (d) => `${d.getDate()} ${TH_M[d.getMonth()]} ${d.getFullYear() + 543}`;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // rotating word
+  const words = ['น้องหมา', 'น้องแมว', 'ทุกตัวในบ้าน'];
+  let wi = 0;
+  if (!reduce) setInterval(() => { wi = (wi + 1) % words.length; $('rot').textContent = words[wi]; }, 2200);
+
+  // hero chat — real Free Chat answers generated at build time
+  const TRACE = {
+    meds: ['อ่านบันทึกยาของ Nova', 'ตอบจากข้อมูลที่บันทึก', 'ไม่ใช้เหรียญ'],
+    weight: ['อ่านน้ำหนัก 5 ครั้ง', 'เทียบแนวโน้ม', 'เกิน 10% → แนะนำให้สัตวแพทย์ดู'],
+    choco: ['จับคำว่าฉุกเฉิน', 'ไม่วินิจฉัย', 'บอกให้พาไปพบสัตวแพทย์'],
+    howto: ['คู่มือวิธีใช้แอป', 'ขั้นตอนตามหน้าจอจริง'],
+  };
+  const chips = $('qchips');
+  PC.answers.forEach((a, i) => {
+    const b = document.createElement('button');
+    b.className = 'chip'; b.textContent = a.q; b.setAttribute('aria-pressed', 'false');
+    b.onclick = () => ask(i);
+    chips.appendChild(b);
+  });
+  let timer;
+  function ask(i) {
+    const a = PC.answers[i];
+    [...chips.children].forEach((c, j) => c.setAttribute('aria-pressed', String(i === j)));
+    const t = $('thread');
+    t.innerHTML = `<div class="msg me">${esc(a.q)}</div>`;
+    const bot = document.createElement('div');
+    bot.className = 'msg bot' + (a.kind === 'emergency' ? ' alert' : '');
+    t.appendChild(bot);
+    $('trace').innerHTML = (TRACE[a.id] || []).map((x, k) => `<span class="${k === 0 ? 'on' : ''}">${esc(x)}</span>`).join('<span class="arr">→</span>');
+    clearInterval(timer);
+    if (reduce) { bot.innerHTML = rich(a.a); return; }
+    let n = 0;
+    timer = setInterval(() => { n += 6; bot.innerHTML = rich(a.a.slice(0, n)); if (n >= a.a.length) clearInterval(timer); }, 16);
+  }
+  ask(0);
+
+  // marquee
+  const tags = ['ทะเบียนน้องหลายตัว', 'วัคซีน + เข็มถัดไป', 'ยา + จำนวนคงเหลือ', 'กราฟน้ำหนัก', 'แจ้งเตือนในเครื่อง', 'ลงบันทึกย้อนหลัง', 'แชตธรรมดาฟรี', 'ไม่วินิจฉัยโรค', 'คลินิกใกล้ตัว', 'ลบบัญชีได้เอง'];
+  $('track').innerHTML = [...tags, ...tags].map((t) => `<span>${t}</span>`).join('');
+
+  // statement lights up on scroll
+  const st = $('statement');
+  const hl = new Set(['มือถือ', 'ตรงเวลา']);
+  st.innerHTML = st.textContent.split(' ').map((w) => `<span class="w${hl.has(w) ? ' t' : ''}">${w}</span>`).join(' ');
+  const ws = [...st.querySelectorAll('.w')];
+  const light = () => {
+    const r = st.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (innerHeight * 0.85 - r.top) / (r.height + innerHeight * 0.35)));
+    ws.forEach((w, k) => w.classList.toggle('lit', reduce || k < Math.round(p * ws.length)));
+  };
+  addEventListener('scroll', light, { passive: true }); light();
+
+  // overview loop
+  const STEPS = [
+    ['1', 'บันทึก', 'น้อง · วัคซีน · ยา · น้ำหนัก', 'var(--teal)', 'เพิ่มน้องแต่ละตัว แล้วบันทึกวัคซีน ยา น้ำหนัก การพบสัตวแพทย์ อาหาร น้ำ เดิน นอน — ลงย้อนหลังได้', '#records'],
+    ['2', 'แจ้งเตือน', 'ยา · วัคซีน · นัดหมาย', 'var(--coral)', 'แอปตั้งแจ้งเตือนในเครื่องให้เองตามเวลาให้ยา วัคซีนที่ใกล้ถึงกำหนด และนัดหมาย ไม่ต้องจำเอง', '#care'],
+    ['3', 'ติ๊กว่าทำแล้ว', 'ให้ยาแล้ว · ฉีดแล้ว', '#E8A93A', 'ติ๊กในแอปเมื่อให้ยาแล้ว จำนวนยาคงเหลือลดเอง และการแจ้งเตือนของรอบนั้นที่ค้างอยู่หายไป', '#care'],
+    ['4', 'ดูแนวโน้ม', 'กราฟ · ถามน้องพอว์', 'var(--navy)', 'ดูกราฟน้ำหนักและประวัติ หรือถามน้องพอว์ในแชต — เปลี่ยนแปลงผิดปกติ แอปจะบอกให้ปรึกษาสัตวแพทย์ ↩ แล้ววนกลับไปบันทึกต่อ', '#paw'],
+  ];
+  const loop = $('loop');
+  STEPS.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.className = 'step'; b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = `<div class="n" style="background:${s[3]}">${s[0]}</div><b>${s[1]}</b><span>${s[2]}</span>`;
+    b.onclick = () => pick(i);
+    loop.appendChild(b);
+  });
+  function pick(i) {
+    [...loop.children].forEach((c, j) => c.setAttribute('aria-pressed', String(i === j)));
+    $('loopnote').innerHTML = `<b>${STEPS[i][1]}:</b> ${STEPS[i][4]}<a href="${STEPS[i][5]}">ดูส่วนนี้ ↓</a>`;
+  }
+  pick(0);
+
+  // weight chart (sample Nova data · same values as the store screenshots)
+  const base = new Date();
+  const wts = [[-51, 2.6], [-37, 2.8], [-23, 2.9], [-9, 3.0], [0, 3.1]].map(([d, w]) => ({ d: new Date(base.getFullYear(), base.getMonth(), base.getDate() + d), w }));
+  function drawWeight() {
+    const last = wts[wts.length - 1], prev = wts[wts.length - 2];
+    $('wnow').innerHTML = `${last.w.toFixed(1)} <small>กก. · ${thDate(last.d)}</small>`;
+    const diff = +(last.w - prev.w).toFixed(1);
+    $('wdelta').textContent = diff === 0 ? 'เท่าเดิม' : `${diff > 0 ? '▲' : '▼'} ${Math.abs(diff).toFixed(1)} กก. จากครั้งก่อน`;
+    const W = 520, H = 190, pad = 28;
+    const t0 = wts[0].d.getTime(), t1 = last.d.getTime() || t0 + 1;
+    const lo = Math.min(...wts.map((p) => p.w)) - 0.2, hi = Math.max(...wts.map((p) => p.w)) + 0.2;
+    const pts = wts.map((p) => [pad + (W - 2 * pad) * (p.d.getTime() - t0) / Math.max(1, t1 - t0), H - pad - (H - 2 * pad) * (p.w - lo) / (hi - lo)]);
+    const line = pts.map((p, k) => `${k ? 'L' : 'M'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+    $('wchart').innerHTML = `<defs><linearGradient id="wg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2EC4B6" stop-opacity=".35"/><stop offset="1" stop-color="#2EC4B6" stop-opacity="0"/></linearGradient></defs>
+      <path d="${line} L${pts[pts.length - 1][0]},${H - pad} L${pts[0][0]},${H - pad} Z" fill="url(#wg)"/>
+      <path d="${line}" fill="none" stroke="#1A9E92" stroke-width="3" stroke-linejoin="round"/>
+      ${pts.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="#fff" stroke="#1A9E92" stroke-width="3"/>`).join('')}`;
+    $('whist').innerHTML = wts.slice(-3).reverse().map((p) => `<li><span>${thDate(p.d)}</span><b>${p.w.toFixed(1)} กก.</b></li>`).join('');
+  }
+  $('wadd').onclick = () => {
+    const last = wts[wts.length - 1];
+    if (wts.length >= 9) wts.shift();
+    wts.push({ d: new Date(last.d.getFullYear(), last.d.getMonth(), last.d.getDate() + 14), w: +(last.w + 0.1).toFixed(1) });
+    drawWeight();
+  };
+  drawWeight();
+
+  // medicine card
+  const doses = [{ t: '08:00', done: false }, { t: '20:00', done: false }];
+  let stock = 60;
+  function drawDoses() {
+    $('doses').innerHTML = doses.map((d, i) => `<div class="dose"><b>${d.t} น.</b><button class="give${d.done ? ' done' : ''}" data-i="${i}">${d.done ? '✓ ให้แล้ว · แก้ไข' : '⊕ บันทึกว่าให้แล้ว'}</button></div>`).join('');
+    $('mgiven').textContent = doses.filter((d) => d.done).length;
+    $('mstock').textContent = stock;
+    $('doses').querySelectorAll('button').forEach((b) => (b.onclick = () => { const d = doses[+b.dataset.i]; d.done = !d.done; stock += d.done ? -1 : 1; drawDoses(); }));
+  }
+  drawDoses();
+
+  // vaccine calculator — programme from constants/vaccineSchedule.ts
+  let species = 'dog';
+  const birth = $('vbirth');
+  const def = new Date(); def.setMonth(def.getMonth() - 2);
+  birth.value = def.toISOString().slice(0, 10);
+  birth.max = new Date().toISOString().slice(0, 10);
+  const addMonths = (d, m) => new Date(d.getFullYear(), d.getMonth() + m, d.getDate());
+  function drawVacc() {
+    const b = new Date(birth.value + 'T00:00:00');
+    const ok = !isNaN(b);
+    $('vbirthth').textContent = ok ? `(${thDate(b)})` : '';
+    $('vlist').innerHTML = PC.vaccines[species].map((v) => {
+      const first = ok ? addMonths(b, v.firstMonths) : null;
+      const tags = `<span class="tag ${v.category === 'core' ? 'core' : 'opt'}">${v.category === 'core' ? 'หลัก' : 'ตามความเสี่ยง'}</span>${v.legal ? '<span class="tag law">กฎหมายไทย</span>' : ''}`;
+      const when = first ? `เข็มแรกได้ตั้งแต่ <b>${thDate(first)}</b> (อายุ ${v.firstMonths} เดือน)` : '';
+      const series = v.series ? ` · ${esc(v.series)}` : '';
+      const boost = ` · กระตุ้นทุก ${v.boosterMonths === 12 ? 'ปี' : v.boosterMonths + ' เดือน'}`;
+      const blood = v.bloodTest ? ' · ตรวจเลือดก่อนฉีด' : '';
+      return `<li><b>${esc(v.name)}</b>${tags}<div class="vdate">${esc(v.protects)}</div><div class="vdate">${when}${series}${boost}${blood}</div></li>`;
+    }).join('');
+  }
+  const setSp = (s) => { species = s; $('vdog').setAttribute('aria-pressed', String(s === 'dog')); $('vcat').setAttribute('aria-pressed', String(s === 'cat')); drawVacc(); };
+  $('vdog').onclick = () => setSp('dog'); $('vcat').onclick = () => setSp('cat');
+  birth.oninput = drawVacc;
+  drawVacc();
+
+  // chat modes
+  const MODES = {
+    free: '<ul><li>ตอบจากบันทึกของน้องที่เปิดแชตอยู่ เช่น ยาวันนี้ น้ำหนักล่าสุด วัคซีนที่ใกล้ถึง</li><li>ถามวิธีใช้แอปได้ทุกหน้า</li><li>ทำงานบนมือถือ ไม่ส่งไป AI ภายนอก ไม่ใช้เหรียญ</li><li>ไม่แก้บันทึกให้ — บันทึกเองที่หน้าจอบันทึก</li></ul>',
+    agent: '<ul><li>AI บนเซิร์ฟเวอร์ ช่วยตอบละเอียดขึ้น และช่วยบันทึกจากข้อความที่พิมพ์ (น้ำหนัก ยา วัคซีน นัดหมาย)</li><li>ทุกการบันทึกขึ้นเป็นการ์ดให้ตรวจ แล้วกดยืนยันเองก่อนเสมอ</li><li>15 Paw Coin ต่อข้อความ · เหรียญไม่พอ = ยังไม่หักเหรียญ</li><li>ส่งข้อมูลไป AI ภายนอก (OpenRouter → Google Gemini) แอปจึงขออนุญาตก่อนใช้ครั้งแรก</li></ul>',
+  };
+  const setMode = (m) => { $('mfree').setAttribute('aria-pressed', String(m === 'free')); $('magent').setAttribute('aria-pressed', String(m === 'agent')); $('modebody').innerHTML = MODES[m]; };
+  $('mfree').onclick = () => setMode('free'); $('magent').onclick = () => setMode('agent');
+  setMode('free');
+
+  // screenshots
+  $('shots').innerHTML = PC.shots.map((s) => `<figure><div class="phone"><img src="${s.src}" alt="${esc(s.caption)}" loading="lazy" width="540" height="1173"></div><figcaption>${esc(s.caption)}</figcaption></figure>`).join('');
+
+  // FAQ (in-app help text)
+  $('faqlist').innerHTML = PC.faq.map((f) => `<details><summary>${esc(f.title)}</summary><div>${rich(f.body)}</div></details>`).join('');
+
+  // Paw Support — answers from the same help text; email when not found
+  const ps = $('ps'), psb = $('psbtn'), body = $('psbody');
+  const PS_TOPICS = ['add_pet', 'medicine', 'reminder_troubleshoot', 'paw_coin', 'account_delete'];
+  function psHome() {
+    body.innerHTML = '<div class="msg bot">สวัสดีค่ะ หนูน้องพอว์ เลือกเรื่องที่อยากรู้ หรือส่งอีเมลหาทีมงานได้เลยค่ะ</div><div class="chips" id="pschips"></div>';
+    const c = $('pschips');
+    PC.faq.filter((f) => PS_TOPICS.includes(f.id)).forEach((f) => {
+      const b = document.createElement('button'); b.className = 'chip'; b.textContent = f.title;
+      b.onclick = () => { body.insertAdjacentHTML('beforeend', `<div class="msg me">${esc(f.title)}</div><div class="msg bot">${rich(f.body)}</div>`); body.scrollTop = body.scrollHeight; };
+      c.appendChild(b);
+    });
+  }
+  psb.onclick = () => { const open = !ps.classList.contains('open'); ps.classList.toggle('open', open); psb.setAttribute('aria-expanded', String(open)); if (open && !body.children.length) psHome(); };
+  $('psmail').href = `mailto:${PC.site.contact}?subject=${encodeURIComponent('PetCare AI 360 · แจ้งปัญหา')}&body=${encodeURIComponent('เล่าปัญหาที่เจอ (หน้าจอไหน · ทำอะไรอยู่):\n\nรุ่นมือถือ / iOS:\n')}`;
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && ps.classList.contains('open')) psb.click(); });
+})();
+</script>
 </body>
 </html>
