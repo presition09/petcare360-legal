@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>PetCare AI 360 — สมุดสุขภาพน้องหมาแมว</title>
-<meta name="description" content="บันทึกวัคซีน ยา น้ำหนัก และนัดหมายของน้องไว้ที่เดียว พร้อมแจ้งเตือนตรงเวลา และแชตถามวิธีใช้ได้ฟรี · แอปไม่วินิจฉัยโรค">
+<title>PetCare AI 360 — สมุดสุขภาพน้องหมาแมว ที่คุยได้และเตือนเป็น</title>
+<meta name="description" content="บันทึกวัคซีน ยา น้ำหนัก และประวัติของน้องทุกตัว แอปเตือนให้ตรงเวลา และมีน้องพอว์ AI ตอบจากบันทึกจริง · แอปไม่วินิจฉัยโรค">
 <meta property="og:title" content="PetCare AI 360 — สมุดสุขภาพน้องหมาแมว">
-<meta property="og:description" content="บันทึกวัคซีน ยา น้ำหนัก และนัดหมายของน้องไว้ที่เดียว พร้อมแจ้งเตือนตรงเวลา">
+<meta property="og:description" content="บันทึกวัคซีน ยา น้ำหนัก · แจ้งเตือนตรงเวลา · น้องพอว์ AI ช่วยตอบจากบันทึกจริง">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://presition09.github.io/petcare360-legal/">
 <meta property="og:image" content="https://presition09.github.io/petcare360-legal/assets/og.jpg">
@@ -17,536 +17,871 @@
 <link rel="canonical" href="https://presition09.github.io/petcare360-legal/">
 <link rel="icon" type="image/png" href="assets/icon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#F6FBFB">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Mitr:wght@400;500;600&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--teal:#2EC4B6;--teal-d:#1A9E92;--teal-l:#CBF3F0;--teal-xl:#E8FAF8;--coral:#FF6B6B;--coral-l:#FFF0F0;--gold:#FFD166;--gold-l:#FFF8E1;--navy:#0D1B2A;--ink:#334155;--muted:#64748B;--line:#DDECEC;--bg:#F0FAFA;--card:#fff;--r:20px;color-scheme:light}
+:root{
+  --mint:#2EC4B6;--mint-d:#169A8E;--mint-l:#CBF3F0;--mint-xl:#E9FAF8;
+  --coral:#FF6B6B;--coral-d:#E85454;--coral-l:#FFEFEF;--peach:#FFE9DE;
+  --gold:#FFC94D;--gold-l:#FFF6DD;--lav:#7B6CF6;--lav-l:#EFEDFF;
+  --navy:#0D1B2A;--ink:#3A4A5C;--muted:#6B7A8C;--line:#E2ECEE;--bg:#F6FBFB;--card:#fff;
+  --r:28px;--shadow:0 18px 50px -24px rgba(13,27,42,.28);--shadow-s:0 6px 18px -10px rgba(13,27,42,.25);
+  --f-latin:'Nunito',system-ui,sans-serif;--f-head:'Mitr','Nunito',system-ui,sans-serif;--f-body:'Kanit',system-ui,sans-serif;
+  color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Kanit,system-ui,sans-serif;overflow-x:clip}
-a{color:var(--teal-d)}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 16.5px/1.7 var(--f-body);overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:var(--mint-d)}
 img{max-width:100%;display:block}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-button{font:inherit;cursor:pointer}
-:focus-visible{outline:3px solid var(--teal);outline-offset:2px;border-radius:8px}
-/* header */
-header.top{position:sticky;top:0;z-index:30;background:rgba(240,250,250,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:600;font-size:18px;white-space:nowrap}
-.brand img{width:34px;height:34px;border-radius:9px}
-nav.links{display:flex;gap:18px;margin-left:auto}
-nav.links a{color:var(--ink);text-decoration:none;font-size:15px}
-nav.links a:hover{color:var(--teal-d)}
-.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:11px 20px;font-weight:500;text-decoration:none;white-space:nowrap}
-.btn.dark{background:var(--navy);color:#fff}
-.btn.dark:hover{background:#1c2f45}
-.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}
-.btn.small{padding:8px 16px;font-size:14px}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px;border-radius:10px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-family:var(--f-head);color:var(--navy);font-weight:500;letter-spacing:-.005em}
+b,strong{font-weight:500;color:var(--navy)}
+.eyebrow{font-family:var(--f-latin);font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint-d)}
+.muted{color:var(--muted)}
+.sample{font-size:12.5px;color:var(--muted)}
+/* ── wordmark ── */
+.wm{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
+.wm img{width:40px;height:40px;border-radius:12px;box-shadow:0 4px 12px -6px rgba(232,84,140,.55);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.wm:hover img{transform:rotate(-10deg) scale(1.08)}
+.wm-text{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-latin);font-weight:900;font-size:23px;line-height:1;letter-spacing:-.025em}
+.wm-pet{color:var(--navy);white-space:nowrap}.wm-pet .c{color:var(--mint-d)}
+.wm-pet span{display:inline-block}
+.wm:hover .wm-pet span{animation:hop .5s cubic-bezier(.34,1.56,.64,1) calc(var(--i) * 45ms)}
+.wm-ai{position:relative;display:inline-flex}
+.wm-badge{position:relative;display:inline-flex;align-items:baseline;gap:4px;padding:5px 10px 6px;border-radius:999px;color:#fff;font-size:15px;letter-spacing:.01em;overflow:hidden;
+  background:linear-gradient(110deg,#2EC4B6 0%,#4BB8F0 40%,#8C7CFF 70%,#FF6B6B 100%);background-size:220% 100%;animation:aiShift 8s ease-in-out infinite;
+  box-shadow:0 8px 18px -10px rgba(75,184,240,.95),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.wm-badge i{font-style:normal;font-weight:800;opacity:.94}
+.wm-badge::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.6) 50%,transparent 65%);transform:translateX(-130%);animation:shine 5s ease-in-out infinite}
+.wm:hover .wm-badge{transform:translateY(-2px) rotate(-4deg)}
+.wm-spark{position:absolute;right:-7px;top:-8px;font-size:12px;color:var(--gold);text-shadow:0 0 6px rgba(255,209,102,.8);animation:twinkle 2.6s ease-in-out infinite;pointer-events:none}
+@keyframes shine{0%,62%{transform:translateX(-130%)}88%,100%{transform:translateX(130%)}}
+@keyframes hop{40%{transform:translateY(-5px)}}
+@keyframes aiShift{50%{background-position:100% 50%}}
+@keyframes twinkle{0%,100%{transform:scale(.6) rotate(0);opacity:.5}50%{transform:scale(1.15) rotate(90deg);opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* ── header ── */
+header.top{position:sticky;top:0;z-index:50;background:rgba(246,251,251,.82);backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgba(226,236,238,.8)}
+header.top .wrap{display:flex;align-items:center;gap:22px;height:70px}
+nav.links{display:flex;gap:22px;margin-left:auto;font-family:var(--f-head);font-size:15px}
+nav.links a{color:var(--ink);text-decoration:none;position:relative}
+nav.links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;border-radius:3px;background:var(--mint);transform:scaleX(0);transition:transform .25s}
+nav.links a:hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:13px 22px;font-family:var(--f-head);font-weight:500;font-size:16px;text-decoration:none;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.store{background:var(--navy);color:#fff;box-shadow:0 12px 26px -14px rgba(13,27,42,.8)}
+.btn.store small{display:block;font-size:11px;font-weight:400;opacity:.75;line-height:1.1}
+.btn.store span{text-align:left;line-height:1.15}
+.btn.soft{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.btn.small{padding:9px 16px;font-size:14.5px}
 .short{display:none}
-@media (max-width:900px){nav.links{display:none}header.top .btn{margin-left:auto}}
-@media (max-width:480px){header.top .long{display:none}header.top .short{display:inline}.brand{font-size:16px}}
-/* hero */
-.hero{padding:56px 0 30px;position:relative}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--teal-d)}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px var(--teal-l)}
-h1{font-size:clamp(36px,5.2vw,58px);line-height:1.15;color:var(--navy);margin:18px 0 14px;font-weight:600}
-.grad{background:linear-gradient(90deg,var(--teal-d),var(--teal) 45%,var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:18px;color:var(--ink);max-width:560px}
-.rot{color:var(--coral);font-weight:500;border-bottom:2px solid var(--gold)}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 14px}
-.medical{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;max-width:520px}
-@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:34px}}
-/* chat demo */
-.demo{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:0 24px 60px -30px rgba(13,27,42,.35);padding:18px;position:relative}
-.demo .bar{display:flex;align-items:center;gap:10px;padding:4px 4px 12px;border-bottom:1px solid var(--line)}
-.demo .bar img{width:36px;height:36px;border-radius:10px}
-.demo .bar b{color:var(--navy);font-weight:600}
-.demo .bar small{display:block;color:var(--muted);font-size:12px;line-height:1.3}
-.tap{font-size:13px;color:var(--coral);margin:12px 2px 8px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:var(--teal-xl);color:var(--navy);border-radius:999px;padding:7px 14px;font-size:14px}
+@media (max-width:980px){nav.links{display:none}header.top .btn{margin-left:auto}}
+@media (max-width:480px){header.top .long{display:none}header.top .short{display:inline}.wm-text{font-size:19px;gap:6px}.wm-badge{font-size:13px;padding:4px 8px 5px}.wm img{width:34px;height:34px}}
+/* ── hero ── */
+.hero{position:relative;padding:54px 0 20px;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none}
+.b1{width:520px;height:520px;background:#BFF3EC;left:-160px;top:-120px}
+.b2{width:460px;height:460px;background:#FFD9CF;right:-120px;top:40px}
+.b3{width:360px;height:360px;background:#E6E1FF;left:38%;bottom:-180px}
+.paws{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:radial-gradient(circle at 20px 20px,rgba(46,196,182,.12) 0 3px,transparent 4px);background-size:64px 64px;mask-image:linear-gradient(180deg,#000,transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:40px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:14px;color:var(--mint-d);font-family:var(--f-head);box-shadow:var(--shadow-s)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px var(--mint-l);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(46,196,182,.12)}}
+h1{font-size:clamp(38px,5.4vw,64px);line-height:1.12;margin:20px 0 16px;font-weight:600}
+.hl{position:relative;white-space:nowrap;isolation:isolate}
+.hl.chat{color:var(--lav)}
+.hl.bell{color:var(--coral-d)}
+.hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:6px;height:12px;border-radius:8px;z-index:-1;opacity:.55}
+.hl.chat::after{background:var(--lav-l)}.hl.bell::after{background:var(--peach)}
+.lead{font-size:19px;max-width:560px;margin:0}
+.lead b{color:var(--lav)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 22px}
+.try{background:#fff;border:1px solid var(--line);border-radius:22px;padding:14px 16px;box-shadow:var(--shadow-s);max-width:560px}
+.try p{margin:0 0 10px;font-size:14px;color:var(--coral-d);font-family:var(--f-head)}
+.try .chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--mint-xl);color:var(--navy);border-radius:999px;padding:8px 14px;font-size:14px;font-family:var(--f-head);transition:transform .15s,background .15s}
+.chip:hover{transform:translateY(-1px);background:#fff;border-color:var(--mint)}
 .chip[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
-.thread{min-height:250px;margin-top:14px;display:flex;flex-direction:column;gap:10px}
-.msg{max-width:88%;padding:11px 14px;border-radius:18px;font-size:14.5px;line-height:1.6;white-space:pre-line}
-.msg.me{align-self:flex-end;background:var(--teal);color:#06302c;border-bottom-right-radius:6px}
-.msg.bot{align-self:flex-start;background:#F4F8F8;border:1px solid var(--line);border-bottom-left-radius:6px}
-.msg.bot.alert{background:var(--coral-l);border-color:#FFD0D0}
-.msg b{color:var(--navy)}
-.trace{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:12px}
-.trace span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted)}
-.trace span.on{border-color:var(--teal);color:var(--teal-d)}
-.trace .arr{border:0;background:none;padding:3px 0;color:#9FB5B8}
-.sample{font-size:12px;color:var(--muted);margin-top:10px}
-.buddy{position:absolute;width:110px;right:-22px;bottom:-34px;pointer-events:none;filter:drop-shadow(0 10px 18px rgba(0,0,0,.18))}
-@media (max-width:600px){.buddy{width:80px;right:-6px;bottom:-26px}}
-/* marquee */
-.marquee{overflow:hidden;border-block:1px solid var(--line);background:#fff;margin-top:46px}
-.track{display:flex;gap:12px;padding:14px 0;width:max-content;animation:slide 38s linear infinite}
-.track span{border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:14px;color:var(--navy);background:var(--bg);white-space:nowrap}
-@keyframes slide{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.track{animation:none}}
-/* statement */
-.statement{padding:110px 0 70px;text-align:center}
-.statement p{font-size:clamp(28px,4.4vw,52px);line-height:1.35;font-weight:600;margin:0 auto;max-width:980px}
-.statement .w{color:#C9D9DA;transition:color .35s}
-.statement .w.lit{color:var(--navy)}
-.statement .w.lit.t{color:var(--teal-d)}
-.statement small{display:block;margin-top:18px;color:var(--muted)}
-/* section heads */
-section.block{padding:70px 0}
-.eyebrow{font-size:13px;letter-spacing:.14em;color:var(--teal-d);font-weight:600}
-h2{font-size:clamp(28px,3.4vw,40px);color:var(--navy);line-height:1.25;margin:6px 0 10px;font-weight:600}
-.sub{color:var(--muted);max-width:720px;margin:0 0 26px}
-.group{display:flex;align-items:center;gap:16px;border-radius:var(--r);padding:16px 20px;margin-bottom:26px;background:#fff;border:1px solid var(--line)}
-.letter{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:22px;flex:none}
-.group h3{margin:0;color:var(--navy);font-size:20px;font-weight:600}
-.group p{margin:0;color:var(--muted);font-size:15px}
-.g-r .letter{background:var(--teal)}.g-c .letter{background:var(--coral)}.g-p .letter{background:#E8A93A}.g-f .letter{background:var(--navy)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media (max-width:900px){.grid2{grid-template-columns:1fr}}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
-.card h4{margin:0 0 4px;color:var(--navy);font-size:18px;font-weight:600}
-.card .hint{font-size:13px;color:var(--coral);margin:0 0 12px}
-.note{font-size:12.5px;color:var(--muted);margin-top:12px}
-/* overview loop */
-.loop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.step{text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;position:relative}
-.step b{display:block;color:var(--navy);font-size:18px;font-weight:600;margin-top:8px}
-.step span{font-size:14px;color:var(--muted)}
-.step .n{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:600}
-.step[aria-pressed=true]{border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-l)}
-.loopnote{margin-top:14px;background:#fff;border:1px dashed var(--teal);border-radius:var(--r);padding:16px 20px;color:var(--navy)}
-.loopnote a{margin-left:6px}
-@media (max-width:900px){.loop{grid-template-columns:1fr 1fr}}
-/* weight chart */
-.wtop{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
-.wnow{font-size:38px;font-weight:600;color:var(--navy);line-height:1}
-.wnow small{font-size:16px;color:var(--muted);font-weight:400}
-.delta{font-size:13px;color:var(--coral)}
-svg.chart{width:100%;height:auto;margin-top:14px}
-.hist{list-style:none;margin:10px 0 0;padding:0;font-size:14px}
-.hist li{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:7px 2px}
-.types{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.types span{background:var(--teal-xl);border-radius:10px;padding:6px 12px;font-size:14px;color:var(--navy)}
-/* medicine */
-.medhead{display:flex;gap:12px;align-items:center}
-.pillicon{width:46px;height:46px;border-radius:14px;background:var(--coral-l);display:grid;place-items:center;font-size:22px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
-.stats div{background:var(--bg);border-radius:14px;padding:10px 12px;font-size:13px;color:var(--muted)}
-.stats b{display:block;font-size:24px;color:var(--navy);font-weight:600}
-.dose{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding:12px 0}
-.dose b{color:var(--navy)}
-.give{border:1px solid var(--teal);background:var(--teal-xl);color:var(--teal-d);border-radius:12px;padding:8px 14px;font-size:14px}
-.give.done{background:#E7F8EE;border-color:#59C08A;color:#20895A}
-/* vaccine */
-.seg{display:inline-flex;background:var(--bg);border-radius:12px;padding:4px;gap:4px}
-.seg button{border:0;background:transparent;border-radius:9px;padding:7px 16px;color:var(--ink)}
-.seg button[aria-pressed=true]{background:#fff;color:var(--navy);box-shadow:0 1px 4px rgba(0,0,0,.08)}
-.vin{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:12px 0}
-.vin input{font:inherit;border:1px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:14px;color:var(--muted)}
+@media (max-width:980px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:30px}}
+/* ── phone ── */
+.stage{position:relative;display:flex;justify-content:center;padding:10px 0 30px}
+.float{position:absolute;z-index:3;background:#fff;border-radius:18px;padding:10px 14px;box-shadow:var(--shadow);font-size:13.5px;display:flex;gap:10px;align-items:center;animation:floaty 6s ease-in-out infinite;max-width:230px}
+.float b{display:block;font-size:14px}
+.float .e{font-size:22px}
+.phonewrap{position:relative}
+.f1{left:-178px;top:96px}.f2{right:-150px;top:250px;animation-delay:-2s}.f3{right:-176px;bottom:118px;animation-delay:-4s}
+@keyframes floaty{50%{transform:translateY(-10px)}}
+@media (max-width:1240px){.float{display:none}}
+.phone{position:relative;width:330px;height:690px;border-radius:52px;background:#0D1B2A;padding:11px;box-shadow:0 40px 80px -30px rgba(13,27,42,.55),inset 0 0 0 2px #2A3B50}
+.screen{position:relative;width:100%;height:100%;border-radius:42px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:104px;height:30px;border-radius:20px;background:#000;z-index:20}
+.sbar{display:flex;justify-content:space-between;align-items:center;padding:14px 26px 4px;font:800 14px var(--f-latin);color:var(--navy);flex:none}
+.sicons{display:inline-flex;align-items:center;gap:5px;fill:currentColor}
+.apphead{display:flex;align-items:center;gap:10px;padding:8px 16px 6px;flex:none}
+.apphead .av{width:34px;height:34px;border-radius:50%;background:var(--gold-l);display:grid;place-items:center;font-size:19px;box-shadow:inset 0 0 0 2px #fff,0 2px 8px -4px rgba(13,27,42,.4)}
+.apphead b{font-family:var(--f-latin);font-weight:800;font-size:15px}
+.coin{margin-left:auto;display:flex;align-items:center;gap:4px;background:var(--gold-l);border-radius:999px;padding:3px 10px;font:800 13px var(--f-latin);color:#9A6A00;transition:transform .3s}
+.coin.bump{transform:scale(1.2)}
+.pets{display:flex;gap:8px;padding:4px 14px 8px;overflow-x:auto;flex:none;scrollbar-width:none}
+.pets::-webkit-scrollbar{display:none}
+.pet{display:flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:4px 10px 4px 4px;flex:none;text-align:left}
+.pet .av{width:30px;height:30px;border-radius:50%;background-color:var(--mint-xl);background-size:cover;background-position:center 20%}
+.pet b{display:block;font-family:var(--f-latin);font-size:13px;line-height:1.1}
+.pet small{font-size:10.5px;color:var(--muted);line-height:1}
+.pet[aria-pressed=true]{border-color:var(--mint);background:var(--mint-xl)}
+.pet.add{color:var(--muted);font-size:12.5px;padding:8px 12px;border-style:dashed}
+.view{flex:1;overflow-y:auto;padding:4px 14px 90px;scrollbar-width:none}
+.view::-webkit-scrollbar{display:none}
+.pcard{background:#fff;border-radius:20px;padding:12px 14px;margin-bottom:10px;box-shadow:0 2px 10px -6px rgba(13,27,42,.18)}
+.pcard h5{margin:0 0 6px;font:500 14px var(--f-head);color:var(--navy);display:flex;align-items:center;gap:6px}
+.pcard .row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;padding:5px 0}
+.pcard .row + .row{border-top:1px solid #EEF3F4}
+.qa{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.qa button{border:0;background:none;padding:0;font:400 11px var(--f-head);color:var(--ink);text-align:center}
+.qa img{width:56px;height:56px;margin:0 auto 3px;border-radius:16px}
+.tick{border:1.5px solid var(--mint);background:var(--mint-xl);color:var(--mint-d);border-radius:12px;padding:4px 10px;font:500 12px var(--f-head)}
+.tick.done{background:#E5F7EC;border-color:#4CBF84;color:#1F8A55}
+.addbtn{width:100%;border:1.5px dashed var(--mint);background:#fff;color:var(--mint-d);border-radius:16px;padding:10px;font:500 13.5px var(--f-head);margin-bottom:10px}
+.ring{border:0;background:linear-gradient(135deg,var(--coral),#FF9F7A);color:#fff;border-radius:16px;padding:10px;width:100%;font:500 13.5px var(--f-head);margin-bottom:10px;box-shadow:0 8px 16px -10px var(--coral)}
+.spark{width:100%;height:70px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:flex;gap:10px;padding:7px 0;font-size:12.5px;border-top:1px solid #EEF3F4}
+.tl li:first-child{border-top:0}
+.tl .ic{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;flex:none;font-size:14px}
+.tl b{display:block;font-size:13px}
+.tl .new{animation:flashIn 1.2s}
+@keyframes flashIn{0%{background:var(--gold-l)}100%{background:transparent}}
+.tabbar{position:absolute;left:0;right:0;bottom:0;height:78px;background:#fff;border-top:1px solid var(--line);box-shadow:0 -10px 24px -18px rgba(13,27,42,.35);display:grid;grid-template-columns:repeat(5,1fr);align-items:center;padding:0 6px 10px;z-index:8}
+.tabbar button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:1px;font:400 10.5px var(--f-head);color:var(--muted)}
+.tabbar button span{font-size:19px;line-height:1.1;filter:grayscale(.6);opacity:.75}
+.tabbar button[aria-selected=true]{color:var(--mint-d)}
+.tabbar button[aria-selected=true] span{filter:none;opacity:1}
+.tabbar button img.ti{width:28px;height:28px;object-fit:contain;filter:grayscale(.55);opacity:.7;transition:transform .25s,filter .25s,opacity .25s}
+.tabbar button[aria-selected=true] img.ti{filter:none;opacity:1;transform:translateY(-1px) scale(1.08)}
+.back{border:0;background:none;font:500 13px var(--f-head);color:var(--mint-d);padding:0 0 6px;cursor:pointer}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.week .day{position:relative;border-radius:12px;padding:5px 0 8px;font-size:11px;color:var(--muted)}
+.week .day b{display:block;font:800 15px var(--f-latin);color:var(--navy)}
+.week .day.on{background:var(--mint);color:#fff}.week .day.on b{color:#fff}
+.week .day i{position:absolute;left:50%;bottom:3px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--coral)}
+.appt{display:flex;gap:10px;align-items:center}
+.appt .ic{flex:none;width:38px;height:38px;border-radius:12px;background:var(--gold-l);display:grid;place-items:center;font-size:19px}
+.appt b{display:block;font:500 13.5px var(--f-head)}.appt small{font-size:11.5px;color:var(--muted)}
+.tabbar .center img{width:54px;height:54px;margin-top:-26px;border-radius:50%;background:#fff;box-shadow:0 8px 18px -8px rgba(13,27,42,.45);padding:3px}
+.notif{position:absolute;left:10px;right:10px;top:-120px;z-index:25;background:rgba(250,250,252,.96);backdrop-filter:blur(10px);border-radius:22px;padding:11px 13px;box-shadow:0 18px 40px -18px rgba(0,0,0,.45);display:flex;gap:10px;transition:top .5s cubic-bezier(.34,1.4,.64,1);text-align:left;border:0;width:auto}
+.notif.show{top:46px}
+.notif img{width:36px;height:36px;border-radius:9px;flex:none}
+.notif small{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;font-family:var(--f-latin)}
+.notif b{display:block;font-size:13.5px;line-height:1.3}
+.notif p{margin:0;font-size:12.5px;line-height:1.35}
+.toast{position:absolute;left:50%;bottom:92px;transform:translate(-50%,20px);opacity:0;background:var(--navy);color:#fff;border-radius:14px;padding:8px 14px;font:400 12.5px var(--f-head);z-index:30;transition:.35s;white-space:nowrap;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.sheet{position:absolute;inset:0;z-index:28;background:rgba(13,27,42,.35);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
+.sheet.open{opacity:1;pointer-events:auto}
+.sheet .panel{width:100%;background:#fff;border-radius:26px 26px 0 0;padding:16px 16px 26px;transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.9,.3,1);max-height:88%;overflow:auto}
+.sheet.open .panel{transform:none}
+.panel h5{margin:0 0 10px;font:500 16px var(--f-head);color:var(--navy);text-align:center}
+.panel label{display:block;font-size:12.5px;color:var(--muted);margin:8px 0 4px}
+.panel input,.panel select{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:9px 12px;background:var(--bg);font-size:14px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:6px 12px;font:400 13px var(--f-head)}
+.seg button[aria-pressed=true]{border-color:var(--mint);background:var(--mint-xl);color:var(--mint-d)}
+.save{width:100%;margin-top:14px;border:0;border-radius:16px;padding:12px;background:var(--mint);color:#fff;font:500 15px var(--f-head)}
+.mini-thumbs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.mini-thumbs button{border:2px solid transparent;border-radius:14px;background:var(--mint-xl);padding:2px;flex:none}
+.mini-thumbs button[aria-pressed=true]{border-color:var(--mint)}
+.mini-thumbs img{height:54px;width:auto}
+.msg{max-width:88%;padding:9px 12px;border-radius:16px;font-size:12.5px;line-height:1.55;white-space:pre-line;margin-bottom:8px}
+.msg.me{margin-left:auto;background:var(--mint);color:#063530;border-bottom-right-radius:5px}
+.msg.bot{background:#fff;border-bottom-left-radius:5px;box-shadow:0 2px 8px -6px rgba(13,27,42,.3)}
+.msg.alert{background:var(--coral-l)}
+.msg b{color:inherit;font-weight:500}
+.phonebuddy{position:absolute;right:6px;bottom:84px;z-index:9;touch-action:none;cursor:grab}
+/* sprite */
+.sprite{background-repeat:no-repeat;will-change:background-position,transform;transform-origin:50% 100%}
+.sprite.bounce{animation:boing .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes boing{30%{transform:scale(1.16,0.92)}60%{transform:scale(.95,1.06)}100%{transform:scale(1)}}
+.say{position:absolute;bottom:100%;left:50%;transform:translateX(-30%);background:#fff;border-radius:14px;padding:6px 10px;font:400 12px var(--f-head);white-space:nowrap;box-shadow:var(--shadow-s);opacity:0;transition:.25s;pointer-events:none}
+.say.show{opacity:1}
+/* ── parade ── */
+.parade{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:clamp(4px,2vw,26px);padding:6px 0 0;margin-top:-6px}
+.parade figure{margin:0;text-align:center;cursor:pointer}
+.parade figcaption{font:400 12.5px var(--f-head);color:var(--muted)}
+.ground{height:14px;margin:0 auto;max-width:1000px;border-radius:50%;background:radial-gradient(closest-side,rgba(13,27,42,.10),transparent)}
+/* ── sections ── */
+section.block{padding:76px 0}
+.head p{text-wrap:balance}
+.eyebrow.th{letter-spacing:.02em;text-transform:none;font-family:var(--f-head);font-weight:500;font-size:14.5px}
+.nudge{animation:nudge 1.2s ease-in-out 3}
+@keyframes nudge{50%{box-shadow:0 0 0 7px rgba(140,124,255,.28)}}
+.head{max-width:760px;margin-bottom:34px}
+.head h2{font-size:clamp(30px,3.6vw,44px);line-height:1.2;margin:8px 0 12px;font-weight:600}
+.head p{margin:0;font-size:17.5px;color:var(--muted)}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+/* AI showcase */
+.ai{background:radial-gradient(1200px 500px at 85% 0%,#E6E2FF 0%,transparent 60%),radial-gradient(900px 500px at 0% 100%,#D6F6F1 0%,transparent 60%),#FBFAFF;border-radius:48px;margin:0 14px;padding:80px 0}
+.ai .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}
+.ai .eyebrow{color:var(--lav)}
+.feat{list-style:none;padding:0;margin:22px 0}
+.feat li{display:flex;gap:14px;margin:0 0 16px}
+.feat .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:20px;flex:none;background:#fff;box-shadow:var(--shadow-s)}
+.feat b{display:block;font-family:var(--f-head);font-size:17px}
+.feat span{color:var(--muted);font-size:15px}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mode{background:#fff;border-radius:20px;padding:14px 16px;box-shadow:var(--shadow-s);font-size:14px}
+.mode b{display:block;font-family:var(--f-head);font-size:16px}
+.chatwin{background:#fff;border-radius:34px;box-shadow:0 30px 70px -30px rgba(91,72,214,.45);overflow:hidden;display:flex;flex-direction:column;height:620px;border:1px solid #ECE9FF}
+.chathead{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #F0EEFF;background:linear-gradient(180deg,#FFF,#FCFBFF)}
+.chathead img{width:44px;height:44px;border-radius:13px}
+.chathead b{font-family:var(--f-head);font-size:17px;display:block;line-height:1.2}
+.chathead small{color:var(--muted);font-size:13px}
+.live{margin-left:auto;font:800 11px var(--f-latin);letter-spacing:.08em;color:var(--mint-d);background:var(--mint-xl);padding:4px 10px;border-radius:999px}
+.thread{flex:1;overflow-y:auto;padding:18px 20px;background:linear-gradient(180deg,#FBFAFF,#F7FBFB)}
+.thread .msg{font-size:14.5px;max-width:84%;padding:11px 15px;border-radius:20px}
+.thread .msg.bot{border-bottom-left-radius:6px}
+.thread .msg.me{border-bottom-right-radius:6px}
+.typing{display:inline-flex;gap:4px;padding:12px 14px;background:#fff;border-radius:18px;box-shadow:0 2px 8px -6px rgba(13,27,42,.3);margin-bottom:8px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#B9B2F7;animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{50%{transform:translateY(-4px);opacity:.5}}
+.propose{background:#fff;border:1.5px solid #E2DDFF;border-radius:20px;padding:12px 14px;margin:0 0 10px;max-width:84%;box-shadow:0 10px 24px -18px rgba(91,72,214,.6)}
+.propose .t{font:500 12px var(--f-head);color:var(--lav);margin-bottom:4px}
+.propose b{font-family:var(--f-head);font-size:15px}
+.propose .acts{display:flex;gap:8px;margin-top:10px}
+.propose .ok{border:0;background:var(--lav);color:#fff;border-radius:12px;padding:7px 14px;font:500 13.5px var(--f-head)}
+.propose .no{border:1px solid var(--line);background:#fff;border-radius:12px;padding:7px 14px;font:400 13.5px var(--f-head)}
+.propose.saved{border-color:#BFE9D2;background:#F2FBF6}
+.chatfoot{padding:12px 16px 16px;border-top:1px solid #F0EEFF;background:#fff}
+.modeTabs{display:flex;gap:8px;margin-bottom:10px}
+.modeTabs button{flex:1;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:8px 10px;text-align:left;font:500 14px var(--f-head);color:var(--navy)}
+.modeTabs button small{display:block;font:300 12px var(--f-body);color:var(--muted)}
+.modeTabs button[aria-pressed=true].free{border-color:var(--mint);background:var(--mint-xl)}
+.modeTabs button[aria-pressed=true].agent{border-color:var(--lav);background:var(--lav-l)}
+.chatfoot .chips{display:flex;flex-wrap:wrap;gap:8px}
+.chatfoot .chip{background:#F7F6FF}
+@media (max-width:980px){.ai .wrap{grid-template-columns:1fr}.ai{margin:0;border-radius:32px}.chatwin{height:600px}}
+/* buddies */
+.filters{display:flex;gap:8px;justify-content:center;margin-bottom:22px;flex-wrap:wrap}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px}
+.bcard{border:2px solid transparent;background:#fff;border-radius:22px;padding:10px 6px 8px;text-align:center;box-shadow:var(--shadow-s);transition:transform .2s,border-color .2s}
+.bcard:hover{transform:translateY(-4px)}
+.bcard[aria-pressed=true]{border-color:var(--mint);background:var(--mint-xl)}
+.bcard .stagebox{height:92px;display:flex;align-items:flex-end;justify-content:center}
+.bcard img{height:86px;width:auto}
+.bcard b{display:block;font-family:var(--f-head);font-size:15px;margin-top:4px}
+.bcard small{display:block;font-size:11.5px;color:var(--muted);line-height:1.3}
+.bmore{text-align:center;margin-top:18px}
+@media (max-width:600px){.bgrid{grid-template-columns:repeat(3,1fr);gap:8px}.bcard{border-radius:18px;padding:8px 4px 6px}.bcard .stagebox{height:70px}.bcard img{height:66px}.bcard b{font-size:13.5px}.bcard small{font-size:10.5px}}
+/* features bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.tile{background:#fff;border-radius:var(--r);padding:22px;box-shadow:var(--shadow-s);position:relative;overflow:hidden}
+.tile h3{margin:0 0 6px;font-size:20px}
+.tile p{margin:0;color:var(--muted);font-size:15px}
+.tile .big{font-size:34px;margin-bottom:6px}
+.t-vacc{grid-column:span 4;grid-row:span 2}.t-find{grid-column:span 2;grid-row:span 2}
+.t-s{grid-column:span 2}
+@media (max-width:980px){.bento{grid-template-columns:1fr 1fr}.t-vacc,.t-find,.t-s{grid-column:span 2}.t-find{grid-row:auto}}
+.vin{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
+.vin input{border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:var(--bg)}
 .vlist{list-style:none;padding:0;margin:0}
-.vlist li{border-top:1px solid var(--line);padding:11px 2px}
-.vlist b{color:var(--navy)}
-.tag{display:inline-block;font-size:11.5px;border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:2px}
-.tag.core{background:var(--teal-l);color:var(--teal-d)}.tag.opt{background:var(--gold-l);color:#9A6A00}.tag.law{background:var(--coral-l);color:#C94444}
-.vdate{font-size:14px;color:var(--ink)}
-/* chat modes */
-.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
-.tabs button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:10px 16px;text-align:left;color:var(--navy)}
-.tabs button small{display:block;color:var(--muted);font-size:12px}
-.tabs button[aria-pressed=true]{border-color:#E8A93A;box-shadow:0 0 0 3px var(--gold-l)}
-.modebody ul{margin:6px 0 0;padding-left:20px}
-.modebody li{margin:4px 0}
-/* find + shots */
-.phone{border-radius:34px;border:8px solid var(--navy);overflow:hidden;background:var(--navy);max-width:300px;margin:0 auto}
-.shots{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px}
-.shots figure{margin:0;flex:0 0 220px;scroll-snap-align:start}
-.shots figure .phone{max-width:220px;border-width:6px;border-radius:28px}
-.shots figcaption{font-size:13.5px;color:var(--ink);margin-top:10px;text-align:center}
+.vlist li{border-top:1px solid var(--line);padding:10px 2px;font-size:14.5px}
+.tag{display:inline-block;font-size:11.5px;border-radius:999px;padding:1px 9px;margin-left:6px;vertical-align:2px;font-family:var(--f-head)}
+.tag.core{background:var(--mint-l);color:var(--mint-d)}.tag.opt{background:var(--gold-l);color:#9A6A00}.tag.law{background:var(--coral-l);color:var(--coral-d)}
+.findshot{margin-top:14px;border-radius:24px;overflow:hidden;border:6px solid var(--navy);max-height:420px}
+/* screens */
+.shots{display:flex;gap:22px;width:max-content;animation:slide 60s linear infinite;padding:10px 0 20px}
+.shots:hover{animation-play-state:paused}
+.shotwrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.shots figure{margin:0;width:230px}
+.shots .dev{border:7px solid var(--navy);border-radius:34px;overflow:hidden;box-shadow:var(--shadow)}
+.shots figcaption{font-size:13.5px;text-align:center;margin-top:10px;color:var(--ink)}
+@keyframes slide{to{transform:translateX(-50%)}}
 /* privacy */
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.facts .card b{color:var(--navy);display:block;margin-bottom:4px}
-.facts .card{font-size:15px}
-@media (max-width:900px){.facts{grid-template-columns:1fr}}
+.priv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.priv .tile b{display:block;font-family:var(--f-head);font-size:17px;margin-bottom:4px;color:var(--navy)}
+.priv .tile{font-size:15px}
+@media (max-width:980px){.priv{grid-template-columns:1fr}}
 /* faq */
-details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:4px 18px;margin-bottom:10px}
-summary{cursor:pointer;padding:12px 0;color:var(--navy);font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:10px}
-summary::after{content:"+";color:var(--teal-d);font-size:20px;line-height:1}
-details[open] summary::after{content:"–"}
-details div{white-space:pre-line;padding:0 0 14px;font-size:15px}
-/* download band + footer */
-.band{background:var(--navy);color:#fff;border-radius:28px;padding:40px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center}
-.bandpet{width:96px;height:auto;margin:-60px 0 -40px}
-.band h2{color:#fff;margin:0 0 6px}
-.band p{margin:0;color:#B8C7D3}
-.band .btn{background:#fff;color:var(--navy)}
-@media (max-width:700px){.band{grid-template-columns:1fr;padding:28px}.bandpet{margin:-70px 0 0;width:84px}}
-footer{padding:46px 0 120px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between}
-footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.faq{max-width:860px;margin:0 auto}
+details{background:#fff;border-radius:20px;padding:4px 20px;margin-bottom:10px;box-shadow:var(--shadow-s)}
+summary{cursor:pointer;padding:14px 0;color:var(--navy);font-family:var(--f-head);font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--mint-d);font-size:22px;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details div{white-space:pre-line;padding:0 0 16px;font-size:15px}
+/* cta + footer */
+.band{position:relative;background:linear-gradient(135deg,#0D1B2A,#123049);color:#fff;border-radius:40px;padding:52px 46px 0;overflow:hidden;text-align:center}
+.band h2{color:#fff;font-size:clamp(28px,3.6vw,42px);margin:0 0 8px}
+.band p{color:#B8C7D3;margin:0 0 22px}
+.band .btn.store{background:#fff;color:var(--navy)}
+.band .parade{margin-top:26px}
+.band .parade figcaption{color:#9FB2C2}
+footer{padding:50px 0 130px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 30px;justify-content:space-between;align-items:center}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
 footer a{color:var(--ink);text-decoration:none}
-/* paw support */
-.ps-btn{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:12px 18px;box-shadow:0 12px 30px -10px rgba(13,27,42,.6);font-weight:500}
-.ps{position:fixed;right:18px;bottom:82px;z-index:41;width:min(380px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 120px));background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px -20px rgba(13,27,42,.45);display:none;flex-direction:column;overflow:hidden}
+/* floating page buddy + paw support */
+.pagebuddy{position:fixed;left:16px;bottom:16px;z-index:45;touch-action:none;cursor:grab;transition:opacity .35s,transform .35s}
+.pagebuddy.away{opacity:0;transform:translateY(30px);pointer-events:none}
+.pagebuddy .tagname{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);background:#fff;border-radius:999px;padding:1px 9px;font:500 11px var(--f-head);box-shadow:var(--shadow-s);white-space:nowrap}
+.ps-btn{position:fixed;right:18px;bottom:18px;z-index:46;display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:12px 18px 12px 12px;box-shadow:0 14px 30px -12px rgba(13,27,42,.7);font:500 15px var(--f-head)}
+.ps-btn img{width:30px;height:30px;border-radius:9px;background:#fff}
+@media (max-width:600px){.ps-btn{padding:8px;gap:0;font-size:0;right:14px;bottom:14px}.ps-btn img{width:36px;height:36px;border-radius:50%}}
+.ps{position:fixed;right:18px;bottom:84px;z-index:47;width:min(390px,calc(100vw - 32px));max-height:min(580px,calc(100vh - 130px));background:#fff;border-radius:26px;box-shadow:0 30px 70px -24px rgba(13,27,42,.5);display:none;flex-direction:column;overflow:hidden}
 .ps.open{display:flex}
-.ps .head{background:var(--teal-xl);padding:14px 18px;border-bottom:1px solid var(--line)}
-.ps .head b{color:var(--navy)}
-.ps .head small{display:block;color:var(--muted);font-size:12.5px}
-.ps .body{padding:14px;overflow:auto;display:flex;flex-direction:column;gap:10px}
-.ps .foot{padding:12px 14px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
-.ps .chips .chip{font-size:13px}
+.ps .h{display:flex;gap:10px;align-items:center;background:var(--mint-xl);padding:14px 18px}
+.ps .h img{width:38px;height:38px;border-radius:11px}
+.ps .h b{font-family:var(--f-head);display:block;line-height:1.2}
+.ps .h small{color:var(--muted);font-size:12.5px}
+.ps .body{padding:14px;overflow:auto;display:flex;flex-direction:column}
+.ps .body .msg{font-size:13.5px}
+.ps .foot{padding:12px 14px;border-top:1px solid var(--line)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
-<body>
+<body id="top">
 <header class="top"><div class="wrap">
-  <a class="brand" href="#"><img src="assets/icon-192.png" alt="" width="34" height="34">PetCare AI 360</a>
-  <nav class="links" aria-label="เมนูหลัก">
-    <a href="#overview">ภาพรวม</a><a href="#records">บันทึกสุขภาพ</a><a href="#care">ยาและวัคซีน</a><a href="#paw">น้องพอว์</a><a href="#find">คลินิกใกล้ตัว</a><a href="#privacy">ความเป็นส่วนตัว</a>
-  </nav>
-  <a class="btn dark small" href="https://apps.apple.com/th/app/id6827011693"><span class="long">ดาวน์โหลดบน App Store</span><span class="short">ดาวน์โหลด</span></a>
+  <a class="wm" href="#top" aria-label="PetCare AI 360 หน้าแรก"><img src="assets/icon-192.png" alt="" width="40" height="40"><span class="wm-text" aria-hidden="true"><span class="wm-pet"><span style="--i:0">P</span><span style="--i:1">e</span><span style="--i:2">t</span><span style="--i:3" class="c">C</span><span style="--i:4" class="c">a</span><span style="--i:5" class="c">r</span><span style="--i:6" class="c">e</span></span><span class="wm-ai"><span class="wm-badge">AI<i>360</i></span><span class="wm-spark">✦</span></span></span></a>
+  <nav class="links" aria-label="เมนูหลัก"><a href="#try">ลองเล่นแอป</a><a href="#ai">น้องพอว์ AI</a><a href="#buddies">เพื่อนน้อง</a><a href="#features">ฟีเจอร์</a><a href="#privacy">ความเป็นส่วนตัว</a></nav>
+  <a class="btn store small" href="https://apps.apple.com/th/app/id6827011693"><span class="long">ดาวน์โหลดบน App Store</span><span class="short">ดาวน์โหลด</span></a>
 </div></header>
 
 <main>
-<section class="hero"><div class="wrap">
-  <div>
-    <span class="pill"><i></i>สมุดสุขภาพน้องหมาแมว · ใช้ฟรี</span>
-    <h1>ดูแลน้องครบ 360°<br><span class="grad">ไม่พลาดยาและวัคซีน</span></h1>
-    <p class="lead">บันทึกประวัติสุขภาพ เตือนเวลาให้ยาและวัคซีน และถามน้องพอว์เรื่องบันทึกกับวิธีใช้แอปได้ สำหรับ<span class="rot" id="rot">น้องหมา</span></p>
-    <div class="cta">
-      <a class="btn dark" href="https://apps.apple.com/th/app/id6827011693">ดาวน์โหลดบน App Store</a>
-      <a class="btn ghost" href="#overview">ดูว่าแอปทำอะไรได้ ↓</a>
+<section class="hero" id="try">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="paws"></div>
+  <div class="wrap">
+    <div>
+      <span class="pill"><i></i>แอปดูแลน้องหมาแมว · ดาวน์โหลดฟรี</span>
+      <h1>สมุดสุขภาพน้อง<br>ที่<span class="hl chat">คุยได้</span> และ<span class="hl bell">เตือนเป็น</span></h1>
+      <p class="lead">บันทึกวัคซีน ยา น้ำหนัก และประวัติของน้องทุกตัว แอปเตือนให้ตรงเวลา และมี<b>น้องพอว์ AI</b> คอยตอบจากบันทึกจริงของน้อง</p>
+      <div class="cta">
+        <a class="btn store" href="https://apps.apple.com/th/app/id6827011693"><span><small>ดาวน์โหลดฟรีบน</small>App Store</span></a>
+        <a class="btn soft" href="#ai">คุยกับน้องพอว์ ↓</a>
+      </div>
+      <div class="try">
+        <p>👆 จอข้าง ๆ เล่นได้จริงเหมือนในแอป ลองกด:</p>
+        <div class="chips" id="trychips">
+          <button class="chip" data-go="addpet">🐾 เพิ่มน้อง</button>
+          <button class="chip" data-go="addmed">💊 ตั้งเวลาให้ยา</button>
+          <button class="chip" data-go="notify">🔔 ลองแจ้งเตือน</button>
+          <button class="chip" data-go="record">📋 บันทึกประวัติ</button>
+          <button class="chip" data-go="addappt">📅 สร้างนัด</button>
+          <button class="chip" data-go="chat">💬 ถามน้องพอว์</button>
+        </div>
+      </div>
+      <div class="trust"><span>🩺 แอปไม่วินิจฉัยโรค</span><span>💬 แชตธรรมดาใช้ฟรี</span><span>🔒 ขออนุญาตก่อนส่งข้อมูลให้ AI ภายนอก</span></div>
     </div>
-    <p class="medical">🩺 <span>แอปไม่วินิจฉัยโรคและไม่แทนการตรวจของสัตวแพทย์ ถ้าน้องมีอาการผิดปกติ ให้พาไปพบสัตวแพทย์</span></p>
+    <div class="stage">
+      <div class="phonewrap">
+      <div class="float f1"><span class="e">💊</span><div><b>ถึงเวลาให้ยา</b><span id="f1t">Nova · 20:00 น.</span></div></div>
+      <div class="float f2"><span class="e">⚖️</span><div><b id="f2b">3.1 กก.</b><span>น้ำหนักล่าสุด</span></div></div>
+      <div class="float f3"><span class="e">💉</span><div><b>วัคซีนเข็มถัดไป</b><span>แอปเตือนก่อนถึงกำหนด</span></div></div>
+      <div class="phone" aria-label="แอปจำลองบนเว็บ">
+        <div class="screen" id="screen">
+          <div class="island"></div>
+          <button class="notif" id="notif" aria-live="polite"></button>
+          <div class="sbar"><span>09:41</span><span class="sicons" aria-hidden="true"><svg width="18" height="11" viewBox="0 0 18 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="6" rx="1"/><rect x="10" y="2.5" width="3" height="8.5" rx="1"/><rect x="15" y="0" width="3" height="11" rx="1"/></svg><svg width="16" height="11" viewBox="0 0 16 11"><path d="M8 2.2c2.3 0 4.4.9 6 2.4l1.3-1.4A10.5 10.5 0 0 0 8 .3 10.5 10.5 0 0 0 .7 3.2L2 4.6a8.6 8.6 0 0 1 6-2.4Zm0 3.6c1.3 0 2.5.5 3.4 1.3l1.3-1.4A6.8 6.8 0 0 0 8 3.9a6.8 6.8 0 0 0-4.7 1.8l1.3 1.4c.9-.8 2.1-1.3 3.4-1.3Zm0 3.6-1.9-2a2.8 2.8 0 0 1 3.8 0Z"/></svg><svg width="26" height="12" viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="16" height="8" rx="2"/><rect x="23.5" y="4" width="2" height="4" rx="1" opacity=".4"/></svg></span></div>
+          <div class="apphead"><span class="av" aria-hidden="true">😊</span><b>Aris 👋</b><span class="coin" id="coin">🪙 <span id="coinN">150</span></span></div>
+          <div class="pets" id="pets"></div>
+          <div class="view" id="view"></div>
+          <div class="phonebuddy" id="phonebuddy" data-tab="buddy" title="แตะเพื่อดูเพื่อนซี้ · ลากย้ายได้"></div>
+          <div class="toast" id="toast"></div>
+          <div class="sheet" id="sheet"><div class="panel" id="panel"></div></div>
+          <nav class="tabbar" id="tabbar">
+            <button data-tab="home" aria-selected="true"><img class="ti" src="assets/tab-home.webp" alt="">หน้าหลัก</button>
+            <button data-tab="appts"><img class="ti" src="assets/tab-booking.webp" alt="">นัดหมาย</button>
+            <button data-tab="chat" class="center"><img src="assets/tab-aichat.webp" alt="AI Chat"></button>
+            <button data-tab="health"><img class="ti" src="assets/tab-health.webp" alt="">สุขภาพ</button>
+            <button data-info="refer"><img class="ti" src="assets/tab-refer.webp" alt="">ชวนเพื่อน</button>
+          </nav>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
-  <div class="demo" aria-label="ลองถามน้องพอว์">
-    <div class="bar"><img src="assets/paw-avatar.webp" alt=""><div><b>น้องพอว์ 🐾</b><small>แชตธรรมดา · ดูแลน้อง Nova · ฟรี</small></div></div>
-    <p class="tap">👆 ลองกดคำถาม แล้วดูคำตอบ</p>
-    <div class="chips" id="qchips"></div>
-    <div class="thread" id="thread" aria-live="polite"></div>
-    <div class="trace" id="trace"></div>
-    <p class="sample">คำตอบจริงจากแชตธรรมดาของแอป ใช้ข้อมูลตัวอย่างของน้อง Nova (แมว) · ทำงานในเครื่อง ไม่ใช้เหรียญ</p>
-    <img class="buddy" src="assets/buddy-dog.webp" alt="">
-  </div>
-</div>
-<div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
+  <div class="parade" id="parade1"></div>
+  <div class="ground"></div>
+  <p class="sample" style="text-align:center;margin:10px 0 0">จอนี้เป็นแอปจำลองบนเว็บ (ข้อมูลตัวอย่าง ไม่ได้เชื่อมระบบจริง) · หน้าตาและการทำงานตามแอปเวอร์ชัน 1.2.0 · น้องลอยลากได้เหมือนในแอป</p>
 </section>
 
-<section class="statement"><div class="wrap">
-  <p id="statement">ทุกเรื่องของน้อง อยู่ใน มือถือ เครื่องเดียว เตือน ตรงเวลา ไม่ต้อง จำเอง</p>
-  <small>เลื่อนลงต่อ เพื่อดูว่าแต่ละส่วนทำงานอย่างไร</small>
-</div></section>
-
-<section class="block" id="overview"><div class="wrap">
-  <div class="eyebrow">OVERVIEW</div>
-  <h2>4 ขั้น วนเป็นวงเดียว</h2>
-  <p class="sub">กดแต่ละขั้นเพื่อดูว่าเกิดอะไรขึ้นในแอป — ยิ่งบันทึกมาก แนวโน้มของน้องยิ่งชัด</p>
-  <div class="loop" id="loop"></div>
-  <div class="loopnote" id="loopnote"></div>
-</div></section>
-
-<section class="block" id="records"><div class="wrap">
-  <div class="group g-r"><div class="letter">R</div><div><h3>Records · บันทึกสุขภาพ</h3><p>ประวัติทุกอย่างของน้องแต่ละตัว ดูย้อนหลังและแนวโน้มได้</p></div></div>
-  <div class="grid2">
-    <div class="card">
-      <h4>น้ำหนักของน้อง Nova</h4>
-      <p class="hint">👆 กด "+ บันทึก" แล้วดูกราฟเปลี่ยน</p>
-      <div class="wtop"><div class="wnow" id="wnow"></div><button class="btn dark small" id="wadd">+ บันทึก</button></div>
-      <div class="delta" id="wdelta"></div>
-      <svg class="chart" id="wchart" viewBox="0 0 520 190" role="img" aria-label="กราฟน้ำหนัก"></svg>
-      <ul class="hist" id="whist"></ul>
-      <p class="note">ข้อมูลตัวอย่าง · ในแอปบันทึกได้วันละ 1 ค่า บันทึกซ้ำวันเดิม = แทนค่าเดิม</p>
-    </div>
-    <div class="card">
-      <h4>บันทึกได้ครบในที่เดียว</h4>
-      <p>เพิ่มน้องได้หลายตัว แต่ละตัวมีรูป สายพันธุ์ วันเกิด น้ำหนัก และเลขไมโครชิปของตัวเอง แล้วเก็บประวัติแยกกัน</p>
-      <div class="types"><span>💉 วัคซีน</span><span>🩺 พบสัตวแพทย์</span><span>💊 ยา–อาหารเสริม</span><span>⚖️ น้ำหนัก</span><span>🍚 อาหาร</span><span>💧 น้ำ</span><span>🚶 การเดิน</span><span>😴 การนอน</span><span>📅 นัดหมาย</span><span>🪪 การ์ดน้อง</span></div>
-      <p class="note">เลือกวันที่จากปฏิทินได้ ลงบันทึกย้อนหลังได้ แต่ลงวันที่ในอนาคตไม่ได้ · วันที่แสดงแบบ "30 ต.ค. 2569"</p>
+<section class="block" id="ai"><div class="ai"><div class="wrap">
+  <div class="reveal">
+    <div class="eyebrow th">น้องพอว์ AI</div>
+    <h2 style="font-size:clamp(30px,3.6vw,46px);line-height:1.18;margin:10px 0 12px;font-weight:600">ถามเรื่องน้อง<br>ได้คำตอบจาก<span class="hl chat">บันทึกจริง</span></h2>
+    <p class="muted" style="font-size:17.5px;margin:0">ผู้ช่วยในแอปที่รู้จักน้องจากสิ่งที่คุณบันทึกไว้ ตอบเรื่องยา น้ำหนัก วัคซีน และสอนวิธีใช้แอปได้ทุกหน้า</p>
+    <ul class="feat">
+      <li><span class="ic">📒</span><div><b>ตอบจากบันทึกของน้องตัวนั้น</b><span>มีหลายตัวก็ไม่ปนข้อมูลข้ามตัว</span></div></li>
+      <li><span class="ic">✍️</span><div><b>พิมพ์บอก แล้วช่วยบันทึกให้</b><span>Agent เตรียมการ์ดให้ตรวจ แล้วคุณกดยืนยันเองทุกครั้ง</span></div></li>
+      <li><span class="ic">🚨</span><div><b>เรื่องที่อาจฉุกเฉิน บอกให้ไปหาสัตวแพทย์</b><span>ไม่วินิจฉัยโรค ไม่สั่งยา ไม่กำหนดขนาดยา</span></div></li>
+      <li><span class="ic">🔒</span><div><b>ขออนุญาตก่อนส่งข้อมูลให้ AI ภายนอก</b><span>แชตธรรมดาทำงานในเครื่อง ไม่ต้องส่งออก</span></div></li>
+    </ul>
+    <div class="modes">
+      <div class="mode"><b>💬 แชตธรรมดา</b>ฟรี · ทำงานในเครื่อง · ตอบจากบันทึกและคู่มือ</div>
+      <div class="mode"><b>✨ Agent</b>15 Paw Coin/ข้อความ · ช่วยบันทึกจากข้อความ</div>
     </div>
   </div>
+  <div class="chatwin reveal" aria-label="แชตน้องพอว์">
+    <div class="chathead"><img src="assets/paw-avatar.webp" alt=""><div><b>น้องพอว์ 🐾</b><small id="chatsub">แชตธรรมดา · ดูแลน้อง Nova</small></div><span class="live">LIVE DEMO</span></div>
+    <div class="thread" id="thread" aria-live="polite"></div>
+    <div class="chatfoot">
+      <div class="modeTabs"><button class="free" id="mFree" aria-pressed="true">💬 แชตธรรมดา<small>ฟรี · คำตอบจริงจากแอป</small></button><button class="agent" id="mAgent" aria-pressed="false">✨ Agent<small>15 Paw · ช่วยบันทึก</small></button></div>
+      <div class="chips" id="aichips"></div>
+      <p class="sample" id="aisample" style="margin:10px 2px 0"></p>
+    </div>
+  </div>
+</div></div></section>
+
+<section class="block" id="buddies"><div class="wrap">
+  <div class="head center reveal"><div class="eyebrow th">เพื่อนน้อง</div><h2>เลือกเพื่อนน้องที่ใช่ <span id="bcount"></span> ตัว</h2><p>ตัวละครชุดเดียวกับในแอป ขยับด้วยเฟรมจริง · แตะเลือกตัวที่ชอบ แล้วน้องจะลอยตามมุมจอ ลากไปวางตรงไหนก็ได้<br><span class="sample">ในแอป: น้องแต่ละตัวเลือกเพื่อนซี้ได้ฟรี 1 ตัวตอนเพิ่มน้อง</span></p></div>
+  <div class="filters" id="bfilters"><button class="chip" data-f="all" aria-pressed="true">ทั้งหมด</button><button class="chip" data-f="dog" aria-pressed="false">🐶 น้องหมา</button><button class="chip" data-f="cat" aria-pressed="false">🐱 น้องแมว</button></div>
+  <div class="bgrid" id="bgrid"></div>
+  <div class="bmore"><button class="btn soft" id="bmore" hidden></button></div>
 </div></section>
 
-<section class="block" id="care"><div class="wrap">
-  <div class="group g-c"><div class="letter">C</div><div><h3>Care · ยาและวัคซีน</h3><p>เตือนตรงเวลาด้วยการแจ้งเตือนในเครื่อง ติ๊กเมื่อให้แล้ว นับจำนวนยาให้</p></div></div>
-  <div class="grid2">
-    <div class="card">
-      <h4>ยาวันนี้</h4>
-      <p class="hint">👆 กด "ให้ยาแล้ว" แล้วดูตัวเลขเปลี่ยน</p>
-      <div class="medhead"><div class="pillicon">💊</div><div><b style="color:var(--navy)">วิตามินบำรุงขน</b><div style="font-size:14px;color:var(--muted)">1 เม็ด · วันละ 2 ครั้ง</div></div></div>
-      <div class="stats"><div>รอบวันนี้<b>2</b></div><div>ให้แล้ว<b id="mgiven">0</b></div><div>คงเหลือ<b id="mstock">60</b></div></div>
-      <div id="doses"></div>
-      <p class="note">ข้อมูลตัวอย่าง · ใส่จำนวนยาได้หรือเว้นว่าง (เว้นว่าง = ไม่นับจำนวน) · ขนาดยาตามฉลากหรือคำสั่งสัตวแพทย์เท่านั้น</p>
-    </div>
-    <div class="card">
-      <h4>คำนวณกำหนดวัคซีน</h4>
-      <p class="hint">👆 เลือกหมาหรือแมว ใส่วันเกิด แล้วดูเข็มที่ควรได้</p>
-      <div class="seg" role="group" aria-label="ชนิดสัตว์"><button id="vdog" aria-pressed="true">🐶 หมา</button><button id="vcat" aria-pressed="false">🐱 แมว</button></div>
-      <div class="vin"><label for="vbirth">วันเกิด</label><input type="date" id="vbirth"><span class="vdate" id="vbirthth"></span></div>
+<section class="block" id="features"><div class="wrap">
+  <div class="head reveal"><div class="eyebrow">Features</div><h2>ทุกเรื่องของน้อง อยู่ในแอปเดียว</h2><p>ฟีเจอร์ตามแอปเวอร์ชันบน App Store ตอนนี้</p></div>
+  <div class="bento">
+    <div class="tile t-vacc reveal">
+      <div class="big">💉</div><h3>คำนวณกำหนดวัคซีน</h3><p>เลือกน้องหมาหรือน้องแมว ใส่วันเกิด ดูเข็มที่ควรได้ตามโปรแกรมวัคซีนชุดเดียวกับในแอป</p>
+      <div class="vin"><div class="seg" role="group" aria-label="ชนิดสัตว์"><button id="vdog" aria-pressed="true">🐶 หมา</button><button id="vcat" aria-pressed="false">🐱 แมว</button></div><input type="date" id="vbirth" aria-label="วันเกิด"><span class="muted" id="vbirthth"></span></div>
       <ul class="vlist" id="vlist"></ul>
-      <p class="note">ใช้โปรแกรมวัคซีนชุดเดียวกับในแอป (อ้างอิง WSAVA · AAHA · AAFP · พ.ร.บ.โรคพิษสุนัขบ้า) เป็นแนวทางทั่วไป ไม่ใช่คำวินิจฉัย — ยืนยันตารางกับสัตวแพทย์ทุกครั้ง</p>
+      <p class="sample" style="margin-top:10px">อ้างอิง WSAVA · AAHA · AAFP · พ.ร.บ.โรคพิษสุนัขบ้า · เป็นแนวทางทั่วไป ไม่ใช่คำวินิจฉัย ยืนยันกับสัตวแพทย์ทุกครั้ง</p>
     </div>
+    <div class="tile t-find reveal"><div class="big">📍</div><h3>คลินิกใกล้ตัว</h3><p>โรงพยาบาลสัตว์ อาบน้ำตัดขน โรงแรม ร้านค้า เรียงตามระยะทาง กดโทรได้</p><div class="findshot"><img src="assets/07-nearby.webp" alt="หน้าค้นหาคลินิกใกล้ตัวในแอป" loading="lazy" width="540" height="1173"></div><p class="sample" style="margin-top:10px">ข้อมูลสถานที่ © OpenStreetMap contributors · โทรเช็กก่อนไป</p></div>
+    <div class="tile t-s reveal"><div class="big">🔔</div><h3>แจ้งเตือนตรงเวลา</h3><p>ยา วัคซีน นัดหมาย เตือนด้วยการแจ้งเตือนในเครื่อง ติ๊กแล้วรายการที่ค้างหายเอง</p></div>
+    <div class="tile t-s reveal"><div class="big">🗓️</div><h3>ลงบันทึกย้อนหลังได้</h3><p>เลือกวันจากปฏิทิน ลืมจดวันไหนก็เติมทีหลังได้ (ลงวันในอนาคตไม่ได้)</p></div>
+    <div class="tile t-s reveal"><div class="big">🐶🐱</div><h3>หลายตัวในบัญชีเดียว</h3><p>แต่ละตัวมีรูป สายพันธุ์ เลขไมโครชิป และประวัติแยกกัน</p></div>
   </div>
 </div></section>
 
-<section class="block" id="paw"><div class="wrap">
-  <div class="group g-p"><div class="letter">P</div><div><h3>Paw · น้องพอว์ ผู้ช่วยในแชต</h3><p>ถามเรื่องของน้องจากบันทึกที่มี และถามวิธีใช้แอปได้</p></div></div>
-  <div class="grid2">
-    <div class="card">
-      <div class="tabs" role="group" aria-label="โหมดแชต">
-        <button id="mfree" aria-pressed="true">💬 แชตธรรมดา<small>ฟรี · ทำงานในเครื่อง</small></button>
-        <button id="magent" aria-pressed="false">✨ Agent<small>15 Paw Coin ต่อข้อความ</small></button>
-      </div>
-      <div class="modebody" id="modebody"></div>
-    </div>
-    <div class="card">
-      <h4>ขอบเขตที่ตั้งใจไว้</h4>
-      <ul style="margin:8px 0 0;padding-left:20px">
-        <li>ไม่วินิจฉัยโรค ไม่สั่งยา ไม่กำหนดขนาดยา</li>
-        <li>เรื่องที่อาจฉุกเฉิน เช่น กินช็อกโกแลตหรือยาของคน → บอกให้พาไปพบสัตวแพทย์ทันที</li>
-        <li>มีน้องหลายตัว → ตอบจากบันทึกของตัวที่เปิดแชตอยู่ ไม่ปนข้อมูลข้ามตัว</li>
-        <li>บันทึกจากแชตต้องกดยืนยันบนการ์ดก่อนทุกครั้ง</li>
-      </ul>
-      <p class="note">Paw Coin ได้ฟรีตอนสมัครและจากการเช็กอินรายวัน · เวอร์ชันนี้ยังซื้อเหรียญไม่ได้</p>
-    </div>
-  </div>
-</div></section>
-
-<section class="block" id="find"><div class="wrap">
-  <div class="group g-f"><div class="letter">F</div><div><h3>Find · คลินิกและร้านใกล้ตัว</h3><p>โรงพยาบาลสัตว์ อาบน้ำตัดขน โรงแรมสัตว์เลี้ยง และร้านขายของ</p></div></div>
-  <div class="grid2">
-    <div class="phone"><img src="assets/07-nearby.webp" alt="หน้าค้นหาคลินิกใกล้ตัวในแอป" loading="lazy" width="540" height="1173"></div>
-    <div class="card" style="align-self:center">
-      <h4>หาได้จากตำแหน่งที่อยู่ หรือเลือกเมืองเอง</h4>
-      <p>แอปขอตำแหน่งเฉพาะตอนใช้งาน เพื่อเรียงร้านจากใกล้ไปไกล ดูระยะทาง เวลาเปิด แผนที่ และกดโทรได้</p>
-      <p>ไม่อนุญาตตำแหน่งก็ใช้ได้ แค่เลือกเมืองที่ต้องการ</p>
-      <p class="note">ข้อมูลสถานที่ © OpenStreetMap contributors · โปรดโทรเช็กเวลาเปิดและเบอร์กับร้านก่อนเดินทาง · แอปยังไม่มีการจองผ่านแอป ติดต่อร้านโดยตรง</p>
-    </div>
-  </div>
-</div></section>
-
-<section class="block" id="screens"><div class="wrap">
-  <div class="eyebrow">SCREENS</div>
-  <h2>หน้าจอจริงในแอป</h2>
-  <p class="sub">ชุดเดียวกับที่อยู่บน App Store · เลื่อนดูได้</p>
-  <div class="shots" id="shots"></div>
-</div></section>
+<section class="block" id="screens">
+  <div class="wrap"><div class="head center reveal"><div class="eyebrow">Screens</div><h2>หน้าจอจริงในแอป</h2><p>ชุดเดียวกับบน App Store · เอาเมาส์วางเพื่อหยุดดู</p></div></div>
+  <div class="shotwrap"><div class="shots" id="shots"></div></div>
+</section>
 
 <section class="block" id="privacy"><div class="wrap">
-  <div class="eyebrow">PRIVACY</div>
-  <h2>ข้อมูลของคุณกับน้อง ดูแลอย่างตรงไปตรงมา</h2>
-  <p class="sub">สรุปจากนโยบายความเป็นส่วนตัวและฉลากความเป็นส่วนตัวบน App Store</p>
-  <div class="facts">
-    <div class="card"><b>เก็บเท่าที่ใช้งาน</b>ชื่อ อีเมล ข้อมูลและบันทึกของน้อง รูปที่อัปโหลด แชต ตำแหน่ง (เมื่ออนุญาต) และข้อมูลการใช้งาน — ไม่ใช้ติดตามข้ามแอปหรือโฆษณา</div>
-    <div class="card"><b>AI ภายนอกต้องขออนุญาตก่อน</b>Agent การ์ดการ์ตูน AI และการอ่านใบเซอร์ ส่งข้อมูลไป OpenRouter (สหรัฐฯ) ที่ใช้โมเดล Google Gemini แอปจะถามก่อนครั้งแรก และปิดได้ที่หน้าบัญชี</div>
-    <div class="card"><b>แชตธรรมดาอยู่ในเครื่อง</b>คำตอบของแชตธรรมดาคำนวณบนมือถือ ไม่ส่งไป AI ภายนอก · ใช้แชตปรับปรุงผู้ช่วยเฉพาะเมื่อเปิดสวิตช์ยินยอม</div>
-    <div class="card"><b>ลบบัญชีได้เองในแอป</b>ยืนยันด้วยรหัสผ่าน ปิดบัญชีทันที เก็บข้อมูลไว้ 30 วันเผื่อเปลี่ยนใจ แล้วลบถาวร</div>
-    <div class="card"><b>เซิร์ฟเวอร์และสิทธิ์</b>ข้อมูลเก็บบน Supabase (สิงคโปร์) · แต่ละบัญชีเห็นเฉพาะข้อมูลของตัวเอง</div>
-    <div class="card"><b>อ่านฉบับเต็ม</b><a href="privacy/">นโยบายความเป็นส่วนตัว</a> · <a href="terms/">ข้อกำหนดการใช้งาน</a> · <a href="contact/">ติดต่อ / ลบบัญชี</a></div>
+  <div class="head reveal"><div class="eyebrow">Privacy</div><h2>ข้อมูลของคุณกับน้อง ดูแลแบบตรงไปตรงมา</h2><p>สรุปจากนโยบายความเป็นส่วนตัวและฉลากความเป็นส่วนตัวบน App Store</p></div>
+  <div class="priv">
+    <div class="tile reveal"><b>📦 เก็บเท่าที่ใช้งาน</b>ชื่อ อีเมล ข้อมูลและบันทึกของน้อง รูป แชต ตำแหน่ง (เมื่ออนุญาต) ข้อมูลการใช้งาน — ไม่ใช้ติดตามข้ามแอปหรือทำโฆษณา</div>
+    <div class="tile reveal"><b>🤖 AI ภายนอก ต้องขออนุญาตก่อน</b>Agent การ์ดการ์ตูน AI และการอ่านใบเซอร์ ส่งข้อมูลไป OpenRouter (สหรัฐฯ) ที่ใช้โมเดล Google Gemini — แอปถามก่อนครั้งแรก ปิดได้ที่หน้าบัญชี</div>
+    <div class="tile reveal"><b>📱 แชตธรรมดาอยู่ในเครื่อง</b>คำตอบคำนวณบนมือถือ ไม่ส่งไป AI ภายนอก · ใช้แชตปรับปรุงผู้ช่วยเฉพาะเมื่อคุณเปิดสวิตช์ยินยอม</div>
+    <div class="tile reveal"><b>🗑️ ลบบัญชีได้เอง</b>ยืนยันด้วยรหัสผ่าน ปิดบัญชีทันที เก็บไว้ 30 วันเผื่อเปลี่ยนใจ แล้วลบถาวร</div>
+    <div class="tile reveal"><b>🛡️ เห็นเฉพาะของตัวเอง</b>ข้อมูลเก็บบน Supabase (สิงคโปร์) · แต่ละบัญชีเข้าถึงได้เฉพาะข้อมูลของตัวเอง</div>
+    <div class="tile reveal"><b>📄 อ่านฉบับเต็ม</b><a href="privacy/">นโยบายความเป็นส่วนตัว</a> · <a href="terms/">ข้อกำหนดการใช้งาน</a> · <a href="contact/">ติดต่อ / ลบบัญชี</a></div>
   </div>
 </div></section>
 
 <section class="block" id="faq"><div class="wrap">
-  <div class="eyebrow">FAQ</div>
-  <h2>คำถามพบบ่อย</h2>
-  <p class="sub">คำตอบชุดเดียวกับที่แชตในแอปใช้ตอบ</p>
-  <div id="faqlist"></div>
+  <div class="head center reveal"><div class="eyebrow">FAQ</div><h2>คำถามพบบ่อย</h2><p>คำตอบชุดเดียวกับคู่มือที่น้องพอว์ใช้ตอบในแอป</p></div>
+  <div class="faq" id="faqlist"></div>
 </div></section>
 
-<section class="block"><div class="wrap">
-  <div class="band"><img class="bandpet" src="assets/buddy-cat.webp" alt="" width="120" height="163"><div><h2>เริ่มบันทึกให้น้องวันนี้</h2><p>ดาวน์โหลดฟรีบน App Store · iPhone · ประเทศไทย</p></div><a class="btn" href="https://apps.apple.com/th/app/id6827011693">ดาวน์โหลดบน App Store</a></div>
+<section class="block" style="padding-top:20px"><div class="wrap">
+  <div class="band reveal"><h2>เริ่มบันทึกให้น้องวันนี้</h2><p>ดาวน์โหลดฟรี · iPhone · ประเทศไทย</p><a class="btn store" href="https://apps.apple.com/th/app/id6827011693"><span><small>ดาวน์โหลดฟรีบน</small>App Store</span></a><div class="parade" id="parade2"></div></div>
 </div></section>
 </main>
 
 <footer><div class="wrap">
-  <div>© 2026 Aris Khuntong (บุคคลธรรมดา) · PetCare AI 360<br>ติดต่อ <a href="mailto:presition01@gmail.com">presition01@gmail.com</a></div>
+  <div><a class="wm" href="#top" aria-label="PetCare AI 360"><img src="assets/icon-192.png" alt="" width="40" height="40"><span class="wm-text" aria-hidden="true"><span class="wm-pet"><span style="--i:0">P</span><span style="--i:1">e</span><span style="--i:2">t</span><span style="--i:3" class="c">C</span><span style="--i:4" class="c">a</span><span style="--i:5" class="c">r</span><span style="--i:6" class="c">e</span></span><span class="wm-ai"><span class="wm-badge">AI<i>360</i></span><span class="wm-spark">✦</span></span></span></a><div style="margin-top:10px">© 2026 Aris Khuntong (บุคคลธรรมดา) · ติดต่อ <a href="mailto:presition01@gmail.com">presition01@gmail.com</a></div></div>
   <nav aria-label="ลิงก์ท้ายเว็บ"><a href="privacy/">นโยบายความเป็นส่วนตัว</a><a href="terms/">ข้อกำหนดการใช้งาน</a><a href="contact/">ติดต่อ / ลบบัญชี</a></nav>
 </div></footer>
 
-<button class="ps-btn" id="psbtn" aria-expanded="false" aria-controls="ps">🛟 Paw Support</button>
+<div class="pagebuddy away" id="pagebuddy" aria-label="เพื่อนน้อง ลากย้ายได้"></div>
+<button class="ps-btn" id="psbtn" aria-expanded="false" aria-controls="ps"><img src="assets/paw-avatar.webp" alt="">Paw Support</button>
 <div class="ps" id="ps" role="dialog" aria-label="Paw Support">
-  <div class="head" style="display:flex;gap:10px;align-items:center"><img src="assets/paw-avatar.webp" alt="" width="36" height="36" style="border-radius:10px"><div><b>🛟 Paw Support</b><small>ตอบจากคู่มือในแอป · ไม่เจอคำตอบ ส่งอีเมลหาทีมงานได้</small></div></div>
+  <div class="h"><img src="assets/paw-avatar.webp" alt=""><div><b>🛟 Paw Support</b><small>ตอบจากคู่มือในแอป · ไม่เจอคำตอบ ส่งอีเมลหาทีมงานได้</small></div></div>
   <div class="body" id="psbody"></div>
-  <div class="foot"><a class="btn dark small" id="psmail" href="mailto:presition01@gmail.com">✉️ ส่งอีเมลหาทีมงาน</a></div>
+  <div class="foot"><a class="btn store small" id="psmail" href="mailto:presition01@gmail.com">✉️ ส่งอีเมลหาทีมงาน</a></div>
 </div>
 
 <script>
-window.PC = {"site":{"baseUrl":"https://presition09.github.io/petcare360-legal/","appStoreUrl":"https://apps.apple.com/th/app/id6827011693","contact":"presition01@gmail.com","legalBase":"./"},"answers":[{"id":"meds","q":"ยาที่ต้องกินวันนี้","a":"ยาของน้องNova (ตามที่บันทึกไว้):\n• วิตามินบำรุงขน — 1 เม็ด · คงเหลือ 59\n\n(ขนาดยาที่แสดงคือค่าที่เจ้าของบันทึก ระบบไม่ได้ตรวจสอบคำสั่งสัตวแพทย์ ถ้าจะเปลี่ยนขนาดหรือหยุดยา ต้องถามสัตวแพทย์ก่อนนะคะ)","kind":"records","intent":"records:medicine"},{"id":"weight","q":"น้ำหนักล่าสุดเท่าไหร่","a":"น้ำหนักน้องNova\n• ล่าสุด **3.1 กก.** (30 ต.ค. 2569)\n• เทียบกับ 2.8 กก. (23 ก.ย. 2569 · 37 วันก่อน) → เพิ่มขึ้น 0.3 กก. (10.7%)\n• แสดง 5 จาก 5 บันทึก\n\n⚠️ เปลี่ยนไปเกิน 10% ใน 37 วัน — ควรเอาตัวเลขชุดนี้ให้สัตวแพทย์ดูค่ะ หนูประเมินสาเหตุแทนไม่ได้","kind":"records","intent":"records:weight"},{"id":"choco","q":"น้องเผลอกินช็อกโกแลต ทำยังไงดี","a":"🚨 อาการหรือเหตุที่เล่าอาจเป็นเหตุฉุกเฉินค่ะ **ติดต่อสัตวแพทย์ฉุกเฉินหรือโรงพยาบาลสัตว์ และพาน้องไปทันที** หนูไม่วินิจฉัยหรือบอกวิธีรักษาผ่านแชทค่ะ\n\n📚 แหล่งอ้างอิง:\n• https://www.aspca.org/pet-care/aspca-poison-control/people-foods-avoid-feeding-your-pets","kind":"emergency","intent":"food:Chocolate"},{"id":"howto","q":"เพิ่มยายังไง","a":"เพิ่มยา–อาหารเสริม\n1. เลือกน้อง แล้วไป Home > เมนูลัด ยา-อาหารเสริม (หรือ ประวัติน้อง > เพิ่มบันทึก > ยา)\n2. แตะ เพิ่มยา/อาหารเสริม\n3. กรอก ชื่อยา/อาหารเสริม และ ขนาดยา ตามฉลากหรือคำสั่งสัตวแพทย์ แล้วเลือก ความถี่\n4. เวลากินยา ต้องเลือกอย่างน้อย 1 เวลา: แตะปุ่มเวลาที่มี หรือแตะ + เวลาอื่น เพื่อเลือกชั่วโมงใดก็ได้ นาทีละ 10 นาที\n5. ระยะเวลาให้ยา: กินต่อเนื่อง · 7 วัน · 14 วัน · 30 วัน หรือ กำหนดวันจบเอง (เลือกวันสุดท้ายจากปฏิทิน)\n6. จำนวนยาที่มี ไม่บังคับ เว้นว่าง = แอปไม่นับจำนวน ถ้าใส่ตัวเลข แอปจะลดลงครั้งละ 1 ทุกครั้งที่บันทึกว่าให้แล้ว\n7. กดบันทึก แล้วดูในแท็บ ยาวันนี้ · กราฟและประวัติ · สต็อก\n\nแอปไม่เลือกยาหรือกำหนดขนาดยาให้ ขนาดยาและการเปลี่ยนยาให้ทำตามสัตวแพทย์ค่ะ\n\nถ้าบอกว่าติดอยู่หน้าจอไหน หนูจะบอกขั้นถัดไปให้ได้ค่ะ","kind":"app_info","intent":"app_help:medicine"}],"vaccines":{"dog":[{"name":"วัคซีนรวม 5-in-1 (DHPPL)","protects":"ไข้หัด · ตับอักเสบ · พาร์โว · พาราอินฟลูเอนซา · เลปโต","category":"core","legal":false,"firstMonths":2,"series":"3 เข็ม: อายุ 8 / 12 / 16 สัปดาห์","boosterMonths":12,"bloodTest":false,"note":"เลปโต (ตัว L) ระบาดในไทย ต้องกระตุ้นทุกปี"},{"name":"พิษสุนัขบ้า (Rabies)","protects":"โรคพิษสุนัขบ้า (ติดคนได้ เสียชีวิตเกือบ 100%)","category":"core","legal":true,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"กฎหมายไทย (พ.ร.บ. 2535) บังคับฉีด + กระตุ้นทุกปี"},{"name":"หลอดลมอักเสบติดต่อ (Bordetella)","protects":"ไอในคอก (kennel cough) — สำหรับหมาที่ฝากเลี้ยง/ไปสนามหมา/อาบน้ำร้าน","category":"non-core","legal":false,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"แนะนำก่อนฝากเลี้ยงหรือเข้าสังคมหมา"}],"cat":[{"name":"วัคซีนรวม 3-in-1 (FVRCP)","protects":"ไข้หัดแมว (ลำไส้อักเสบ) · หวัดแมว (เฮอร์ปีส์) · แคลิซี (แผลในปาก)","category":"core","legal":false,"firstMonths":2,"series":"3 เข็ม: อายุ 8 / 12 / 16 สัปดาห์","boosterMonths":12,"bloodTest":false,"note":"แมวในบ้านก็ต้องฉีด · ลูกแมวครบ 3 เข็ม เข็มสุดท้าย ≥16 สัปดาห์"},{"name":"พิษสุนัขบ้า (Rabies)","protects":"โรคพิษสุนัขบ้า (แมวเป็นสัตว์ควบคุมตามกฎหมายไทยด้วย)","category":"core","legal":true,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"กฎหมายไทยครอบคลุมแมว — ฉีด + กระตุ้นทุกปี"},{"name":"ลิวคีเมียแมว (FeLV)","protects":"มะเร็งเม็ดเลือดขาว/ภูมิคุ้มกันจากไวรัส FeLV","category":"core","legal":false,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":true,"note":"แนะนำสำหรับลูกแมว/แมวออกนอกบ้าน · ⚠️ ต้องตรวจเลือดก่อนฉีด"},{"name":"คลามัยเดีย (Chlamydia)","protects":"เยื่อตาอักเสบจากเชื้อคลามัยเดีย","category":"non-core","legal":false,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"เฉพาะบ้านหลายแมวที่มีการติดเชื้อ"}]},"faq":[{"id":"app_overview","title":"เริ่มใช้ PetCare AI 360","body":"1. เพิ่มน้องที่หน้า Home แล้วเลือกน้องให้ถูกตัว\n2. ใช้ Health บันทึกน้ำหนัก อาหาร น้ำ เดิน และนอน\n3. เปิดประวัติน้อง (Records) เพื่อบันทึกวัคซีน ตรวจสุขภาพ ยา หรือนัดแพทย์\n4. ใช้ Chat ธรรมดาถามข้อมูลที่บันทึกหรือวิธีใช้แอปได้ฟรี\n5. ค้นหาสถานที่แล้วติดต่อร้านหรือคลินิกเอง\n\nแอปไม่วินิจฉัยโรค หากน้องมีอาการหรือความเสี่ยง ให้ติดต่อสัตวแพทย์ค่ะ"},{"id":"add_pet","title":"เพิ่มสัตว์เลี้ยง","body":"1. ไปหน้า Home แล้วแตะ + เพิ่มสัตว์เลี้ยง (ท้ายแถวรายชื่อน้อง)\n2. หน้า ข้อมูลพื้นฐาน: เลือกชนิดและกรอกชื่อน้อง ข้อมูลอื่นใส่เท่าที่มี แล้วแตะ ถัดไป →\n3. หน้า รายละเอียดเพิ่มเติม: ใส่วัคซีนล่าสุดหรือยาที่กำลังใช้ได้ (ไม่บังคับ) ถ้าใส่ยา ให้เลือกความถี่และเวลาให้ยาด้วย\n4. แตะ 🐾 เพิ่มน้อง แล้วตรวจว่าน้องใหม่ขึ้นในแถวรายชื่อ และเลือกน้องตัวนั้นก่อนบันทึกข้อมูลเพิ่ม\n\nเพิ่มได้ไม่จำกัดจำนวน ไม่หัก Paw Coin รูปและข้อมูลอื่นแก้ภายหลังได้ค่ะ"},{"id":"medicine","title":"เพิ่มยา–อาหารเสริม","body":"1. เลือกน้อง แล้วไป Home > เมนูลัด ยา-อาหารเสริม (หรือ ประวัติน้อง > เพิ่มบันทึก > ยา)\n2. แตะ เพิ่มยา/อาหารเสริม\n3. กรอก ชื่อยา/อาหารเสริม และ ขนาดยา ตามฉลากหรือคำสั่งสัตวแพทย์ แล้วเลือก ความถี่\n4. เวลากินยา ต้องเลือกอย่างน้อย 1 เวลา: แตะปุ่มเวลาที่มี หรือแตะ + เวลาอื่น เพื่อเลือกชั่วโมงใดก็ได้ นาทีละ 10 นาที\n5. ระยะเวลาให้ยา: กินต่อเนื่อง · 7 วัน · 14 วัน · 30 วัน หรือ กำหนดวันจบเอง (เลือกวันสุดท้ายจากปฏิทิน)\n6. จำนวนยาที่มี ไม่บังคับ เว้นว่าง = แอปไม่นับจำนวน ถ้าใส่ตัวเลข แอปจะลดลงครั้งละ 1 ทุกครั้งที่บันทึกว่าให้แล้ว\n7. กดบันทึก แล้วดูในแท็บ ยาวันนี้ · กราฟและประวัติ · สต็อก\n\nแอปไม่เลือกยาหรือกำหนดขนาดยาให้ ขนาดยาและการเปลี่ยนยาให้ทำตามสัตวแพทย์ค่ะ"},{"id":"vaccine","title":"บันทึกวัคซีน","body":"1. เลือกน้อง แล้วเปิด Home > ประวัติน้อง (Records)\n2. ใน เพิ่มบันทึก แตะ วัคซีน\n3. กรอกชื่อวัคซีน เลือกวันที่ฉีดจากปฏิทิน (ย้อนหลังได้ ไม่เกินวันนี้) และใส่คลินิกตามเอกสารจริง\n4. กดบันทึก แล้วตรวจในประวัติการบันทึก\n\nหรือเปิดหน้าโปรแกรมวัคซีน (Health > ภาพรวม > การ์ด 💉 หรือหน้าข้อมูลน้อง > วัคซีน) แล้วแตะ + บันทึกว่าฉีดแล้ว วันนัดและโปรแกรมวัคซีนให้สัตวแพทย์กำหนด แอปช่วยเก็บข้อมูลค่ะ"},{"id":"reminder_troubleshoot","title":"ทำไมไม่มีแจ้งเตือน (หรือยังเตือนอยู่)","body":"1. เปิด Home > ยา-อาหารเสริม แล้วดูกล่อง ยาที่ต้องแก้ ยาที่ยังไม่ได้ตั้งเวลา หรือใช้ความถี่ที่แอปตั้งเตือนไม่ได้ จะไม่มีแจ้งเตือน ให้แตะ แก้ไข แล้วเลือกเวลาและความถี่จากตัวเลือก\n2. ตรวจว่าวันนี้ยังอยู่ในช่วงคอร์ส ยาที่เลยวันสุดท้ายหรือกดหยุดยาแล้วจะไม่เตือน\n3. ที่ Home แตะรูปหรือชื่อบัญชี > การแจ้งเตือน เปิดสวิตช์ แจ้งเตือนยา/วัคซีน หรือ แจ้งเตือนนัดหมาย แตะ ตรวจสถานะแจ้งเตือน และตรวจสิทธิ์แจ้งเตือนของ PetCare ในการตั้งค่าเครื่อง\n4. Android: ถ้าขึ้นว่ายังไม่อนุญาตตั้งเตือนตามเวลา ให้แตะ เปิดตั้งค่า Android แล้วอนุญาต\n5. แอปตั้งคิวเตือนล่วงหน้าเป็นช่วง ๆ ควรเปิดแอปทุกไม่กี่วัน ถ้าไม่ได้เปิดนาน จะเหลือแจ้งเตือนสรุปวันละครั้งไม่เกิน 30 วัน และยารายเดือนที่รอบถัดไปห่างเกิน 30 วัน จะถูกตั้งเตือนเมื่อเปิดแอปครั้งถัดไป\n\nยาหมดแล้วยังเตือน: การเตือนเป็นไปตามตารางยา ไม่ได้ดูจำนวนยา ถ้าหมอสั่งหยุด ให้ไปแท็บ สต็อก แล้วแตะ หยุดยา ถ้ามียาเพิ่ม ให้แตะ แก้ไข แล้ว + เติม จำนวนเป็น 0 ก็ยังบันทึกว่าให้แล้วได้ค่ะ"},{"id":"chat_mode","title":"เลือกโหมดแชท","body":"1. เปิด AI Chat แล้วตรวจชื่อน้อง\n2. เลือก Chat ธรรมดา เพื่อถามข้อมูลที่บันทึกและวิธีใช้แอปได้ฟรี\n3. Agent เป็นอีกโหมดและแสดงค่าใช้ Paw Coin ก่อนส่ง\n4. ถ้าเล่าข้อมูล เช่น น้ำหนัก ยา วัคซีน หรือนัด ในโหมด Agent จะมีการ์ดให้ตรวจ แล้วแตะ ยืนยันบันทึก ก่อนบันทึกจริง (ยาต้องเลือกเวลาให้ยาในการ์ดก่อน) หรือบันทึกเองที่หน้าบันทึก แล้วตรวจประวัติหลังบันทึก\n\nChat ธรรมดาไม่แก้ข้อมูลให้ ไม่วินิจฉัยหรือกำหนดยา และไม่หัก Paw Coin ค่ะ"},{"id":"paw_coin","title":"ดู Paw Coin และรับเหรียญ","body":"1. แตะยอดเหรียญมุมขวาบนของหน้า Home เพื่อเปิด Paw Coin ของคุณ\n2. ดูยอด ได้รับทั้งหมด ใช้ไปทั้งหมด และแตะ ประวัติ เพื่อดูรายการ\n3. แตะ 📅 Check-in วันนี้ วันละครั้งเพื่อรับเหรียญ หรือรับเพิ่มจากการชวนเพื่อน\n4. เหรียญใช้กับ Agent (ค่าใช้ต่อข้อความแสดงที่ปุ่ม Agent) และการ์ตูน AI ในการ์ดน้อง\n\nตอนนี้ยังซื้อหรือเติม Paw Coin ด้วยเงินจริงในแอปไม่ได้ Chat ธรรมดาไม่หักเหรียญ และ Paw Coin แยกจากค่าสมาชิกค่ะ"},{"id":"nearby_vet","title":"ค้นหาสัตวแพทย์และสถานที่","body":"1. ไป Home > เมนูลัด คลินิก-โรงพยาบาล · ร้านอาบน้ำ-ตัดขน · โรงแรมสัตว์เลี้ยง หรือ ร้านอุปกรณ์สัตว์เลี้ยง (หรือปุ่ม + ในแท็บนัดหมาย)\n2. แตะ เปิด GPS เพื่อใช้ตำแหน่งปัจจุบัน หรือ เลือกเมือง และพื้นที่ที่ต้องการ\n3. เปิดรายการเพื่อดูรายละเอียด แผนที่ และเบอร์โทร\n4. ติดต่อสถานที่และตกลงคิวเอง\n\nผลค้นหาไม่ได้แปลว่าเป็นร้านคู่สัญญาหรือมีคิวว่าง แอปไม่รับชำระค่าจองร้านค่ะ"},{"id":"account_delete","title":"ลบบัญชี","body":"1. ที่ Home แตะรูปหรือชื่อบัญชี เลื่อนลงไปที่ ตั้งค่า แล้วแตะ 🗑️ ลบบัญชี\n2. อ่านผลกระทบ กรอก รหัสผ่าน (เหตุผลไม่บังคับ) แล้วแตะ ยืนยันและขอลบบัญชี ถ้าจำรหัสผ่านไม่ได้ ให้แตะ จำรหัสผ่านไม่ได้? ยืนยันทางอีเมลแทน แล้วกรอกรหัสตัวเลขจากอีเมล\n3. ระบบเก็บข้อมูลไว้ 30 วันแล้วจึงลบถาวร แชตที่เก็บในเครื่องนี้ถูกลบทันทีเมื่อยืนยัน\n4. ถ้าเปลี่ยนใจภายใน 30 วัน ให้เข้าสู่ระบบด้วยบัญชีเดิม แล้วแตะ กู้คืนบัญชี\n\nแชทนี้ไม่ได้ลบบัญชีให้ การลบบัญชีไม่ใช่การยกเลิกการต่ออายุสมาชิกในร้านค้า อย่าลบบัญชีเพื่อแก้ปัญหาเข้าสู่ระบบค่ะ"},{"id":"privacy","title":"อ่านนโยบายและข้อกำหนด","body":"ที่ Home แตะรูปหรือชื่อบัญชี แล้วเลือก ความเป็นส่วนตัว หรือ เงื่อนไขการใช้งาน เพื่ออ่านเอกสารที่แอปแสดง หากพบปัญหาให้แจ้งชื่อหน้าและข้อความผิดพลาด โดยไม่ส่งรหัสผ่าน OTP หรือลิงก์รีเซ็ต\n\nตรวจข้อมูลส่วนตัวก่อนแชร์การ์ดหรือภาพหน้าจอค่ะ"}],"shots":[{"src":"assets/03-home.webp","caption":"หน้าแรก — น้องทุกตัว เมนูลัด และช่วงทดลองใช้"},{"src":"assets/05-medicine.webp","caption":"ยาวันนี้ — ติ๊กให้ยาแล้ว จำนวนคงเหลือลดเอง"},{"src":"assets/04-weight.webp","caption":"น้ำหนัก — กราฟแนวโน้มและประวัติ"},{"src":"assets/06-chat.webp","caption":"แชตธรรมดา — ตอบจากบันทึกของน้อง ฟรี"},{"src":"assets/07-nearby.webp","caption":"คลินิกใกล้ตัว — ข้อมูลร้านจาก OpenStreetMap"},{"src":"assets/01-onboarding-1.webp","caption":"ดูแลน้องทุกตัว เก็บประวัติเป็นที่เดียว"},{"src":"assets/02-onboarding-2.webp","caption":"ค้นหาคลินิกและร้านใกล้คุณ"}],"builtOn":"2026-10-30"};
+window.PC = {"site":{"baseUrl":"https://presition09.github.io/petcare360-legal/","appStoreUrl":"https://apps.apple.com/th/app/id6827011693","contact":"presition01@gmail.com","legalBase":"./"},"answers":[{"id":"meds","q":"ยาที่ต้องกินวันนี้","a":"ยาของน้องNova (ตามที่บันทึกไว้):\n• วิตามินบำรุงขน — 1 เม็ด · คงเหลือ 59\n\n(ขนาดยาที่แสดงคือค่าที่เจ้าของบันทึก ระบบไม่ได้ตรวจสอบคำสั่งสัตวแพทย์ ถ้าจะเปลี่ยนขนาดหรือหยุดยา ต้องถามสัตวแพทย์ก่อนนะคะ)","kind":"records","intent":"records:medicine"},{"id":"weight","q":"น้ำหนักล่าสุดเท่าไหร่","a":"น้ำหนักน้องNova\n• ล่าสุด **3.1 กก.** (30 ต.ค. 2569)\n• เทียบกับ 2.8 กก. (23 ก.ย. 2569 · 37 วันก่อน) → เพิ่มขึ้น 0.3 กก. (10.7%)\n• แสดง 5 จาก 5 บันทึก\n\n⚠️ เปลี่ยนไปเกิน 10% ใน 37 วัน — ควรเอาตัวเลขชุดนี้ให้สัตวแพทย์ดูค่ะ หนูประเมินสาเหตุแทนไม่ได้","kind":"records","intent":"records:weight"},{"id":"choco","q":"น้องเผลอกินช็อกโกแลต ทำยังไงดี","a":"🚨 อาการหรือเหตุที่เล่าอาจเป็นเหตุฉุกเฉินค่ะ **ติดต่อสัตวแพทย์ฉุกเฉินหรือโรงพยาบาลสัตว์ และพาน้องไปทันที** หนูไม่วินิจฉัยหรือบอกวิธีรักษาผ่านแชทค่ะ\n\n📚 แหล่งอ้างอิง:\n• https://www.aspca.org/pet-care/aspca-poison-control/people-foods-avoid-feeding-your-pets","kind":"emergency","intent":"food:Chocolate"},{"id":"howto","q":"เพิ่มยายังไง","a":"เพิ่มยา–อาหารเสริม\n1. เลือกน้อง แล้วไป Home > เมนูลัด ยา-อาหารเสริม (หรือ ประวัติน้อง > เพิ่มบันทึก > ยา)\n2. แตะ เพิ่มยา/อาหารเสริม\n3. กรอก ชื่อยา/อาหารเสริม และ ขนาดยา ตามฉลากหรือคำสั่งสัตวแพทย์ แล้วเลือก ความถี่\n4. เวลากินยา ต้องเลือกอย่างน้อย 1 เวลา: แตะปุ่มเวลาที่มี หรือแตะ + เวลาอื่น เพื่อเลือกชั่วโมงใดก็ได้ นาทีละ 10 นาที\n5. ระยะเวลาให้ยา: กินต่อเนื่อง · 7 วัน · 14 วัน · 30 วัน หรือ กำหนดวันจบเอง (เลือกวันสุดท้ายจากปฏิทิน)\n6. จำนวนยาที่มี ไม่บังคับ เว้นว่าง = แอปไม่นับจำนวน ถ้าใส่ตัวเลข แอปจะลดลงครั้งละ 1 ทุกครั้งที่บันทึกว่าให้แล้ว\n7. กดบันทึก แล้วดูในแท็บ ยาวันนี้ · กราฟและประวัติ · สต็อก\n\nแอปไม่เลือกยาหรือกำหนดขนาดยาให้ ขนาดยาและการเปลี่ยนยาให้ทำตามสัตวแพทย์ค่ะ\n\nถ้าบอกว่าติดอยู่หน้าจอไหน หนูจะบอกขั้นถัดไปให้ได้ค่ะ","kind":"app_info","intent":"app_help:medicine"}],"vaccines":{"dog":[{"name":"วัคซีนรวม 5-in-1 (DHPPL)","protects":"ไข้หัด · ตับอักเสบ · พาร์โว · พาราอินฟลูเอนซา · เลปโต","category":"core","legal":false,"firstMonths":2,"series":"3 เข็ม: อายุ 8 / 12 / 16 สัปดาห์","boosterMonths":12,"bloodTest":false,"note":"เลปโต (ตัว L) ระบาดในไทย ต้องกระตุ้นทุกปี"},{"name":"พิษสุนัขบ้า (Rabies)","protects":"โรคพิษสุนัขบ้า (ติดคนได้ เสียชีวิตเกือบ 100%)","category":"core","legal":true,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"กฎหมายไทย (พ.ร.บ. 2535) บังคับฉีด + กระตุ้นทุกปี"},{"name":"หลอดลมอักเสบติดต่อ (Bordetella)","protects":"ไอในคอก (kennel cough) — สำหรับหมาที่ฝากเลี้ยง/ไปสนามหมา/อาบน้ำร้าน","category":"non-core","legal":false,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"แนะนำก่อนฝากเลี้ยงหรือเข้าสังคมหมา"}],"cat":[{"name":"วัคซีนรวม 3-in-1 (FVRCP)","protects":"ไข้หัดแมว (ลำไส้อักเสบ) · หวัดแมว (เฮอร์ปีส์) · แคลิซี (แผลในปาก)","category":"core","legal":false,"firstMonths":2,"series":"3 เข็ม: อายุ 8 / 12 / 16 สัปดาห์","boosterMonths":12,"bloodTest":false,"note":"แมวในบ้านก็ต้องฉีด · ลูกแมวครบ 3 เข็ม เข็มสุดท้าย ≥16 สัปดาห์"},{"name":"พิษสุนัขบ้า (Rabies)","protects":"โรคพิษสุนัขบ้า (แมวเป็นสัตว์ควบคุมตามกฎหมายไทยด้วย)","category":"core","legal":true,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"กฎหมายไทยครอบคลุมแมว — ฉีด + กระตุ้นทุกปี"},{"name":"ลิวคีเมียแมว (FeLV)","protects":"มะเร็งเม็ดเลือดขาว/ภูมิคุ้มกันจากไวรัส FeLV","category":"core","legal":false,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":true,"note":"แนะนำสำหรับลูกแมว/แมวออกนอกบ้าน · ⚠️ ต้องตรวจเลือดก่อนฉีด"},{"name":"คลามัยเดีย (Chlamydia)","protects":"เยื่อตาอักเสบจากเชื้อคลามัยเดีย","category":"non-core","legal":false,"firstMonths":2,"series":"","boosterMonths":12,"bloodTest":false,"note":"เฉพาะบ้านหลายแมวที่มีการติดเชื้อ"}]},"faq":[{"id":"app_overview","title":"เริ่มใช้ PetCare AI 360","body":"1. เพิ่มน้องที่หน้า Home แล้วเลือกน้องให้ถูกตัว\n2. ใช้ Health บันทึกน้ำหนัก อาหาร น้ำ เดิน และนอน\n3. เปิดประวัติน้อง (Records) เพื่อบันทึกวัคซีน ตรวจสุขภาพ ยา หรือนัดแพทย์\n4. ใช้ Chat ธรรมดาถามข้อมูลที่บันทึกหรือวิธีใช้แอปได้ฟรี\n5. ค้นหาสถานที่แล้วติดต่อร้านหรือคลินิกเอง\n\nแอปไม่วินิจฉัยโรค หากน้องมีอาการหรือความเสี่ยง ให้ติดต่อสัตวแพทย์ค่ะ"},{"id":"add_pet","title":"เพิ่มสัตว์เลี้ยง","body":"1. ไปหน้า Home แล้วแตะ + เพิ่มสัตว์เลี้ยง (ท้ายแถวรายชื่อน้อง)\n2. หน้า ข้อมูลพื้นฐาน: เลือกชนิดและกรอกชื่อน้อง ข้อมูลอื่นใส่เท่าที่มี แล้วแตะ ถัดไป →\n3. หน้า รายละเอียดเพิ่มเติม: ใส่วัคซีนล่าสุดหรือยาที่กำลังใช้ได้ (ไม่บังคับ) ถ้าใส่ยา ให้เลือกความถี่และเวลาให้ยาด้วย\n4. แตะ 🐾 เพิ่มน้อง แล้วตรวจว่าน้องใหม่ขึ้นในแถวรายชื่อ และเลือกน้องตัวนั้นก่อนบันทึกข้อมูลเพิ่ม\n\nเพิ่มได้ไม่จำกัดจำนวน ไม่หัก Paw Coin รูปและข้อมูลอื่นแก้ภายหลังได้ค่ะ"},{"id":"medicine","title":"เพิ่มยา–อาหารเสริม","body":"1. เลือกน้อง แล้วไป Home > เมนูลัด ยา-อาหารเสริม (หรือ ประวัติน้อง > เพิ่มบันทึก > ยา)\n2. แตะ เพิ่มยา/อาหารเสริม\n3. กรอก ชื่อยา/อาหารเสริม และ ขนาดยา ตามฉลากหรือคำสั่งสัตวแพทย์ แล้วเลือก ความถี่\n4. เวลากินยา ต้องเลือกอย่างน้อย 1 เวลา: แตะปุ่มเวลาที่มี หรือแตะ + เวลาอื่น เพื่อเลือกชั่วโมงใดก็ได้ นาทีละ 10 นาที\n5. ระยะเวลาให้ยา: กินต่อเนื่อง · 7 วัน · 14 วัน · 30 วัน หรือ กำหนดวันจบเอง (เลือกวันสุดท้ายจากปฏิทิน)\n6. จำนวนยาที่มี ไม่บังคับ เว้นว่าง = แอปไม่นับจำนวน ถ้าใส่ตัวเลข แอปจะลดลงครั้งละ 1 ทุกครั้งที่บันทึกว่าให้แล้ว\n7. กดบันทึก แล้วดูในแท็บ ยาวันนี้ · กราฟและประวัติ · สต็อก\n\nแอปไม่เลือกยาหรือกำหนดขนาดยาให้ ขนาดยาและการเปลี่ยนยาให้ทำตามสัตวแพทย์ค่ะ"},{"id":"vaccine","title":"บันทึกวัคซีน","body":"1. เลือกน้อง แล้วเปิด Home > ประวัติน้อง (Records)\n2. ใน เพิ่มบันทึก แตะ วัคซีน\n3. กรอกชื่อวัคซีน เลือกวันที่ฉีดจากปฏิทิน (ย้อนหลังได้ ไม่เกินวันนี้) และใส่คลินิกตามเอกสารจริง\n4. กดบันทึก แล้วตรวจในประวัติการบันทึก\n\nหรือเปิดหน้าโปรแกรมวัคซีน (Health > ภาพรวม > การ์ด 💉 หรือหน้าข้อมูลน้อง > วัคซีน) แล้วแตะ + บันทึกว่าฉีดแล้ว วันนัดและโปรแกรมวัคซีนให้สัตวแพทย์กำหนด แอปช่วยเก็บข้อมูลค่ะ"},{"id":"reminder_troubleshoot","title":"ทำไมไม่มีแจ้งเตือน (หรือยังเตือนอยู่)","body":"1. เปิด Home > ยา-อาหารเสริม แล้วดูกล่อง ยาที่ต้องแก้ ยาที่ยังไม่ได้ตั้งเวลา หรือใช้ความถี่ที่แอปตั้งเตือนไม่ได้ จะไม่มีแจ้งเตือน ให้แตะ แก้ไข แล้วเลือกเวลาและความถี่จากตัวเลือก\n2. ตรวจว่าวันนี้ยังอยู่ในช่วงคอร์ส ยาที่เลยวันสุดท้ายหรือกดหยุดยาแล้วจะไม่เตือน\n3. ที่ Home แตะรูปหรือชื่อบัญชี > การแจ้งเตือน เปิดสวิตช์ แจ้งเตือนยา/วัคซีน หรือ แจ้งเตือนนัดหมาย แตะ ตรวจสถานะแจ้งเตือน และตรวจสิทธิ์แจ้งเตือนของ PetCare ในการตั้งค่าเครื่อง\n4. Android: ถ้าขึ้นว่ายังไม่อนุญาตตั้งเตือนตามเวลา ให้แตะ เปิดตั้งค่า Android แล้วอนุญาต\n5. แอปตั้งคิวเตือนล่วงหน้าเป็นช่วง ๆ ควรเปิดแอปทุกไม่กี่วัน ถ้าไม่ได้เปิดนาน จะเหลือแจ้งเตือนสรุปวันละครั้งไม่เกิน 30 วัน และยารายเดือนที่รอบถัดไปห่างเกิน 30 วัน จะถูกตั้งเตือนเมื่อเปิดแอปครั้งถัดไป\n\nยาหมดแล้วยังเตือน: การเตือนเป็นไปตามตารางยา ไม่ได้ดูจำนวนยา ถ้าหมอสั่งหยุด ให้ไปแท็บ สต็อก แล้วแตะ หยุดยา ถ้ามียาเพิ่ม ให้แตะ แก้ไข แล้ว + เติม จำนวนเป็น 0 ก็ยังบันทึกว่าให้แล้วได้ค่ะ"},{"id":"chat_mode","title":"เลือกโหมดแชท","body":"1. เปิด AI Chat แล้วตรวจชื่อน้อง\n2. เลือก Chat ธรรมดา เพื่อถามข้อมูลที่บันทึกและวิธีใช้แอปได้ฟรี\n3. Agent เป็นอีกโหมดและแสดงค่าใช้ Paw Coin ก่อนส่ง\n4. ถ้าเล่าข้อมูล เช่น น้ำหนัก ยา วัคซีน หรือนัด ในโหมด Agent จะมีการ์ดให้ตรวจ แล้วแตะ ยืนยันบันทึก ก่อนบันทึกจริง (ยาต้องเลือกเวลาให้ยาในการ์ดก่อน) หรือบันทึกเองที่หน้าบันทึก แล้วตรวจประวัติหลังบันทึก\n\nChat ธรรมดาไม่แก้ข้อมูลให้ ไม่วินิจฉัยหรือกำหนดยา และไม่หัก Paw Coin ค่ะ"},{"id":"paw_coin","title":"ดู Paw Coin และรับเหรียญ","body":"1. แตะยอดเหรียญมุมขวาบนของหน้า Home เพื่อเปิด Paw Coin ของคุณ\n2. ดูยอด ได้รับทั้งหมด ใช้ไปทั้งหมด และแตะ ประวัติ เพื่อดูรายการ\n3. แตะ 📅 Check-in วันนี้ วันละครั้งเพื่อรับเหรียญ หรือรับเพิ่มจากการชวนเพื่อน\n4. เหรียญใช้กับ Agent (ค่าใช้ต่อข้อความแสดงที่ปุ่ม Agent) และการ์ตูน AI ในการ์ดน้อง\n\nตอนนี้ยังซื้อหรือเติม Paw Coin ด้วยเงินจริงในแอปไม่ได้ Chat ธรรมดาไม่หักเหรียญ และ Paw Coin แยกจากค่าสมาชิกค่ะ"},{"id":"nearby_vet","title":"ค้นหาสัตวแพทย์และสถานที่","body":"1. ไป Home > เมนูลัด คลินิก-โรงพยาบาล · ร้านอาบน้ำ-ตัดขน · โรงแรมสัตว์เลี้ยง หรือ ร้านอุปกรณ์สัตว์เลี้ยง (หรือปุ่ม + ในแท็บนัดหมาย)\n2. แตะ เปิด GPS เพื่อใช้ตำแหน่งปัจจุบัน หรือ เลือกเมือง และพื้นที่ที่ต้องการ\n3. เปิดรายการเพื่อดูรายละเอียด แผนที่ และเบอร์โทร\n4. ติดต่อสถานที่และตกลงคิวเอง\n\nผลค้นหาไม่ได้แปลว่าเป็นร้านคู่สัญญาหรือมีคิวว่าง แอปไม่รับชำระค่าจองร้านค่ะ"},{"id":"account_delete","title":"ลบบัญชี","body":"1. ที่ Home แตะรูปหรือชื่อบัญชี เลื่อนลงไปที่ ตั้งค่า แล้วแตะ 🗑️ ลบบัญชี\n2. อ่านผลกระทบ กรอก รหัสผ่าน (เหตุผลไม่บังคับ) แล้วแตะ ยืนยันและขอลบบัญชี ถ้าจำรหัสผ่านไม่ได้ ให้แตะ จำรหัสผ่านไม่ได้? ยืนยันทางอีเมลแทน แล้วกรอกรหัสตัวเลขจากอีเมล\n3. ระบบเก็บข้อมูลไว้ 30 วันแล้วจึงลบถาวร แชตที่เก็บในเครื่องนี้ถูกลบทันทีเมื่อยืนยัน\n4. ถ้าเปลี่ยนใจภายใน 30 วัน ให้เข้าสู่ระบบด้วยบัญชีเดิม แล้วแตะ กู้คืนบัญชี\n\nแชทนี้ไม่ได้ลบบัญชีให้ การลบบัญชีไม่ใช่การยกเลิกการต่ออายุสมาชิกในร้านค้า อย่าลบบัญชีเพื่อแก้ปัญหาเข้าสู่ระบบค่ะ"},{"id":"privacy","title":"อ่านนโยบายและข้อกำหนด","body":"ที่ Home แตะรูปหรือชื่อบัญชี แล้วเลือก ความเป็นส่วนตัว หรือ เงื่อนไขการใช้งาน เพื่ออ่านเอกสารที่แอปแสดง หากพบปัญหาให้แจ้งชื่อหน้าและข้อความผิดพลาด โดยไม่ส่งรหัสผ่าน OTP หรือลิงก์รีเซ็ต\n\nตรวจข้อมูลส่วนตัวก่อนแชร์การ์ดหรือภาพหน้าจอค่ะ"}],"shots":[{"src":"assets/03-home.webp","caption":"หน้าแรก — น้องทุกตัว เมนูลัด และช่วงทดลองใช้"},{"src":"assets/05-medicine.webp","caption":"ยาวันนี้ — ติ๊กให้ยาแล้ว จำนวนคงเหลือลดเอง"},{"src":"assets/04-weight.webp","caption":"น้ำหนัก — กราฟแนวโน้มและประวัติ"},{"src":"assets/06-chat.webp","caption":"แชตธรรมดา — ตอบจากบันทึกของน้อง ฟรี"},{"src":"assets/07-nearby.webp","caption":"คลินิกใกล้ตัว — ข้อมูลร้านจาก OpenStreetMap"},{"src":"assets/01-onboarding-1.webp","caption":"ดูแลน้องทุกตัว เก็บประวัติเป็นที่เดียว"},{"src":"assets/02-onboarding-2.webp","caption":"ค้นหาคลินิกและร้านใกล้คุณ"}],"buddies":[{"id":"dog01_golden","species":"dog","name":"โมจิ","breed":"โกลเด้น รีทรีฟเวอร์","cycleMs":5000,"hold":0.7,"frames":24,"fw":150,"fh":160},{"id":"dog02_pomeranian","species":"dog","name":"ปอม","breed":"ปอมเมอเรเนียน","cycleMs":4200,"hold":0.55,"frames":24,"fw":160,"fh":160},{"id":"dog03_shihtzu","species":"dog","name":"ชิสุ","breed":"ชิห์สุ","cycleMs":6000,"hold":0.8,"frames":24,"fw":150,"fh":160},{"id":"dog04_husky","species":"dog","name":"ฮัสกี้","breed":"ไซบีเรียน ฮัสกี้","cycleMs":3800,"hold":0.5,"frames":24,"fw":130,"fh":160},{"id":"cat01_scottishfold","species":"cat","name":"ลูน่า","breed":"สก็อตทิช โฟลด์","cycleMs":7000,"hold":0.45,"frames":24,"fw":142,"fh":160},{"id":"cat02_orange","species":"cat","name":"ส้ม","breed":"แมวส้ม","cycleMs":6000,"hold":0.5,"frames":32,"fw":132,"fh":160},{"id":"cat03_mainecoon","species":"cat","name":"เมนคูน","breed":"เมนคูน","cycleMs":7500,"hold":0.5,"frames":32,"fw":134,"fh":160},{"id":"cat04_persian","species":"cat","name":"เปอร์เซีย","breed":"เปอร์เซีย","cycleMs":8500,"hold":0.4,"frames":32,"fw":144,"fh":160},{"id":"cat05_siamese","species":"cat","name":"มะลิ","breed":"วิเชียรมาศ","cycleMs":6800,"hold":0.7,"frames":24,"fw":111,"fh":160},{"id":"cat06_british","species":"cat","name":"เมฆ","breed":"บริติช ชอร์ตแฮร์","cycleMs":5000,"hold":0,"frames":32,"fw":128,"fh":160},{"id":"cat07_tuxedo","species":"cat","name":"โอรีโอ","breed":"แมวดำขาว","cycleMs":6500,"hold":0.7,"frames":24,"fw":112,"fh":160},{"id":"cat08_calico","species":"cat","name":"คุกกี้","breed":"แมวสามสี","cycleMs":6200,"hold":0.7,"frames":24,"fw":119,"fh":160},{"id":"dog05_corgi","species":"dog","name":"บัตเตอร์","breed":"คอร์กี้","cycleMs":4600,"hold":0.7,"frames":21,"fw":104,"fh":160},{"id":"dog06_beagle","species":"dog","name":"บิสกิต","breed":"บีเกิล","cycleMs":4400,"hold":0.7,"frames":24,"fw":134,"fh":160},{"id":"dog07_poodle","species":"dog","name":"ทอฟฟี่","breed":"พุดเดิล","cycleMs":5200,"hold":0.7,"frames":24,"fw":132,"fh":160},{"id":"dog08_dachshund","species":"dog","name":"โกโก้","breed":"ดัชชุนด์","cycleMs":5700,"hold":0.7,"frames":23,"fw":136,"fh":160},{"id":"dog09_labrador","species":"dog","name":"ลาเต้","breed":"ลาบราดอร์ รีทรีฟเวอร์","cycleMs":4700,"hold":0.65,"frames":23,"fw":136,"fh":160},{"id":"dog10_shiba","species":"dog","name":"ยูซุ","breed":"ชิบะ อินุ","cycleMs":5200,"hold":0.7,"frames":24,"fw":134,"fh":160},{"id":"dog11_samoyed","species":"dog","name":"ปุยเมฆ","breed":"ซามอยด์","cycleMs":4400,"hold":0.6,"frames":24,"fw":122,"fh":160},{"id":"dog12_frenchbulldog","species":"dog","name":"ตังเม","breed":"เฟรนช์ บูลด็อก","cycleMs":5500,"hold":0.72,"frames":24,"fw":99,"fh":160},{"id":"dog13_chihuahua","species":"dog","name":"พริกไทย","breed":"ชิวาวา","cycleMs":4100,"hold":0.55,"frames":24,"fw":103,"fh":160},{"id":"dog14_bordercollie","species":"dog","name":"แพนด้า","breed":"บอร์เดอร์ คอลลี่","cycleMs":4000,"hold":0.52,"frames":24,"fw":112,"fh":160},{"id":"dog15_dalmatian","species":"dog","name":"ดอตตี้","breed":"ดัลเมเชียน","cycleMs":4500,"hold":0.6,"frames":24,"fw":126,"fh":160},{"id":"dog16_schnauzer","species":"dog","name":"พริ้ม","breed":"ชเนาเซอร์","cycleMs":5600,"hold":0.7,"frames":24,"fw":112,"fh":160},{"id":"dog17_yorkshire","species":"dog","name":"ริบบิ้น","breed":"ยอร์กเชียร์ เทอร์เรีย","cycleMs":4800,"hold":0.62,"frames":24,"fw":104,"fh":160},{"id":"dog18_maltese","species":"dog","name":"นมสด","breed":"มอลทีส","cycleMs":5900,"hold":0.75,"frames":24,"fw":134,"fh":160},{"id":"dog19_cavalier","species":"dog","name":"เชอร์รี่","breed":"คาวาเลียร์ คิง ชาลส์ สแปเนียล","cycleMs":6100,"hold":0.76,"frames":24,"fw":139,"fh":160},{"id":"dog20_thairidgeback","species":"dog","name":"ทองแดง","breed":"ไทยหลังอาน","cycleMs":4300,"hold":0.58,"frames":16,"fw":92,"fh":160},{"id":"dog21_thaimixed","species":"dog","name":"เจ้าบ้าน","breed":"หมาไทยพันธุ์ผสม","cycleMs":4900,"hold":0.65,"frames":24,"fw":114,"fh":160},{"id":"cat09_ragdoll","species":"cat","name":"ฟ้าใส","breed":"แร็กดอลล์","cycleMs":7600,"hold":0.78,"frames":24,"fw":129,"fh":160},{"id":"cat10_bengal","species":"cat","name":"เสือดาว","breed":"เบงกอล","cycleMs":4200,"hold":0.55,"frames":24,"fw":122,"fh":160},{"id":"cat11_sphynx","species":"cat","name":"โมจิชมพู","breed":"สฟิงซ์","cycleMs":5800,"hold":0.72,"frames":24,"fw":102,"fh":160},{"id":"cat12_russianblue","species":"cat","name":"หมอก","breed":"รัสเซียนบลู","cycleMs":7200,"hold":0.8,"frames":24,"fw":115,"fh":160},{"id":"cat13_abyssinian","species":"cat","name":"อบเชย","breed":"อะบิสซิเนียน","cycleMs":4500,"hold":0.58,"frames":24,"fw":114,"fh":160},{"id":"cat14_turkishangora","species":"cat","name":"หิมะ","breed":"เตอร์กิช แองโกรา","cycleMs":7300,"hold":0.8,"frames":24,"fw":122,"fh":160},{"id":"cat15_americanshorthair","species":"cat","name":"ซิลเวอร์","breed":"อเมริกัน ชอร์ตแฮร์","cycleMs":6100,"hold":0.7,"frames":24,"fw":118,"fh":160},{"id":"cat16_burmese","species":"cat","name":"โกโก้","breed":"เบอร์มีส","cycleMs":5400,"hold":0.66,"frames":24,"fw":120,"fh":160},{"id":"cat17_norwegian","species":"cat","name":"ฟยอร์ด","breed":"นอร์วีเจียน ฟอเรสต์","cycleMs":7800,"hold":0.82,"frames":24,"fw":126,"fh":160},{"id":"cat18_devonrex","species":"cat","name":"หยิกหยอย","breed":"เดวอน เร็กซ์","cycleMs":4700,"hold":0.6,"frames":24,"fw":122,"fh":160},{"id":"cat19_birman","species":"cat","name":"ไพลิน","breed":"เบอร์แมน","cycleMs":7000,"hold":0.76,"frames":24,"fw":126,"fh":160},{"id":"cat20_siberian","species":"cat","name":"สน","breed":"ไซบีเรียน","cycleMs":6800,"hold":0.74,"frames":24,"fw":134,"fh":160}],"defaultBuddy":{"dog":"dog01_golden","cat":"cat01_scottishfold"},"builtOn":"2026-10-30"};
 (() => {
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/(https:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
   const TH_M = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
   const thDate = (d) => `${d.getDate()} ${TH_M[d.getMonth()]} ${d.getFullYear() + 543}`;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const dayOff = (n) => new Date(today.getFullYear(), today.getMonth(), today.getDate() + n);
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const B = Object.fromEntries(PC.buddies.map((b) => [b.id, b]));
 
-  // rotating word
-  const words = ['น้องหมา', 'น้องแมว', 'ทุกตัวในบ้าน'];
-  let wi = 0;
-  if (!reduce) setInterval(() => { wi = (wi + 1) % words.length; $('rot').textContent = words[wi]; }, 2200);
-
-  // hero chat — real Free Chat answers generated at build time
-  const TRACE = {
-    meds: ['อ่านบันทึกยาของ Nova', 'ตอบจากข้อมูลที่บันทึก', 'ไม่ใช้เหรียญ'],
-    weight: ['อ่านน้ำหนัก 5 ครั้ง', 'เทียบแนวโน้ม', 'เกิน 10% → แนะนำให้สัตวแพทย์ดู'],
-    choco: ['จับคำว่าฉุกเฉิน', 'ไม่วินิจฉัย', 'บอกให้พาไปพบสัตวแพทย์'],
-    howto: ['คู่มือวิธีใช้แอป', 'ขั้นตอนตามหน้าจอจริง'],
-  };
-  const chips = $('qchips');
-  PC.answers.forEach((a, i) => {
-    const b = document.createElement('button');
-    b.className = 'chip'; b.textContent = a.q; b.setAttribute('aria-pressed', 'false');
-    b.onclick = () => ask(i);
-    chips.appendChild(b);
-  });
-  let timer;
-  function ask(i) {
-    const a = PC.answers[i];
-    [...chips.children].forEach((c, j) => c.setAttribute('aria-pressed', String(i === j)));
-    const t = $('thread');
-    t.innerHTML = `<div class="msg me">${esc(a.q)}</div>`;
-    const bot = document.createElement('div');
-    bot.className = 'msg bot' + (a.kind === 'emergency' ? ' alert' : '');
-    t.appendChild(bot);
-    $('trace').innerHTML = (TRACE[a.id] || []).map((x, k) => `<span class="${k === 0 ? 'on' : ''}">${esc(x)}</span>`).join('<span class="arr">→</span>');
-    clearInterval(timer);
-    if (reduce) { bot.innerHTML = rich(a.a); return; }
-    let n = 0;
-    timer = setInterval(() => { n += 6; bot.innerHTML = rich(a.a.slice(0, n)); if (n >= a.a.length) clearInterval(timer); }, 16);
+  // ═══ Buddy engine — same frames + timing as components/CompanionBuddy.tsx (ping-pong · hold at ends · gentle bob) ═══
+  const live = new Set();
+  function makeSprite(host, id, height) {
+    const b = B[id];
+    const el = document.createElement('div');
+    el.className = 'sprite';
+    const scale = height / b.fh, w = Math.round(b.fw * scale);
+    Object.assign(el.style, { width: w + 'px', height: height + 'px', backgroundImage: `url(assets/buddies/${id}.webp)`, backgroundSize: `${w * b.frames}px ${height}px` });
+    host.replaceChildren(el);
+    const s = { el, b, w, t0: performance.now() + Math.random() * 3000 };
+    live.add(s);
+    el.addEventListener('click', () => { el.classList.remove('bounce'); void el.offsetWidth; el.classList.add('bounce'); });
+    return el;
   }
-  ask(0);
+  function tick(now) {
+    for (const s of live) {
+      if (!s.el.isConnected) { live.delete(s); continue; }
+      const { b } = s, half = b.cycleMs / 2, move = half * (1 - b.hold);
+      const t = ((now - s.t0) % b.cycleMs + b.cycleMs) % b.cycleMs, inHalf = t % half, dir = t < half ? 1 : -1;
+      let p = Math.min(1, inHalf / Math.max(1, move));
+      p = 0.5 - Math.cos(p * Math.PI) / 2;
+      const f = Math.round((dir === 1 ? p : 1 - p) * (b.frames - 1));
+      s.el.style.backgroundPosition = `${-f * s.w}px 0`;
+      s.el.style.translate = `0 ${(-Math.sin((now - s.t0) / b.cycleMs * Math.PI * 2) * 3).toFixed(2)}px`;
+    }
+    requestAnimationFrame(tick);
+  }
+  if (!reduce) requestAnimationFrame(tick);
+  function draggable(el, bounds) {
+    let sx = null, sy, ox, oy, moved;
+    el.addEventListener('pointerdown', (e) => { sx = e.clientX; sy = e.clientY; const r = el.getBoundingClientRect(); ox = r.left; oy = r.top; moved = false; el.setPointerCapture(e.pointerId); el.style.cursor = 'grabbing'; });
+    el.addEventListener('pointermove', (e) => {
+      if (sx == null) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
+      if (!moved) return;
+      const box = bounds ? bounds.getBoundingClientRect() : { left: 0, top: 0, right: innerWidth, bottom: innerHeight };
+      const r = el.getBoundingClientRect();
+      const x = Math.min(box.right - r.width, Math.max(box.left, ox + dx)), y = Math.min(box.bottom - r.height, Math.max(box.top, oy + dy));
+      el.style.left = (x - box.left) + 'px'; el.style.top = (y - box.top) + 'px'; el.style.bottom = el.style.right = 'auto';
+    });
+    const end = () => { sx = null; el.style.cursor = 'grab'; };
+    el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+    el.addEventListener('click', (e) => { if (moved) e.stopPropagation(); }, true);
+  }
 
-  // marquee
-  const tags = ['ทะเบียนน้องหลายตัว', 'วัคซีน + เข็มถัดไป', 'ยา + จำนวนคงเหลือ', 'กราฟน้ำหนัก', 'แจ้งเตือนในเครื่อง', 'ลงบันทึกย้อนหลัง', 'แชตธรรมดาฟรี', 'ไม่วินิจฉัยโรค', 'คลินิกใกล้ตัว', 'ลบบัญชีได้เอง'];
-  $('track').innerHTML = [...tags, ...tags].map((t) => `<span>${t}</span>`).join('');
+  // ═══ Mini app state (sample data · remembered in this browser) ═══
+  const KEY = 'petcare-web-demo-v1';
+  const fresh = () => ({
+    coin: 150, sel: 'nova',
+    pets: [
+      { id: 'nova', name: 'Nova', species: 'cat', breed: 'American Shorthair', age: '1 ปี', buddy: PC.defaultBuddy.cat },
+      { id: 'mango', name: 'Mango', species: 'dog', breed: 'Golden Retriever', age: '3 ปี', buddy: PC.defaultBuddy.dog },
+    ],
+    meds: [
+      { id: 'm1', pet: 'nova', name: 'วิตามินบำรุงขน', dose: '1 เม็ด', times: ['08:00', '20:00'], given: {}, stock: 60 },
+      { id: 'm2', pet: 'mango', name: 'ยาถ่ายพยาธิ', dose: '1 เม็ด', times: ['09:00'], given: {}, stock: 4 },
+    ],
+    recs: [
+      ...[[-51, 2.6], [-37, 2.8], [-23, 2.9], [-9, 3.0], [0, 3.1]].map(([d, w], i) => ({ id: 'w' + i, pet: 'nova', type: 'weight', d, v: w })),
+      ...[[-60, 28.0], [-30, 28.4], [-2, 28.6]].map(([d, w], i) => ({ id: 'g' + i, pet: 'mango', type: 'weight', d, v: w })),
+      { id: 'v1', pet: 'nova', type: 'vaccine', d: -62, v: 'วัคซีนรวม 3-in-1 (FVRCP)' },
+      { id: 'c1', pet: 'nova', type: 'vet', d: -20, v: 'ตรวจสุขภาพประจำปี' },
+      { id: 'v2', pet: 'mango', type: 'vaccine', d: -120, v: 'พิษสุนัขบ้า (Rabies)' },
+    ],
+    appts: [],
+  });
+  let S;
+  try { S = JSON.parse(localStorage.getItem(KEY)) || fresh(); } catch { S = fresh(); }
+  if (!S.pets?.length || !S.pets.every((p) => B[p.buddy])) S = fresh();
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch {} };
+  const pet = () => S.pets.find((p) => p.id === S.sel) || S.pets[0];
+  const weights = (id) => S.recs.filter((r) => r.pet === id && r.type === 'weight').sort((a, b) => a.d - b.d);
+  const lastW = (id) => weights(id).slice(-1)[0];
+  let tab = 'home';
 
-  // statement lights up on scroll
-  const st = $('statement');
-  const hl = new Set(['มือถือ', 'ตรงเวลา']);
-  st.innerHTML = st.textContent.split(' ').map((w) => `<span class="w${hl.has(w) ? ' t' : ''}">${w}</span>`).join(' ');
-  const ws = [...st.querySelectorAll('.w')];
-  const light = () => {
-    const r = st.getBoundingClientRect();
-    const p = Math.min(1, Math.max(0, (innerHeight * 0.85 - r.top) / (r.height + innerHeight * 0.35)));
-    ws.forEach((w, k) => w.classList.toggle('lit', reduce || k < Math.round(p * ws.length)));
-  };
-  addEventListener('scroll', light, { passive: true }); light();
+  function toast(t) { const el = $('toast'); el.textContent = t; el.classList.add('show'); clearTimeout(toast.h); toast.h = setTimeout(() => el.classList.remove('show'), 2200); }
+  function renderPets() {
+    $('pets').innerHTML = S.pets.map((p) => {
+      const w = lastW(p.id);
+      return `<button class="pet" data-pet="${p.id}" aria-pressed="${p.id === S.sel}"><span class="av" style="background-image:url(assets/buddies/${p.buddy}-thumb.webp)"></span><span><b>${esc(p.name)}</b><small>${esc(p.age)}${w ? ' · ' + w.v + ' kg' : ''}</small></span></button>`;
+    }).join('') + '<button class="pet add" data-go="addpet">＋ เพิ่มสัตว์เลี้ยง</button>';
+  }
+  function nextDose() {
+    const now = new Date(); const hm = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    const list = S.meds.filter((m) => m.pet === S.sel).flatMap((m) => m.times.filter((t) => !m.given[t]).map((t) => ({ m, t })));
+    return list.sort((a, b) => (a.t < hm) - (b.t < hm) || a.t.localeCompare(b.t))[0];
+  }
+  function sparkline(id) {
+    const w = weights(id); if (w.length < 2) return '<p class="sample">บันทึกอย่างน้อย 2 ครั้งเพื่อดูกราฟ</p>';
+    const W = 280, H = 70, pad = 8, lo = Math.min(...w.map((x) => x.v)) - 0.1, hi = Math.max(...w.map((x) => x.v)) + 0.1, d0 = w[0].d, d1 = w[w.length - 1].d;
+    const pts = w.map((x) => [pad + (W - 2 * pad) * (x.d - d0) / Math.max(1, d1 - d0), H - pad - (H - 2 * pad) * (x.v - lo) / (hi - lo)]);
+    const line = pts.map((p, i) => `${i ? 'L' : 'M'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+    return `<svg class="spark" viewBox="0 0 ${W} ${H}"><defs><linearGradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2EC4B6" stop-opacity=".35"/><stop offset="1" stop-color="#2EC4B6" stop-opacity="0"/></linearGradient></defs><path d="${line} L${pts.at(-1)[0]},${H} L${pts[0][0]},${H} Z" fill="url(#sg)"/><path d="${line}" fill="none" stroke="#169A8E" stroke-width="2.5" stroke-linejoin="round"/>${pts.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="#fff" stroke="#169A8E" stroke-width="2"/>`).join('')}</svg>`;
+  }
+  const TH_D = ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.'];
+  const APPT_KIND = { vet: ['🏥', 'คลินิก / โรงพยาบาลสัตว์', 'คลินิก'], groom: ['✂️', 'อาบน้ำ-ตัดขน', 'อาบน้ำ-ตัดขน'], hotel: ['🏨', 'โรงแรมสัตว์เลี้ยง', 'โรงแรม'] };
+  const REC = { weight: ['⚖️', '#E9FAF8', 'น้ำหนัก'], vaccine: ['💉', '#FFEFEF', 'วัคซีน'], vet: ['🩺', '#EFEDFF', 'พบสัตวแพทย์'], food: ['🍚', '#FFF6DD', 'อาหาร'], appt: ['📅', '#FFF6DD', 'นัดหมาย'] };
+  function timeline(id, n) {
+    const list = S.recs.filter((r) => r.pet === id).concat(S.appts.filter((a) => a.pet === id)).sort((a, b) => b.d - a.d).slice(0, n);
+    if (!list.length) return '<p class="sample">ยังไม่มีบันทึก</p>';
+    return `<ul class="tl">${list.map((r) => { const [ic, bg, lab] = REC[r.type]; return `<li class="${r.fresh ? 'new' : ''}"><span class="ic" style="background:${bg}">${ic}</span><span><b>${lab}${r.type === 'weight' ? ' ' + r.v + ' กก.' : ''}</b>${r.type === 'weight' ? '' : esc(r.v) + ' · '}${thDate(dayOff(r.d))}</span></li>`; }).join('')}</ul>`;
+  }
+  function renderView() {
+    const p = pet(), v = $('view');
+    if (tab === 'home') {
+      const nd = nextDose(), w = lastW(p.id), appt = S.appts.filter((a) => a.pet === p.id && a.d >= 0).sort((a, b) => a.d - b.d)[0];
+      v.innerHTML = `<div class="pcard" style="background:linear-gradient(135deg,#E9FAF8,#fff)"><h5>วันนี้ของ ${esc(p.name)} ${p.species === 'dog' ? '🐶' : '🐱'}</h5>
+        <div class="row"><span>💊 ยารอบถัดไป</span><b>${nd ? esc(nd.m.name) + ' · ' + nd.t + ' น.' : 'ให้ครบแล้ว ✓'}</b></div>
+        <div class="row"><span>⚖️ น้ำหนักล่าสุด</span><b>${w ? w.v + ' กก.' : '—'}</b></div>
+        ${appt ? `<div class="row" data-tab="appts" style="cursor:pointer"><span>📅 นัดถัดไป</span><b>${(APPT_KIND[appt.kind] || [, , 'นัดหมาย'])[2]} · ${thDate(dayOff(appt.d))}</b></div>` : ''}</div>
+        <div class="qa"><button data-tab="health"><img src="assets/qa-records.webp" alt="">ประวัติน้อง</button><button data-tab="meds"><img src="assets/qa-medicine.webp" alt="">ยา–อาหารเสริม</button><button data-info="vet"><img src="assets/qa-vet.webp" alt="">คลินิก</button><button data-info="groom"><img src="assets/qa-grooming.webp" alt="">อาบน้ำตัดขน</button></div>
+        <button class="ring" data-go="notify">🔔 ลองดูแจ้งเตือนยา</button>
+        <div class="pcard"><h5>📋 บันทึกล่าสุด</h5>${timeline(p.id, 3)}</div>`;
+    } else if (tab === 'meds') {
+      const meds = S.meds.filter((m) => m.pet === p.id);
+      const done = meds.reduce((n, m) => n + m.times.filter((t) => m.given[t]).length, 0), all = meds.reduce((n, m) => n + m.times.length, 0);
+      v.innerHTML = `<button class="back" data-tab="home">‹ หน้าหลัก</button><div class="pcard"><h5>💊 ยาวันนี้ · ${thDate(today)}</h5><div class="row"><span>ให้แล้ว</span><b>${done}/${all} รอบ</b></div></div>
+        ${meds.map((m) => `<div class="pcard"><h5>💊 ${esc(m.name)}</h5><div class="row"><span class="muted">${esc(m.dose)} · คงเหลือ ${m.stock}</span></div>${m.times.map((t) => `<div class="row"><b>${t} น.</b><button class="tick${m.given[t] ? ' done' : ''}" data-tick="${m.id}|${t}">${m.given[t] ? '✓ ให้แล้ว' : '＋ ให้แล้ว'}</button></div>`).join('')}</div>`).join('') || '<div class="pcard"><p class="sample">ยังไม่มียา ลองเพิ่มดู</p></div>'}
+        <button class="addbtn" data-go="addmed">＋ เพิ่มยา–อาหารเสริม</button><button class="ring" data-go="notify">🔔 ลองแจ้งเตือน</button>`;
+    } else if (tab === 'health') {
+      const w = lastW(p.id);
+      v.innerHTML = `<div class="pcard"><h5>⚖️ น้ำหนัก ${w ? `<span style="margin-left:auto;font:800 18px var(--f-latin)">${w.v} kg</span>` : ''}</h5>${sparkline(p.id)}</div>
+        <button class="addbtn" data-go="record">＋ บันทึกประวัติ</button><div class="pcard"><h5>📋 ประวัติทั้งหมด</h5>${timeline(p.id, 20)}</div>`;
+    } else if (tab === 'chat') {
+      v.innerHTML = `<div class="pcard" style="display:flex;gap:10px;align-items:center"><img src="assets/paw-avatar.webp" alt="" style="width:36px;height:36px;border-radius:10px"><div><b style="font-family:var(--f-head)">น้องพอว์ 🐾</b><div class="sample">แชตธรรมดา · ดูแลน้อง ${esc(p.name)} · ฟรี</div></div></div><div id="pthread"></div><div style="display:flex;flex-wrap:wrap;gap:6px">${['ยาที่ต้องกินวันนี้', 'น้ำหนักล่าสุดเท่าไหร่'].map((q) => `<button class="chip" style="font-size:12px;padding:6px 10px" data-ask="${q}">${q}</button>`).join('')}<a class="chip" style="font-size:12px;padding:6px 10px;text-decoration:none" href="#ai">คุยต่อแบบเต็มจอ ↓</a></div>`;
+    } else if (tab === 'appts') {
+      const mine = S.appts.filter((a) => a.pet === p.id && a.d >= 0).sort((a, b) => a.d - b.d);
+      const week = Array.from({ length: 7 }, (_, i) => { const d = dayOff(i); return `<span class="day${i === 0 ? ' on' : ''}"><small>${TH_D[d.getDay()]}</small><b>${d.getDate()}</b>${mine.some((a) => a.d === i) ? '<i></i>' : ''}</span>`; }).join('');
+      v.innerHTML = `<div class="pcard"><h5>📅 นัดหมาย · ${TH_M[today.getMonth()]} ${today.getFullYear() + 543}</h5><div class="week">${week}</div></div>
+        ${mine.map((a) => `<div class="pcard appt"><span class="ic">${(APPT_KIND[a.kind] || ['📅'])[0]}</span><span><b>${esc(a.v)}</b><small>${thDate(dayOff(a.d))}${a.remind ? ` · เตือนล่วงหน้า ${a.remind} วัน` : ''}</small></span></div>`).join('') || `<div class="pcard"><p class="sample" style="margin:0">ยังไม่มีนัดของ ${esc(p.name)} ลองสร้างดู</p></div>`}
+        <button class="addbtn" data-go="addappt">＋ สร้างนัดใหม่</button>`;
+    } else if (tab === 'buddy') {
+      const b = B[p.buddy];
+      v.innerHTML = `<button class="back" data-tab="home">‹ หน้าหลัก</button><div class="pcard" style="text-align:center;background:linear-gradient(180deg,#F3EFFF,#fff)"><h5 style="justify-content:center">🐾 เพื่อนซี้ของ ${esc(p.name)}</h5><div id="bstage" style="height:150px;display:flex;align-items:flex-end;justify-content:center"></div><b style="font-family:var(--f-head);font-size:17px">${esc(b.name)}</b><div class="sample">${esc(b.breed)}</div></div>
+        <div class="pcard"><div class="row"><span>🎁 เลือกฟรีตอนเพิ่มน้อง</span><b>น้อง 1 ตัว · เพื่อนซี้ 1 ตัว</b></div><div class="row"><span>👆 ลากเพื่อนซี้บนจอ</span><b>วางตรงไหนก็ได้</b></div></div>
+        <button class="addbtn" data-go="addpet">＋ เพิ่มน้องอีกตัว · เลือกเพื่อนซี้ใหม่</button>`;
+      makeSprite($('bstage'), p.buddy, 140);
+    }
+    v.scrollTop = 0;
+  }
+  let shownBuddy = null;
+  function render() {
+    renderPets(); renderView();
+    $('coinN').textContent = S.coin;
+    [...$('tabbar').children].forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
+    const p = pet();
+    if (shownBuddy !== p.buddy) { makeSprite($('phonebuddy'), p.buddy, 92); shownBuddy = p.buddy; }
+    const nd = nextDose(), w = lastW(p.id);
+    $('f1t').textContent = nd ? `${p.name} · ${nd.t} น.` : `${p.name} · ให้ครบแล้ว`;
+    $('f2b').textContent = w ? `${w.v} กก.` : '—';
+    save();
+  }
+  const go = (t) => { tab = t; render(); };
 
-  // overview loop
-  const STEPS = [
-    ['1', 'บันทึก', 'น้อง · วัคซีน · ยา · น้ำหนัก', 'var(--teal)', 'เพิ่มน้องแต่ละตัว แล้วบันทึกวัคซีน ยา น้ำหนัก การพบสัตวแพทย์ อาหาร น้ำ เดิน นอน — ลงย้อนหลังได้', '#records'],
-    ['2', 'แจ้งเตือน', 'ยา · วัคซีน · นัดหมาย', 'var(--coral)', 'แอปตั้งแจ้งเตือนในเครื่องให้เองตามเวลาให้ยา วัคซีนที่ใกล้ถึงกำหนด และนัดหมาย ไม่ต้องจำเอง', '#care'],
-    ['3', 'ติ๊กว่าทำแล้ว', 'ให้ยาแล้ว · ฉีดแล้ว', '#E8A93A', 'ติ๊กในแอปเมื่อให้ยาแล้ว จำนวนยาคงเหลือลดเอง และการแจ้งเตือนของรอบนั้นที่ค้างอยู่หายไป', '#care'],
-    ['4', 'ดูแนวโน้ม', 'กราฟ · ถามน้องพอว์', 'var(--navy)', 'ดูกราฟน้ำหนักและประวัติ หรือถามน้องพอว์ในแชต — เปลี่ยนแปลงผิดปกติ แอปจะบอกให้ปรึกษาสัตวแพทย์ ↩ แล้ววนกลับไปบันทึกต่อ', '#paw'],
+  // bottom sheets
+  function openSheet(html, onSave) {
+    $('panel').innerHTML = html; $('sheet').classList.add('open');
+    $('panel').querySelectorAll('.seg').forEach((g) => g.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; if (!g.dataset.multi) g.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', 'false')); b.setAttribute('aria-pressed', String(g.dataset.multi ? b.getAttribute('aria-pressed') !== 'true' : true)); g.dispatchEvent(new Event('pick')); }));
+    $('panel').querySelector('.save').onclick = () => { if (onSave() !== false) closeSheet(); };
+  }
+  const closeSheet = () => $('sheet').classList.remove('open');
+  $('sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') closeSheet(); });
+  const picked = (sel) => [...$('panel').querySelectorAll(sel + ' [aria-pressed=true]')].map((b) => b.dataset.v);
+  function addPet() {
+    openSheet(`<h5>🐾 เพิ่มสัตว์เลี้ยง</h5><label for="pn">ชื่อน้อง</label><input id="pn" placeholder="เช่น ถั่วแดง" maxlength="16"><label>ชนิด</label><div class="seg" id="psp"><button data-v="dog" aria-pressed="true">🐶 หมา</button><button data-v="cat" aria-pressed="false">🐱 แมว</button></div><label>เพื่อนซี้ (เลือกฟรี 1 ตัว · ลอยบนจอ)</label><div class="mini-thumbs seg" id="pb"></div><label for="pa">อายุ</label><select id="pa"><option>2 เดือน</option><option>6 เดือน</option><option selected>1 ปี</option><option>3 ปี</option><option>7 ปี</option></select><button class="save">บันทึก</button>`, () => {
+      const sp = picked('#psp')[0], name = $('pn').value.trim() || (sp === 'cat' ? 'เหมียว' : 'ปุยฝ้าย');
+      const buddy = picked('#pb')[0] || PC.defaultBuddy[sp];
+      const id = 'p' + Date.now();
+      S.pets.push({ id, name, species: sp, breed: B[buddy].breed, age: $('pa').value, buddy });
+      S.sel = id; tab = 'home'; render(); toast(`เพิ่ม ${name} แล้ว 🎉`);
+    });
+    const fill = () => { const sp = picked('#psp')[0]; $('pb').innerHTML = PC.buddies.filter((b) => b.species === sp).map((b, i) => `<button data-v="${b.id}" aria-pressed="${i === 0}" title="${esc(b.name)}"><img src="assets/buddies/${b.id}-thumb.webp" alt="${esc(b.name)}"></button>`).join(''); };
+    $('psp').addEventListener('pick', fill); fill();
+  }
+  function addMed() {
+    const p = pet();
+    openSheet(`<h5>💊 เพิ่มยา–อาหารเสริม · ${esc(p.name)}</h5><label for="mn">ชื่อยา/อาหารเสริม</label><input id="mn" placeholder="เช่น น้ำมันปลา"><label for="md">ขนาดยา (ตามฉลากหรือสัตวแพทย์)</label><input id="md" value="1 เม็ด"><label>เวลาให้ยา (เลือกได้หลายเวลา)</label><div class="seg" id="mt" data-multi="1">${['07:00', '08:00', '12:00', '18:00', '20:00', '22:00'].map((t, i) => `<button data-v="${t}" aria-pressed="${i === 1}">${t}</button>`).join('')}</div><label for="ms">จำนวนที่มี (ไม่บังคับ)</label><input id="ms" inputmode="numeric" placeholder="เว้นว่าง = ไม่นับ"><button class="save">บันทึก</button>`, () => {
+      const times = picked('#mt').sort(); if (!times.length) { toast('เลือกเวลาอย่างน้อย 1 เวลา'); return false; }
+      const stock = parseInt($('ms').value, 10);
+      S.meds.push({ id: 'm' + Date.now(), pet: p.id, name: $('mn').value.trim() || 'น้ำมันปลา', dose: $('md').value.trim() || '1 เม็ด', times, given: {}, stock: Number.isFinite(stock) ? stock : '—' });
+      tab = 'meds'; render(); toast('ตั้งเตือนให้แล้ว ⏰');
+    });
+  }
+  function addRecord() {
+    const p = pet(), wNext = () => (Math.round(((lastW(p.id)?.v ?? 3) + 0.1) * 10) / 10).toFixed(1);
+    openSheet(`<h5>📋 บันทึกประวัติ · ${esc(p.name)}</h5><label>ประเภท</label><div class="seg" id="rt"><button data-v="weight" aria-pressed="true">⚖️ น้ำหนัก</button><button data-v="vaccine" aria-pressed="false">💉 วัคซีน</button><button data-v="vet" aria-pressed="false">🩺 พบสัตวแพทย์</button><button data-v="food" aria-pressed="false">🍚 อาหาร</button></div><label for="rv" id="rvl">น้ำหนัก (กก.)</label><input id="rv" inputmode="decimal" value="${wNext()}"><label for="rd">วันที่ (ลงย้อนหลังได้)</label><select id="rd"><option value="0">วันนี้ · ${thDate(today)}</option><option value="-1">เมื่อวาน · ${thDate(dayOff(-1))}</option><option value="-3">${thDate(dayOff(-3))}</option><option value="-7">${thDate(dayOff(-7))}</option></select><button class="save">บันทึก</button>`, () => {
+      const type = picked('#rt')[0], raw = $('rv').value.trim();
+      if (type === 'weight' && !(parseFloat(raw) > 0)) { toast('ใส่น้ำหนักเป็นตัวเลข'); return false; }
+      const d = +$('rd').value;
+      if (type === 'weight') S.recs = S.recs.filter((r) => !(r.pet === p.id && r.type === 'weight' && r.d === d));
+      S.recs.forEach((r) => (r.fresh = false));
+      S.recs.push({ id: 'r' + Date.now(), pet: p.id, type, d, v: type === 'weight' ? Math.round(parseFloat(raw) * 10) / 10 : raw || REC[type][2], fresh: true });
+      tab = 'health'; render(); toast('บันทึกแล้ว ✓');
+    });
+    const ph = { weight: ['น้ำหนัก (กก.)', ''], vaccine: ['ชื่อวัคซีน', 'เช่น วัคซีนรวม 5-in-1'], vet: ['เหตุผล/อาการ', 'เช่น ตรวจสุขภาพ'], food: ['อาหาร', 'เช่น อาหารเม็ด 40 กรัม'] };
+    $('rt').addEventListener('pick', () => { const t = picked('#rt')[0]; $('rvl').textContent = ph[t][0]; $('rv').value = t === 'weight' ? wNext() : ''; $('rv').placeholder = ph[t][1]; $('rv').inputMode = t === 'weight' ? 'decimal' : 'text'; });
+  }
+  function addAppt() {
+    const p = pet();
+    openSheet(`<h5>📅 สร้างนัดใหม่ · ${esc(p.name)}</h5><label>ประเภท</label><div class="seg" id="ak">${Object.entries(APPT_KIND).map(([k, [ic, , short]], i) => `<button data-v="${k}" aria-pressed="${i === 0}">${ic} ${short}</button>`).join('')}</div><label for="ad">วัน</label><select id="ad">${Array.from({ length: 14 }, (_, i) => `<option value="${i + 1}">${i === 0 ? 'พรุ่งนี้ · ' : ''}${thDate(dayOff(i + 1))}</option>`).join('')}</select><label>เวลา</label><div class="seg" id="at">${['09:00', '10:00', '13:00', '15:00', '17:00'].map((t, i) => `<button data-v="${t}" aria-pressed="${i === 1}">${t}</button>`).join('')}</div><label>เตือนล่วงหน้า (วัน)</label><div class="seg" id="ar">${[0, 1, 2, 3].map((n) => `<button data-v="${n}" aria-pressed="${n === 1}">${n ? n + ' วัน' : 'วันนัด'}</button>`).join('')}</div><label for="an">หมายเหตุนัด (ไม่บังคับ)</label><input id="an" placeholder="เช่น ฉีดวัคซีนเข็มกระตุ้น" maxlength="40"><button class="save">บันทึก</button>`, () => {
+      const kind = picked('#ak')[0], time = picked('#at')[0], note = $('an').value.trim();
+      S.appts.push({ id: 'a' + Date.now(), pet: p.id, type: 'appt', kind, d: +$('ad').value, remind: +picked('#ar')[0], v: `${APPT_KIND[kind][1]} · ${time}\u00a0น.${note ? ' · ' + note : ''}` });
+      tab = 'appts'; render(); toast('สร้างนัดแล้ว · แอปจะเตือนก่อนถึงวันนัด ⏰');
+    });
+  }
+  function notify() {
+    const p = pet(), nd = nextDose() || { m: S.meds.find((m) => m.pet === p.id) || { name: 'วิตามิน', dose: '1 เม็ด' }, t: '20:00' };
+    const n = $('notif');
+    n.innerHTML = `<img src="assets/icon-192.png" alt=""><span style="flex:1"><small><span>PETCARE AI 360</span><span>เดี๋ยวนี้</span></small><b>💊 ถึงเวลาให้ยา ${esc(p.name)}</b><p>${esc(nd.m.name)} ${esc(nd.m.dose || '')} · ${nd.t} น. — แตะเพื่อบันทึกว่าให้แล้ว</p></span>`;
+    n.classList.remove('show'); void n.offsetWidth; n.classList.add('show');
+    clearTimeout(notify.h); notify.h = setTimeout(() => n.classList.remove('show'), 4500);
+  }
+  $('notif').onclick = () => { $('notif').classList.remove('show'); go('meds'); };
+  function phoneAsk(q) {
+    const p = pet(), th = $('pthread'); if (!th) return;
+    let a;
+    const novaUntouched = p.id === 'nova' && weights('nova').length === 5 && lastW('nova').v === 3.1 && S.meds.filter((m) => m.pet === 'nova').length === 1;
+    if (novaUntouched) a = PC.answers.find((x) => x.q === q)?.a;
+    if (!a) {
+      if (q.startsWith('ยา')) { const meds = S.meds.filter((m) => m.pet === p.id); a = meds.length ? `ยาของน้อง${p.name} (ตามที่บันทึกไว้):\n${meds.map((m) => `• ${m.name} — ${m.dose} · คงเหลือ ${m.stock}`).join('\n')}\n\n(ขนาดยาที่แสดงคือค่าที่เจ้าของบันทึก ถ้าจะเปลี่ยนขนาดหรือหยุดยา ต้องถามสัตวแพทย์ก่อนนะคะ)` : `น้อง${p.name}ยังไม่มีบันทึกยาค่ะ`; }
+      else { const w = lastW(p.id); a = w ? `น้ำหนักน้อง${p.name}\n• ล่าสุด **${w.v} กก.** (${thDate(dayOff(w.d))})` : `ยังไม่มีบันทึกน้ำหนักของน้อง${p.name}ค่ะ`; }
+    }
+    th.innerHTML = `<div class="msg me">${esc(q)}</div><div class="msg bot">${rich(a)}</div>`;
+  }
+  function run(g) {
+    if (g === 'addpet') addPet(); else if (g === 'addmed') addMed(); else if (g === 'record') addRecord(); else if (g === 'addappt') addAppt();
+    else if (g === 'notify') notify(); else if (g === 'chat') go('chat');
+  }
+  $('screen').addEventListener('click', (e) => {
+    const t = e.target.closest('[data-tab],[data-go],[data-pet],[data-tick],[data-info],[data-ask]');
+    if (!t || $('panel').contains(t)) return;
+    if (t.dataset.tab) go(t.dataset.tab);
+    else if (t.dataset.pet) { S.sel = t.dataset.pet; render(); }
+    else if (t.dataset.tick) { const [id, time] = t.dataset.tick.split('|'); const m = S.meds.find((x) => x.id === id); m.given[time] = !m.given[time]; if (typeof m.stock === 'number') m.stock += m.given[time] ? -1 : 1; render(); if (m.given[time]) toast('บันทึกว่าให้ยาแล้ว ✓'); }
+    else if (t.dataset.info) toast({ vet: 'ในแอป: คลินิกใกล้ตัว + แผนที่ + กดโทร', groom: 'ในแอป: ร้านอาบน้ำตัดขนใกล้ตัว', refer: 'ในแอป: ชวนเพื่อนด้วยโค้ดหรือ QR ของคุณ' }[t.dataset.info]);
+    else if (t.dataset.ask) phoneAsk(t.dataset.ask);
+    else run(t.dataset.go);
+  });
+  $('trychips').addEventListener('click', (e) => { const b = e.target.closest('[data-go]'); if (!b) return; const small = innerWidth < 980; if (small) $('screen').scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => run(b.dataset.go), small ? 450 : 0); });
+  draggable($('phonebuddy'), $('screen'));
+  render();
+
+  // ═══ AI showcase — free chat answers are the app's real Smart Bot output; Agent = simulated proposal cards ═══
+  const AGENT = [
+    { q: 'Nova หนัก 3.2 โล ชั่งเมื่อกี้', say: 'รับทราบค่ะ หนูเตรียมบันทึกน้ำหนักให้แล้ว ตรวจแล้วกดยืนยันนะคะ', card: { t: 'บันทึกน้ำหนัก', b: '⚖️ Nova · 3.2 กก.', d: 'วันนี้' }, apply: () => { S.recs = S.recs.filter((r) => !(r.pet === 'nova' && r.type === 'weight' && r.d === 0)); S.recs.forEach((r) => (r.fresh = false)); S.recs.push({ id: 'a' + Date.now(), pet: 'nova', type: 'weight', d: 0, v: 3.2, fresh: true }); S.sel = 'nova'; tab = 'health'; } },
+    { q: 'พา Mango ฉีดพิษสุนัขบ้ามาแล้ววันนี้', say: 'เก่งมากค่ะ หนูเตรียมบันทึกวัคซีนให้ Mango แล้ว ตรวจแล้วกดยืนยันนะคะ', card: { t: 'บันทึกวัคซีน', b: '💉 Mango · พิษสุนัขบ้า (Rabies)', d: 'วันนี้' }, apply: () => { S.recs.forEach((r) => (r.fresh = false)); S.recs.push({ id: 'a' + Date.now(), pet: 'mango', type: 'vaccine', d: 0, v: 'พิษสุนัขบ้า (Rabies)', fresh: true }); S.sel = 'mango'; tab = 'health'; } },
+    { q: 'นัดอาบน้ำ Mango วันเสาร์ 10 โมง', say: 'ได้เลยค่ะ หนูร่างนัดหมายให้แล้ว แอปจะเตือนก่อนถึงเวลานัดนะคะ', card: { t: 'สร้างนัดหมาย', b: '📅 Mango · อาบน้ำตัดขน', d: 'วันเสาร์ · 10:00 น.' }, apply: () => { S.appts.push({ id: 'a' + Date.now(), pet: 'mango', type: 'appt', kind: 'groom', remind: 1, d: (6 - today.getDay() + 7) % 7 || 7, v: 'อาบน้ำตัดขน · เสาร์ 10:00' }); S.sel = 'mango'; tab = 'appts'; } },
   ];
-  const loop = $('loop');
-  STEPS.forEach((s, i) => {
-    const b = document.createElement('button');
-    b.className = 'step'; b.setAttribute('aria-pressed', 'false');
-    b.innerHTML = `<div class="n" style="background:${s[3]}">${s[0]}</div><b>${s[1]}</b><span>${s[2]}</span>`;
-    b.onclick = () => pick(i);
-    loop.appendChild(b);
+  let mode = 'free';
+  const thread = $('thread');
+  function setMode(m) {
+    mode = m; $('mFree').setAttribute('aria-pressed', String(m === 'free')); $('mAgent').setAttribute('aria-pressed', String(m === 'agent'));
+    $('chatsub').textContent = m === 'free' ? 'แชตธรรมดา · ดูแลน้อง Nova' : 'Agent · 15 Paw/ข้อความ';
+    $('aichips').innerHTML = (m === 'free' ? PC.answers.map((a) => a.q) : AGENT.map((a) => a.q)).map((q, i) => `<button class="chip" data-i="${i}">${esc(q)}</button>`).join('');
+    $('aisample').textContent = m === 'free' ? 'คำตอบจริงจากแชตธรรมดาของแอป (รันกับข้อมูลตัวอย่างน้อง Nova ตอนสร้างเว็บ)' : 'จำลองหน้าตาการทำงานของ Agent · ในแอปใช้ AI จริง 15 Paw/ข้อความ ขออนุญาตก่อนส่งข้อมูลครั้งแรก และต้องกดยืนยันทุกครั้งก่อนบันทึก';
+    thread.innerHTML = `<div class="msg bot">${m === 'free' ? 'สวัสดีค่ะ หนูน้องพอว์ ถามเรื่องยา น้ำหนัก วัคซีนของน้อง Nova หรือวิธีใช้แอปได้เลยค่ะ 🐾' : 'โหมด Agent: เล่าเรื่องของน้องมาได้เลย แล้วหนูจะเตรียมการ์ดบันทึกให้ตรวจก่อนค่ะ ✨'}</div>`;
+  }
+  function typing() { const t = document.createElement('div'); t.className = 'typing'; t.innerHTML = '<i></i><i></i><i></i>'; thread.appendChild(t); thread.scrollTop = thread.scrollHeight; return t; }
+  function stream(el, text, done) {
+    if (reduce) { el.innerHTML = rich(text); done?.(); return; }
+    let n = 0; const h = setInterval(() => { n += 5; el.innerHTML = rich(text.slice(0, n)); thread.scrollTop = thread.scrollHeight; if (n >= text.length) { clearInterval(h); done?.(); } }, 14);
+  }
+  $('aichips').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-i]'); if (!b) return;
+    const i = +b.dataset.i;
+    thread.insertAdjacentHTML('beforeend', `<div class="msg me">${esc(b.textContent)}</div>`);
+    const t = typing();
+    setTimeout(() => {
+      t.remove();
+      const msg = document.createElement('div');
+      if (mode === 'free') {
+        const a = PC.answers[i]; msg.className = 'msg bot' + (a.kind === 'emergency' ? ' alert' : ''); thread.appendChild(msg); stream(msg, a.a);
+      } else {
+        const a = AGENT[i]; msg.className = 'msg bot'; thread.appendChild(msg);
+        S.coin = Math.max(0, S.coin - 15); $('coinN').textContent = S.coin; $('coin').classList.add('bump'); setTimeout(() => $('coin').classList.remove('bump'), 300); save();
+        stream(msg, a.say, () => {
+          const c = document.createElement('div'); c.className = 'propose';
+          c.innerHTML = `<div class="t">✨ ${esc(a.card.t)} · รอคุณยืนยัน</div><b>${esc(a.card.b)}</b><div class="sample">${esc(a.card.d)}</div><div class="acts"><button class="ok">ยืนยันบันทึก</button><button class="no">ยกเลิก</button></div>`;
+          thread.appendChild(c); thread.scrollTop = thread.scrollHeight;
+          c.querySelector('.ok').onclick = () => { a.apply(); render(); c.classList.add('saved'); c.querySelector('.acts').innerHTML = '<span style="color:#1F8A55;font:500 13.5px var(--f-head)">✓ บันทึกแล้ว — ดูในจอแอปด้านบน</span>'; toast('บันทึกจากแชตแล้ว ✓'); };
+          c.querySelector('.no').onclick = () => { c.querySelector('.acts').innerHTML = '<span class="sample">ยกเลิกแล้ว ไม่มีอะไรถูกบันทึก</span>'; };
+        });
+      }
+    }, reduce ? 0 : 700);
   });
-  function pick(i) {
-    [...loop.children].forEach((c, j) => c.setAttribute('aria-pressed', String(i === j)));
-    $('loopnote').innerHTML = `<b>${STEPS[i][1]}:</b> ${STEPS[i][4]}<a href="${STEPS[i][5]}">ดูส่วนนี้ ↓</a>`;
-  }
-  pick(0);
+  $('mFree').onclick = () => setMode('free'); $('mAgent').onclick = () => { $('mAgent').classList.remove('nudge'); setMode('agent'); };
+  setMode('free');
+  // the chat shows itself: the first real answer plays once when the window scrolls into view, then the Agent button nudges
+  new IntersectionObserver(([e], o) => {
+    if (!e.isIntersecting) return; o.disconnect();
+    if (thread.children.length !== 1) return;
+    setTimeout(() => { $('aichips').querySelector('[data-i="0"]')?.click(); setTimeout(() => $('mAgent').classList.add('nudge'), 2600); }, 500);
+  }, { threshold: 0.5 }).observe(thread);
 
-  // weight chart (sample Nova data · same values as the store screenshots)
-  const base = new Date();
-  const wts = [[-51, 2.6], [-37, 2.8], [-23, 2.9], [-9, 3.0], [0, 3.1]].map(([d, w]) => ({ d: new Date(base.getFullYear(), base.getMonth(), base.getDate() + d), w }));
-  function drawWeight() {
-    const last = wts[wts.length - 1], prev = wts[wts.length - 2];
-    $('wnow').innerHTML = `${last.w.toFixed(1)} <small>กก. · ${thDate(last.d)}</small>`;
-    const diff = +(last.w - prev.w).toFixed(1);
-    $('wdelta').textContent = diff === 0 ? 'เท่าเดิม' : `${diff > 0 ? '▲' : '▼'} ${Math.abs(diff).toFixed(1)} กก. จากครั้งก่อน`;
-    const W = 520, H = 190, pad = 28;
-    const t0 = wts[0].d.getTime(), t1 = last.d.getTime() || t0 + 1;
-    const lo = Math.min(...wts.map((p) => p.w)) - 0.2, hi = Math.max(...wts.map((p) => p.w)) + 0.2;
-    const pts = wts.map((p) => [pad + (W - 2 * pad) * (p.d.getTime() - t0) / Math.max(1, t1 - t0), H - pad - (H - 2 * pad) * (p.w - lo) / (hi - lo)]);
-    const line = pts.map((p, k) => `${k ? 'L' : 'M'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
-    $('wchart').innerHTML = `<defs><linearGradient id="wg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2EC4B6" stop-opacity=".35"/><stop offset="1" stop-color="#2EC4B6" stop-opacity="0"/></linearGradient></defs>
-      <path d="${line} L${pts[pts.length - 1][0]},${H - pad} L${pts[0][0]},${H - pad} Z" fill="url(#wg)"/>
-      <path d="${line}" fill="none" stroke="#1A9E92" stroke-width="3" stroke-linejoin="round"/>
-      ${pts.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="#fff" stroke="#1A9E92" stroke-width="3"/>`).join('')}`;
-    $('whist').innerHTML = wts.slice(-3).reverse().map((p) => `<li><span>${thDate(p.d)}</span><b>${p.w.toFixed(1)} กก.</b></li>`).join('');
+  // ═══ Buddies gallery + floating page buddy ═══
+  $('bcount').textContent = PC.buddies.length;
+  let filter = 'all', pageBuddy = (() => { try { return localStorage.getItem('petcare-web-buddy'); } catch { return null; } })();
+  if (!B[pageBuddy]) pageBuddy = PC.defaultBuddy.dog;
+  function setPageBuddy(id) {
+    pageBuddy = id; try { localStorage.setItem('petcare-web-buddy', id); } catch {}
+    const host = $('pagebuddy'); makeSprite(host, id, innerWidth < 600 ? 84 : 104);
+    host.insertAdjacentHTML('beforeend', `<span class="tagname">${esc(B[id].name)}</span><span class="say" id="say">สวัสดี! ลากหนูไปไหนก็ได้นะ</span>`);
+    renderGallery();
   }
-  $('wadd').onclick = () => {
-    const last = wts[wts.length - 1];
-    if (wts.length >= 9) wts.shift();
-    wts.push({ d: new Date(last.d.getFullYear(), last.d.getMonth(), last.d.getDate() + 14), w: +(last.w + 0.1).toFixed(1) });
-    drawWeight();
-  };
-  drawWeight();
-
-  // medicine card
-  const doses = [{ t: '08:00', done: false }, { t: '20:00', done: false }];
-  let stock = 60;
-  function drawDoses() {
-    $('doses').innerHTML = doses.map((d, i) => `<div class="dose"><b>${d.t} น.</b><button class="give${d.done ? ' done' : ''}" data-i="${i}">${d.done ? '✓ ให้แล้ว · แก้ไข' : '⊕ บันทึกว่าให้แล้ว'}</button></div>`).join('');
-    $('mgiven').textContent = doses.filter((d) => d.done).length;
-    $('mstock').textContent = stock;
-    $('doses').querySelectorAll('button').forEach((b) => (b.onclick = () => { const d = doses[+b.dataset.i]; d.done = !d.done; stock += d.done ? -1 : 1; drawDoses(); }));
+  let showAll = false;
+  function renderGallery() {
+    const all = PC.buddies.filter((b) => filter === 'all' || b.species === filter), limit = innerWidth < 600 ? 12 : 18;
+    let list = showAll ? all : all.slice(0, limit);
+    if (!showAll && !list.some((b) => b.id === pageBuddy) && all.some((b) => b.id === pageBuddy)) list = [...list.slice(0, -1), B[pageBuddy]];
+    const more = $('bmore'); more.hidden = showAll || all.length <= limit; more.textContent = `ดูอีก ${all.length - list.length} ตัว ↓`;
+    $('bgrid').innerHTML = list.map((b) => `<button class="bcard" data-b="${b.id}" aria-pressed="${b.id === pageBuddy}"><span class="stagebox" id="st-${b.id}"><img src="assets/buddies/${b.id}-thumb.webp" alt="" loading="lazy" width="72" height="86"></span><b>${esc(b.name)}</b><small>${esc(b.breed)}</small></button>`).join('');
+    const sel = $('st-' + pageBuddy); if (sel) makeSprite(sel, pageBuddy, innerWidth < 600 ? 68 : 90);
   }
-  drawDoses();
+  const say = (text) => { const s = $('say'); if (!s) return; s.textContent = text; s.classList.add('show'); clearTimeout(say.h); say.h = setTimeout(() => s.classList.remove('show'), 2200); };
+  $('bgrid').addEventListener('click', (e) => { const c = e.target.closest('[data-b]'); if (!c) return; setPageBuddy(c.dataset.b); const nb = B[c.dataset.b]; say(nb.name === nb.breed ? `หนูชื่อ${nb.name}!` : `หนูชื่อ${nb.name}! (${nb.breed})`); });
+  $('bgrid').addEventListener('pointerover', (e) => { const c = e.target.closest('[data-b]'); if (!c || c.dataset.b === pageBuddy || c._anim) return; c._anim = 1; makeSprite($('st-' + c.dataset.b), c.dataset.b, innerWidth < 600 ? 68 : 90); });
+  $('bmore').onclick = () => { showAll = true; renderGallery(); };
+  $('bfilters').addEventListener('click', (e) => { const b = e.target.closest('[data-f]'); if (!b) return; filter = b.dataset.f; showAll = false; [...$('bfilters').children].forEach((x) => x.setAttribute('aria-pressed', String(x === b))); renderGallery(); });
+  $('pagebuddy').addEventListener('click', () => { const lines = [`หนูชื่อ${B[pageBuddy].name}`, 'อย่าลืมให้ยาน้องนะ 💊', 'เลือกตัวใหม่ได้ที่ "เพื่อนน้อง"', 'ลากหนูไปวางที่อื่นได้นะ']; say(lines[Math.floor(Math.random() * lines.length)]); });
+  draggable($('pagebuddy'));
+  setPageBuddy(pageBuddy);
+  // the hero already has the phone buddy + parade — the page buddy comes out once the hero scrolls away (it never blocks the first screen)
+  new IntersectionObserver(([e]) => $('pagebuddy').classList.toggle('away', e.isIntersecting), { threshold: 0.25 }).observe($('try'));
+  const PARADE = ['dog01_golden', 'cat01_scottishfold', 'dog05_corgi', 'cat05_siamese', 'dog02_pomeranian', 'cat02_orange', 'dog10_shiba'];
+  function parade(host, h) {
+    const ids = PARADE.slice(0, innerWidth < 600 ? 4 : PARADE.length);
+    host.innerHTML = ids.map((id) => `<figure data-b="${id}"><div id="${host.id}-${id}"></div><figcaption>${esc(B[id].name)}</figcaption></figure>`).join('');
+    ids.forEach((id) => makeSprite($(`${host.id}-${id}`), id, h));
+    host.onclick = (e) => { const f = e.target.closest('[data-b]'); if (f) { setPageBuddy(f.dataset.b); say(`หนูชื่อ${B[f.dataset.b].name}!`); } };
+  }
+  parade($('parade1'), innerWidth < 600 ? 70 : 96); parade($('parade2'), innerWidth < 600 ? 66 : 84);
 
-  // vaccine calculator — programme from constants/vaccineSchedule.ts
+  // ═══ Vaccine calculator (constants/vaccineSchedule.ts) ═══
   let species = 'dog';
   const birth = $('vbirth');
-  const def = new Date(); def.setMonth(def.getMonth() - 2);
-  birth.value = def.toISOString().slice(0, 10);
-  birth.max = new Date().toISOString().slice(0, 10);
+  const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  birth.value = iso(dayOff(-60)); birth.max = iso(today);
   const addMonths = (d, m) => new Date(d.getFullYear(), d.getMonth() + m, d.getDate());
   function drawVacc() {
-    const b = new Date(birth.value + 'T00:00:00');
-    const ok = !isNaN(b);
+    const b = new Date(birth.value + 'T00:00:00'), ok = !isNaN(b);
     $('vbirthth').textContent = ok ? `(${thDate(b)})` : '';
     $('vlist').innerHTML = PC.vaccines[species].map((v) => {
       const first = ok ? addMonths(b, v.firstMonths) : null;
       const tags = `<span class="tag ${v.category === 'core' ? 'core' : 'opt'}">${v.category === 'core' ? 'หลัก' : 'ตามความเสี่ยง'}</span>${v.legal ? '<span class="tag law">กฎหมายไทย</span>' : ''}`;
-      const when = first ? `เข็มแรกได้ตั้งแต่ <b>${thDate(first)}</b> (อายุ ${v.firstMonths} เดือน)` : '';
-      const series = v.series ? ` · ${esc(v.series)}` : '';
-      const boost = ` · กระตุ้นทุก ${v.boosterMonths === 12 ? 'ปี' : v.boosterMonths + ' เดือน'}`;
-      const blood = v.bloodTest ? ' · ตรวจเลือดก่อนฉีด' : '';
-      return `<li><b>${esc(v.name)}</b>${tags}<div class="vdate">${esc(v.protects)}</div><div class="vdate">${when}${series}${boost}${blood}</div></li>`;
+      return `<li><b>${esc(v.name)}</b>${tags}<div class="muted" style="font-size:13.5px">${esc(v.protects)}</div><div style="font-size:14px">${first ? `เข็มแรกได้ตั้งแต่ <b>${thDate(first)}</b> (อายุ ${v.firstMonths} เดือน)` : ''}${v.series ? ' · ' + esc(v.series) : ''} · กระตุ้นทุก${v.boosterMonths === 12 ? 'ปี' : ` ${v.boosterMonths} เดือน`}${v.bloodTest ? ' · ตรวจเลือดก่อนฉีด' : ''}</div></li>`;
     }).join('');
   }
   const setSp = (s) => { species = s; $('vdog').setAttribute('aria-pressed', String(s === 'dog')); $('vcat').setAttribute('aria-pressed', String(s === 'cat')); drawVacc(); };
-  $('vdog').onclick = () => setSp('dog'); $('vcat').onclick = () => setSp('cat');
-  birth.oninput = drawVacc;
-  drawVacc();
+  $('vdog').onclick = () => setSp('dog'); $('vcat').onclick = () => setSp('cat'); birth.oninput = drawVacc; drawVacc();
 
-  // chat modes
-  const MODES = {
-    free: '<ul><li>ตอบจากบันทึกของน้องที่เปิดแชตอยู่ เช่น ยาวันนี้ น้ำหนักล่าสุด วัคซีนที่ใกล้ถึง</li><li>ถามวิธีใช้แอปได้ทุกหน้า</li><li>ทำงานบนมือถือ ไม่ส่งไป AI ภายนอก ไม่ใช้เหรียญ</li><li>ไม่แก้บันทึกให้ — บันทึกเองที่หน้าจอบันทึก</li></ul>',
-    agent: '<ul><li>AI บนเซิร์ฟเวอร์ ช่วยตอบละเอียดขึ้น และช่วยบันทึกจากข้อความที่พิมพ์ (น้ำหนัก ยา วัคซีน นัดหมาย)</li><li>ทุกการบันทึกขึ้นเป็นการ์ดให้ตรวจ แล้วกดยืนยันเองก่อนเสมอ</li><li>15 Paw Coin ต่อข้อความ · เหรียญไม่พอ = ยังไม่หักเหรียญ</li><li>ส่งข้อมูลไป AI ภายนอก (OpenRouter → Google Gemini) แอปจึงขออนุญาตก่อนใช้ครั้งแรก</li></ul>',
-  };
-  const setMode = (m) => { $('mfree').setAttribute('aria-pressed', String(m === 'free')); $('magent').setAttribute('aria-pressed', String(m === 'agent')); $('modebody').innerHTML = MODES[m]; };
-  $('mfree').onclick = () => setMode('free'); $('magent').onclick = () => setMode('agent');
-  setMode('free');
-
-  // screenshots
-  $('shots').innerHTML = PC.shots.map((s) => `<figure><div class="phone"><img src="${s.src}" alt="${esc(s.caption)}" loading="lazy" width="540" height="1173"></div><figcaption>${esc(s.caption)}</figcaption></figure>`).join('');
-
-  // FAQ (in-app help text)
+  // ═══ Screens marquee · FAQ · Paw Support · reveal ═══
+  const shotHtml = PC.shots.map((s) => `<figure><div class="dev"><img src="${s.src}" alt="${esc(s.caption)}" loading="lazy" width="540" height="1173"></div><figcaption>${esc(s.caption)}</figcaption></figure>`).join('');
+  $('shots').innerHTML = shotHtml + shotHtml.replace(/alt="[^"]*"/g, 'alt="" aria-hidden="true"');
   $('faqlist').innerHTML = PC.faq.map((f) => `<details><summary>${esc(f.title)}</summary><div>${rich(f.body)}</div></details>`).join('');
-
-  // Paw Support — answers from the same help text; email when not found
   const ps = $('ps'), psb = $('psbtn'), body = $('psbody');
   const PS_TOPICS = ['add_pet', 'medicine', 'reminder_troubleshoot', 'paw_coin', 'account_delete'];
   function psHome() {
-    body.innerHTML = '<div class="msg bot">สวัสดีค่ะ หนูน้องพอว์ เลือกเรื่องที่อยากรู้ หรือส่งอีเมลหาทีมงานได้เลยค่ะ</div><div class="chips" id="pschips"></div>';
-    const c = $('pschips');
-    PC.faq.filter((f) => PS_TOPICS.includes(f.id)).forEach((f) => {
-      const b = document.createElement('button'); b.className = 'chip'; b.textContent = f.title;
-      b.onclick = () => { body.insertAdjacentHTML('beforeend', `<div class="msg me">${esc(f.title)}</div><div class="msg bot">${rich(f.body)}</div>`); body.scrollTop = body.scrollHeight; };
-      c.appendChild(b);
-    });
+    body.innerHTML = '<div class="msg bot">สวัสดีค่ะ หนูน้องพอว์ เลือกเรื่องที่อยากรู้ หรือส่งอีเมลหาทีมงานได้เลยค่ะ</div><div id="pschips" style="display:flex;flex-wrap:wrap;gap:6px"></div>';
+    PC.faq.filter((f) => PS_TOPICS.includes(f.id)).forEach((f) => { const b = document.createElement('button'); b.className = 'chip'; b.style.fontSize = '13px'; b.textContent = f.title; b.onclick = () => { body.insertAdjacentHTML('beforeend', `<div class="msg me">${esc(f.title)}</div><div class="msg bot">${rich(f.body)}</div>`); body.scrollTop = body.scrollHeight; }; $('pschips').appendChild(b); });
   }
   psb.onclick = () => { const open = !ps.classList.contains('open'); ps.classList.toggle('open', open); psb.setAttribute('aria-expanded', String(open)); if (open && !body.children.length) psHome(); };
   $('psmail').href = `mailto:${PC.site.contact}?subject=${encodeURIComponent('PetCare AI 360 · แจ้งปัญหา')}&body=${encodeURIComponent('เล่าปัญหาที่เจอ (หน้าจอไหน · ทำอะไรอยู่):\n\nรุ่นมือถือ / iOS:\n')}`;
-  addEventListener('keydown', (e) => { if (e.key === 'Escape' && ps.classList.contains('open')) psb.click(); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') { if (ps.classList.contains('open')) psb.click(); closeSheet(); } });
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.01, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 })();
 </script>
 </body>
